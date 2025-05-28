@@ -1,0 +1,14 @@
+C:\Users\Owner\Downloads\MusicCenter\MusicCenter\obj\Debug\net8.0\MusicCenter.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Owner\Downloads\MusicCenter\MusicCenter\obj\Debug\net8.0\MusicCenter.AssemblyInfoInputs.cache
+C:\Users\Owner\Downloads\MusicCenter\MusicCenter\obj\Debug\net8.0\MusicCenter.AssemblyInfo.cs
+C:\Users\Owner\Downloads\MusicCenter\MusicCenter\obj\Debug\net8.0\MusicCenter.csproj.CoreCompileInputs.cache
+C:\Users\Owner\Downloads\MusicCenter\MusicCenter\bin\Debug\net8.0\MusicCenter.exe
+C:\Users\Owner\Downloads\MusicCenter\MusicCenter\bin\Debug\net8.0\MusicCenter.deps.json
+C:\Users\Owner\Downloads\MusicCenter\MusicCenter\bin\Debug\net8.0\MusicCenter.runtimeconfig.json
+C:\Users\Owner\Downloads\MusicCenter\MusicCenter\bin\Debug\net8.0\MusicCenter.dll
+C:\Users\Owner\Downloads\MusicCenter\MusicCenter\bin\Debug\net8.0\MusicCenter.pdb
+C:\Users\Owner\Downloads\MusicCenter\MusicCenter\obj\Debug\net8.0\MusicCenter.dll
+C:\Users\Owner\Downloads\MusicCenter\MusicCenter\obj\Debug\net8.0\refint\MusicCenter.dll
+C:\Users\Owner\Downloads\MusicCenter\MusicCenter\obj\Debug\net8.0\MusicCenter.pdb
+C:\Users\Owner\Downloads\MusicCenter\MusicCenter\obj\Debug\net8.0\MusicCenter.genruntimeconfig.cache
+C:\Users\Owner\Downloads\MusicCenter\MusicCenter\obj\Debug\net8.0\ref\MusicCenter.dll

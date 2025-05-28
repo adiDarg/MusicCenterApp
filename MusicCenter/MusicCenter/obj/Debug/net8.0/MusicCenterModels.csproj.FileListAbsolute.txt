@@ -1,0 +1,14 @@
+C:\Users\Owner\Downloads\MusicCenterModels\MusicCenterModels\bin\Debug\net8.0\MusicCenterModels.exe
+C:\Users\Owner\Downloads\MusicCenterModels\MusicCenterModels\bin\Debug\net8.0\MusicCenterModels.deps.json
+C:\Users\Owner\Downloads\MusicCenterModels\MusicCenterModels\bin\Debug\net8.0\MusicCenterModels.runtimeconfig.json
+C:\Users\Owner\Downloads\MusicCenterModels\MusicCenterModels\bin\Debug\net8.0\MusicCenterModels.dll
+C:\Users\Owner\Downloads\MusicCenterModels\MusicCenterModels\bin\Debug\net8.0\MusicCenterModels.pdb
+C:\Users\Owner\Downloads\MusicCenterModels\MusicCenterModels\obj\Debug\net8.0\MusicCenterModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Owner\Downloads\MusicCenterModels\MusicCenterModels\obj\Debug\net8.0\MusicCenterModels.AssemblyInfoInputs.cache
+C:\Users\Owner\Downloads\MusicCenterModels\MusicCenterModels\obj\Debug\net8.0\MusicCenterModels.AssemblyInfo.cs
+C:\Users\Owner\Downloads\MusicCenterModels\MusicCenterModels\obj\Debug\net8.0\MusicCenterModels.csproj.CoreCompileInputs.cache
+C:\Users\Owner\Downloads\MusicCenterModels\MusicCenterModels\obj\Debug\net8.0\MusicCenterModels.dll
+C:\Users\Owner\Downloads\MusicCenterModels\MusicCenterModels\obj\Debug\net8.0\refint\MusicCenterModels.dll
+C:\Users\Owner\Downloads\MusicCenterModels\MusicCenterModels\obj\Debug\net8.0\MusicCenterModels.pdb
+C:\Users\Owner\Downloads\MusicCenterModels\MusicCenterModels\obj\Debug\net8.0\MusicCenterModels.genruntimeconfig.cache
+C:\Users\Owner\Downloads\MusicCenterModels\MusicCenterModels\obj\Debug\net8.0\ref\MusicCenterModels.dll
