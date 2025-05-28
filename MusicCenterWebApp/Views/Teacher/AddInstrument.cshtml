@@ -1,0 +1,27 @@
+﻿@using MusicCenterModels
+@model List<Instrument>
+@{
+    ViewData["Title"] = "AddInstrument";
+    bool? isInstrumentAdded = TempData["isInstrumentAdded"] as bool?;
+    ViewBag.isInstrumentAdded = isInstrumentAdded;
+    Layout = "~/Views/Shared/MasterPage.cshtml";
+}
+
+<h1>Add Instrument</h1>
+<form method="post"
+    action="/Teacher/AddNewInstrument">
+    <select name="instrumentID">
+        <option value="0">Choose Instrument</option>
+        @foreach (var instrument in Model)
+        {
+            <option value="@instrument.Id">@instrument.Name</option>
+        }
+    </select>
+    <button type="submit">Add</button>
+</form>
+@if (ViewBag.isInstrumentAdded != null)
+{
+    <h4>@(ViewBag.isInstrumentAdded? "Instrument added succesfully!": "Instrument addition failed..")</h4>
+}
+
+

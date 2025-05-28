@@ -1,0 +1,33 @@
+﻿<Window x:Class="MusicCenterWPF.Windows.User.Schedule"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MusicCenterWPF.Windows.User"
+        xmlns:shared="clr-namespace:MusicCenterWPF.Windows.Shared"
+        mc:Ignorable="d"
+        Title="Schedule" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="1.2*"/>
+        </Grid.RowDefinitions>
+        <shared:CollapseAndClose Grid.Row="0"/>
+        <shared:NavBar Grid.Row="1"/>
+        <Label Style="{StaticResource StyledLabel}" Grid.Row="2">
+            Schedule
+        </Label>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="3">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</Window>

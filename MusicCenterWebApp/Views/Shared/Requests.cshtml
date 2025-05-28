@@ -1,0 +1,70 @@
+﻿@using MusicCenterModels
+@model List<Request>
+@{
+    ViewData["Title"] = "Requests";
+    bool isSent = ViewData["IsSent"] as bool? ?? false;
+    bool? requestHandled = TempData["requestHandled"] as bool?;
+    ViewBag.requestHandled = requestHandled;
+    bool? requestSentSuccessfully = TempData["requestSentSuccessfully"] as bool?;
+    ViewBag.requestSentSuccessfully = requestSentSuccessfully;
+    Layout = "~/Views/Shared/MasterPage.cshtml";
+}
+@RenderBody()
+<h3>Requests</h3>
+<ul>
+    @foreach (var request in Model)
+    {
+        <li>
+            <h5>@(request.Title) (@(request.RequestType))</h5>
+            <p>@request.Description</p>
+            @if (!isSent)
+            {
+                <p>Sent by: @request.Sender.Name</p>
+            }
+            else
+            {
+                <p>Sent to: @request.Reciever.Name</p>
+            }
+            @if (!isSent && (bool)!request.IsSeen)
+            {
+                <form method="post" 
+                    enctype="multipart/form-data"
+                    action="/User/HandleRequest">
+                    <input type="hidden" name="requestID" value="@request.Id" />
+                    <input type="hidden" name="isApproved" value="true" />
+                    <input type="hidden" name="userID" value="@ViewBag.userID" />
+                    <button type="submit">Approve</button>
+                </form>
+                <form method="post"
+                    enctype="multipart/form-data"
+                    action="/User/HandleRequest">
+                    <input type="hidden" name="requestID" value="@request.Id" />
+                    <input type="hidden" name="isApproved" value="false" />
+                    <input type="hidden" name="userID" value="@ViewBag.userID" />
+                    <button type="submit">Deny</button>
+                </form>
+            }
+            else if (!isSent)
+            {
+                @if ((bool)request.IsSeen)
+                {
+                    <p>@((bool)request.IsApproved ? "Approved" : "Denied")</p>
+                }
+                else
+                {
+                    <p>Waiting for response...</p>
+                }
+
+        }
+        </li>
+    }
+</ul>
+@if (ViewBag.requestHandled != null)
+{
+    <h4>@(ViewBag.requestHandled ? "Replied to request" : "Failed to reply to request")</h4>
+}
+@if (ViewBag.requestSentSuccessfully != null)
+{
+    <h4>@(ViewBag.requestSentSuccessfully? "Request sent!" : "Request failed to send..")</h4>
+}
+

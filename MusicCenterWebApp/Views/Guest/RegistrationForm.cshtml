@@ -1,0 +1,49 @@
+﻿<link href="~/css/generalstyles.css" rel="stylesheet" />
+@{
+    ViewData["Title"] = "RegistrationForm";
+    bool? success = TempData["isRegistrerSuccessful"] as bool?;
+    ViewBag.success = success;
+    string errorMessage = TempData["errorMessage"] as string == null ? "" : TempData["errorMessage"] as string;
+    ViewBag.errorMessage = errorMessage;
+    Layout = "~/Views/Shared/MasterPage.cshtml";
+}
+
+<h1>Registration Form</h1>
+<form
+    method="post"
+    action="/Guest/Register"
+    enctype="multipart/form-data">
+    <ul class="details">
+        <li class="sign-up-detail detail">
+            <img class="icon-image" src="~/images/loginicons/user.png" />
+            <input name="Name" placeholder="Enter Username" />
+        </li>
+        <li class="sign-up-detail detail">
+            <img class="icon-image" src="~/images/loginicons/padlock.png" />
+            <input name="Password" type="password" placeholder="Enter Password" />
+        </li>
+        <li class="sign-up-detail detail">
+            <img class="icon-image" src="~/images/loginicons/email.png" />
+            <input name="Email" placeholder="Enter Email" />
+        </li>
+        <li class="sign-up-detail detail">
+            <img class="icon-image" src="~/images/loginicons/call.png" />
+            <input name="PhoneNumber" placeholder="Enter Phone Number" />
+        </li>
+        <li class="sign-up-detail detail">
+            <img class="icon-image" src="~/images/loginicons/house.png" />
+            <input name="Address" placeholder="Enter Address" />
+        </li>
+        <li class="sign-up-detail detail">
+            <img class="icon-image" src="~/images/loginicons/photo.png" />
+            <input name="Image" type="file" placeholder="Enter Image" />
+        </li>
+    </ul>
+    <button type="submit">Submit</button>
+</form>
+@if (ViewBag.success != null && !ViewBag.success)
+{
+    <h4>Login failed..</h4>
+}
+<h4>@ViewBag.errorMessage</h4>
+

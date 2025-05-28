@@ -1,0 +1,35 @@
+﻿<Window x:Class="MusicCenterWPF.Windows.Admin.AddRegistreeToGroup"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MusicCenterWPF.Windows.Admin"
+        xmlns:shared="clr-namespace:MusicCenterWPF.Windows.Shared"
+        mc:Ignorable="d"
+        Title="AddRegistreeToGroup" Height="450" Width="800"
+        WindowStyle="None"
+        WindowState="Maximized"
+        ResizeMode="CanMinimize"
+        AllowsTransparency="False">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.15*"/>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <shared:CollapseAndClose/>
+        <shared:NavBar Grid.Row="1"/>
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label Style="{StaticResource StyledLabel}">Add Registree To Group</Label>
+            <ComboBox Template="{DynamicResource ComboBoxTemplate2}" Style="{StaticResource StyledComboBox}" Grid.Row="1">Choose Group</ComboBox>
+            <ComboBox Template="{DynamicResource ComboBoxTemplate2}" Style="{StaticResource StyledComboBox}" Grid.Row="2">Choose Registree</ComboBox>
+            <Button Style="{StaticResource StyledButton}" Grid.Row="4">Add</Button>
+        </Grid>
+    </Grid>
+</Window>

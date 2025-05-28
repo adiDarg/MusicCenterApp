@@ -1,0 +1,40 @@
+﻿@using MusicCenterModels
+@model UpdateGroupInstructorViewModel
+@{
+    ViewData["Title"] = "UpdateInstructorToGroup";
+    bool? success = TempData["instructorUpdateSuccess"] as bool?;
+    ViewBag.instructorUpdateSuccess = success;
+    Layout = "~/Views/Shared/MasterPage.cshtml";
+}
+
+<h1>Update Instructor Of Group</h1>
+<form method="post"
+      enctype="multipart/form-data"
+      action="/Admin/AddInstructorToGroup">
+      <ul>
+          <li class="detail">
+              <select name="groupID">
+                  <option value="0">Choose Group</option>
+                @foreach (var group in Model.Groups)
+                {
+                    <option value="@group.Id">@(group.Name)(Current Instructor: @group.Instructor.Name)</option>
+                }
+            </select>
+          </li>
+          <li class="detail">
+            <select name="instructorID">
+                <option value="0">Choose Instructor</option>
+                @foreach (var insturctor in Model.Instructors)
+                {
+                    <option value="@insturctor.Id">@insturctor.Name</option>
+                }
+            </select>
+          </li>
+      </ul>
+    <button type="submit">Submit</button>
+</form>
+@if (ViewBag.instructorUpdateSuccess != null)
+{
+    <h4>@(ViewBag.instructorUpdateSuccess ? "Group updated successfully!" : "Group update failed..")</h4>
+}
+

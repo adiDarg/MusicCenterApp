@@ -1,0 +1,36 @@
+﻿<Window x:Class="MusicCenterWPF.SignUp"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MusicCenterWPF"
+        xmlns:shared="clr-namespace:MusicCenterWPF.Windows.Shared"
+        mc:Ignorable="d"
+        Title="Sign Up" Height="450" Width="800"
+        WindowStyle="None"
+        WindowState="Maximized"
+        ResizeMode="CanMinimize"
+        AllowsTransparency="False">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resources/GeneralStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <StackPanel>
+        <shared:CollapseAndClose/>
+        <Label Style="{StaticResource StyledLabel}"
+            FontSize="30px"
+            >Sign Up
+        </Label>
+        <Label Name="errorLabel" Style="{StaticResource ErrorLabel}"/>
+        <TextBox Name="usernameInput" Style="{StaticResource StyledTextBox}" Text="Username"/>
+        <TextBox Name="passwordInput" Style="{StaticResource StyledTextBox}" Text="Password"/>
+        <TextBox Name="emailInput" Style="{StaticResource StyledTextBox}" Text="Email"/>
+        <TextBox Name="addressInput" Style="{StaticResource StyledTextBox}" Text="Address"/>
+        <TextBox Name="phoneNumberInput" Style="{StaticResource StyledTextBox}" Text="Phone Number"/>
+        <Button Name="fileOpener" Style="{StaticResource StyledButton}" Content="Select Image" Width="174" Click="fileOpener_Click"/>
+        <Button Name="SignUpButton" Style="{StaticResource StyledButton}" Content="Sign Up" Click="SignUpButton_ClickAsync"/>
+    </StackPanel>
+</Window>

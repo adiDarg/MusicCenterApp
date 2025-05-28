@@ -1,0 +1,32 @@
+﻿@using MusicCenterModels
+@model List<Teacher>
+@{
+    ViewData["Title"] = "ChooseTeacherForLesson";
+    Layout = "~/Views/Shared/MasterPage.cshtml";
+}
+
+<h1>Schedule Lesson</h1>
+<form method="post"
+    action="/Admin/CreateLesson">
+    <ul class="details">
+        <li class="detail">
+            <input type="hidden" name="registreeID" value="@ViewBag.registreeID" />
+        </li>
+        <li class="detail">
+            <select name="teacherID">
+                <option value="0">Select Teacher</option>
+                @foreach (var teacher in Model)
+                {
+                    <option value="@teacher.Id">@teacher.Name</option>
+                }
+            </select>
+        </li>
+        <li class="detail">
+            <input name="room" placeholder="Input Room" />
+        </li>
+        <li class="detail">
+            <input type="datetime-local" name="date" />
+        </li>
+    </ul>
+    <button type="submit">Create Lesson</button>
+</form>

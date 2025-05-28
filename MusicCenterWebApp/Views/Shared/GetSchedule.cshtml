@@ -1,0 +1,42 @@
+﻿@using MusicCenterModels
+@model ScheduleViewModel
+@{
+    ViewData["Title"] = "GetSchedule";
+    Layout = "~/Views/Shared/MasterPage.cshtml";
+}
+@RenderBody()
+<h1>Get Schedule</h1>
+<ul class="profiles">
+    @{
+        List<McEvent> events = new List<McEvent>();
+        events.AddRange(Model.Lessons);
+        events.AddRange(Model.Meetings);
+        events.Sort((a, b) =>
+        {
+            return DateTime.Parse(a.Date).CompareTo(DateTime.Parse(b.Date));
+        }
+        );
+        foreach (var mcEvent in events)
+        {
+            <li class="profile">
+                <h3>@DateTime.Parse(mcEvent.Date).ToString()</h3>
+                @if (mcEvent is Lesson)
+                {
+                    Lesson lesson = (Lesson)mcEvent;
+                    <div>
+                        <h4>Teacher: @(lesson.Teacher.Name)</h4>
+                        <h4>Student: @(lesson.Student.Name)</h4>
+                    </div>
+                }
+                else
+                {
+                    Meeting meeting = (Meeting)mcEvent;
+                    <h4>Group: @meeting.Group.Name</h4>
+                }
+                <h4>@mcEvent.Room</h4>
+            </li>
+        }
+    }
+</ul>
+
+

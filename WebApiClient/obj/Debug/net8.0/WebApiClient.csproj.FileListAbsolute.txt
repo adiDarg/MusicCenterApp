@@ -1,0 +1,12 @@
+C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\WebApiClient\bin\Debug\net8.0\WebApiClient.deps.json
+C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\WebApiClient\bin\Debug\net8.0\WebApiClient.dll
+C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\WebApiClient\bin\Debug\net8.0\WebApiClient.pdb
+C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\WebApiClient\obj\Debug\net8.0\WebApiClient.csproj.AssemblyReference.cache
+C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\WebApiClient\obj\Debug\net8.0\WebApiClient.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\WebApiClient\obj\Debug\net8.0\WebApiClient.AssemblyInfoInputs.cache
+C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\WebApiClient\obj\Debug\net8.0\WebApiClient.AssemblyInfo.cs
+C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\WebApiClient\obj\Debug\net8.0\WebApiClient.csproj.CoreCompileInputs.cache
+C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\WebApiClient\obj\Debug\net8.0\WebApiClient.dll
+C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\WebApiClient\obj\Debug\net8.0\refint\WebApiClient.dll
+C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\WebApiClient\obj\Debug\net8.0\WebApiClient.pdb
+C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\WebApiClient\obj\Debug\net8.0\ref\WebApiClient.dll

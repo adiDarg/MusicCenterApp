@@ -1,0 +1,54 @@
+﻿@using MusicCenterModels
+@model List<User>
+@{
+    ViewData["Title"] = "SendRequest";
+    Layout = "~/Views/Shared/MasterPage.cshtml";
+}
+
+<h1>Send A New Request</h1>
+<form method="post"
+    enctype="multipart/form-data"
+    action="/User/HandleSendRequest">
+    <ul class="details">
+        <li class="detail">
+            <input type="hidden" name="RequestID" value="0" />
+        </li>
+        <li class="detail">
+            <input name="Title" placeholder="Enter Title" />
+        </li>
+        <li class="detail">
+            <input name="Description" placeholder="Enter Request Description" />
+        </li>
+        <li class="detail">
+            <input type="hidden" name="IsSeen" value="false" />
+        </li>
+        <li class="detail">
+            <input type="hidden" name="IsApproved" value="false" />
+        </li>
+        <li class="detail">
+            <input type="hidden" name="SenderID" value="@ViewBag.userID" />
+        </li>
+        <li class="detail">
+            <select name="RequestType">
+                <option value = "0">Select Request Type</option>
+                <option value="invite">Invite</option>
+                <option value="add event">Add Event</option>
+                <option value="cancel">Cancel</option>
+                <option value="leave group">Leave Group</option>
+                <option value="join group">Join Group</option>
+            </select>
+        </li>
+        <li class="detail">
+            <select name="RecieverID" value="@ViewBag.RecieverID">
+                <option value="0">Choose Reciever</option>
+                @foreach (User user in Model)
+                {
+                    <option value="@user.Id">@user.Name</option>
+                }
+            </select>
+        </li>
+    </ul>
+    <button type="reset">Clear</button>
+    <button type="submit">Submit</button>
+</form>
+

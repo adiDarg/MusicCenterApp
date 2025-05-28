@@ -1,0 +1,25 @@
+﻿@using MusicCenterModels
+@model List<Registree>
+@{
+    ViewData["Title"] = "ScheduleLesson";
+    bool? success = TempData["isLessonCreated"] as bool?;
+    ViewBag.isLessonCreated = success;
+    Layout = "~/Views/Shared/MasterPage.cshtml";
+}
+
+<h1>Schedule Lesson</h1>
+<h3>Choose registree to schedule the lesson for</h3>
+<form method="get"
+      action="/Admin/ChooseTeacherForLesson">
+    <select name="registreeID">
+        @foreach (var registree in Model)
+        {
+            <option value="@registree.Id">@registree.Name</option>
+        }
+    </select>
+    <button type="submit">Continue</button>
+</form>
+@if (ViewBag.isLessonCreated != null)
+{
+    <h4>@(ViewBag.isLessonCreated? "Lesson Created successfully!":"Lesson creation failed..")</h4>
+}

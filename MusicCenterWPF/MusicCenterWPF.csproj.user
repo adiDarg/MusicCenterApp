@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Windows\Admin\AddRegistreeToGroup.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Admin\CreateGroup.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Admin\RemoveRegistreeFromGroup.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Admin\UpdateInstructorOfGroup.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Guest\StartupWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Shared\CollapseAndClose.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Shared\NavBar.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Teacher\AddNewInstrument.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\User\EnterValidationKey.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\User\Requests.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Guest\SignIn.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Guest\SignUp.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Shared\Schedule.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\User\SendRequest.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\User\UserProfile.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Resources\GeneralStyles.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\UserProfileStyles.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Admin\AddRegistreeToGroup.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Admin\CreateGroup.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Admin\RemoveRegistreeFromGroup.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Admin\UpdateInstructorOfGroup.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Guest\StartupWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Shared\CollapseAndClose.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Shared\NavBar.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Teacher\AddNewInstrument.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\User\EnterValidationKey.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\User\Requests.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Guest\SignIn.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Guest\SignUp.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Shared\Schedule.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\User\SendRequest.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\User\UserProfile.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

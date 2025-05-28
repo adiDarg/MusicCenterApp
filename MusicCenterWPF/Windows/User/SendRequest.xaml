@@ -1,0 +1,32 @@
+﻿<Window x:Class="MusicCenterWPF.Windows.User.SendRequest"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MusicCenterWPF.Windows.User"
+        xmlns:shared="clr-namespace:MusicCenterWPF.Windows.Shared"
+        mc:Ignorable="d"
+        Title="SendRequest" Height="450" Width="800"
+        WindowStyle="None"
+        WindowState="Maximized"
+        ResizeMode="CanMinimize"
+        AllowsTransparency="False">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <shared:CollapseAndClose/>
+        <shared:NavBar Grid.Row="1"/>
+        <Label Grid.Row="2" Style="{StaticResource StyledLabel}">Send Request</Label>
+        <TextBox Grid.Row="3" Style="{StaticResource StyledTextBox}">Title</TextBox>
+        <TextBox Grid.Row="4" Style="{StaticResource StyledTextBox}">Description</TextBox>
+        <ComboBox Template="{DynamicResource ComboBoxTemplate1}" Grid.Row="3" Text="Choose Reciever" Style="{StaticResource StyledComboBox}">
+        </ComboBox>
+        <Button Grid.Row="5" Style="{StaticResource StyledButton}">Submit</Button>
+    </Grid>
+</Window>

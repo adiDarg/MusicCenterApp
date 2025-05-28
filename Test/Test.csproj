@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Linq" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MusicCenterFactories\MusicCenterFactories.csproj" />
+    <ProjectReference Include="..\MusicCenterModels\MusicCenterModels.csproj" />
+    <ProjectReference Include="..\MusicCenterWebApp\MusicCenterWebApp.csproj" />
+    <ProjectReference Include="..\MusicCenterWebService\MusicCenterWebService.csproj" />
+    <ProjectReference Include="..\WebApiClient\WebApiClient.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,76 @@
+:root {
+    --background-main: #EDF1F7;
+    --background-secondary: #D9E1EC;
+    --background-accent: #ecf1ff;
+    --title-color: #1E2A38;
+    --body-text-color: #2F3B4C;
+    --light-text-color: #6C7A89;
+    --accent-yellow: #FFD95A;
+    --accent-teal: #00A79D;
+    --accent-coral: #FF7F6A;
+    --accent-blue: #70BFFF;
+    --accent-green: #8ED9B8;
+    --accent-strong-coral: #FF4E4E;
+}
+
+* {
+    background-color: #E0EBEA;
+}
+
+header {
+    padding: 5px;
+    border-bottom: var(--accent-teal) 5px double;
+    text-align: center;
+}
+header h1 {
+    color: var(--title-color );
+}
+header nav {
+    color: var(--accent-teal);
+}
+main {
+    color: var(--body-text-color);
+}
+div.mainWrapper {
+    display: flex;
+    border-bottom: var(--accent-teal) 5px double;
+}
+aside {
+    display: inline-block;
+    color: var(--accent-coral);
+    margin-left: auto;
+    border-left: 5px double var(--accent-teal);
+}
+aside ul {
+    padding: 7px;
+}
+aside li {
+    border: var(--accent-teal) 4px solid;
+    border-radius: 12px;
+    padding: 2px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+aside li, aside li * {
+    background-color: var(--background-accent);
+    text-decoration: none;
+    color: #FF6F61;
+}
+aside li:hover, aside li:hover * {
+    background-color: var(--accent-blue);
+    color: var(--accent-strong-coral);
+}
+aside li:hover * {
+    cursor: pointer;
+}
+aside li.actionLink {
+    text-decoration: none;
+    color: #FF6F61;
+}
+* a:hover {
+        color: var(--accent-blue);
+        cursor: pointer;
+    }
+footer {
+    color: var(--accent-teal);
+}

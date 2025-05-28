@@ -1,0 +1,32 @@
+﻿<Window x:Class="MusicCenterWPF.Windows.SignIn"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MusicCenterWPF.Windows"
+        xmlns:shared="clr-namespace:MusicCenterWPF.Windows.Shared"
+        mc:Ignorable="d"
+        Title="Sign In" Height="450" Width="800"
+        WindowStyle="None"
+        WindowState="Maximized"
+        ResizeMode="CanMinimize"
+        AllowsTransparency="False">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resources/GeneralStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <StackPanel>
+        <shared:CollapseAndClose/>
+        <Label Style="{StaticResource StyledLabel}"
+        FontSize="30px"
+        >Sign In
+        </Label>
+        <TextBox Name="usernameInput" Style="{StaticResource StyledTextBox}" Text="Username"/>
+        <TextBox Name="passwordInput" Style="{StaticResource StyledTextBox}" Text="Password"/>
+        <Button Name="signInButton" Style="{StaticResource StyledButton}" Content="Sign In" Click="signInButton_Click"/>
+        <Label Name="errorLabel" Style="{StaticResource ErrorLabel}"/>
+    </StackPanel>
+</Window>

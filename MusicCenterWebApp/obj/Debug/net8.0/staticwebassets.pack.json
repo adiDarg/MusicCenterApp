@@ -1,0 +1,365 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\MusicCenterWebApp.bundle.scp.css",
+      "PackagePath": "staticwebassets\\MusicCenterWebApp.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\css\\GeneralStyles.css",
+      "PackagePath": "staticwebassets\\css\\GeneralStyles.css"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\css\\MasterPageStyle.css",
+      "PackagePath": "staticwebassets\\css\\MasterPageStyle.css"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\images\\loginIcons\\call.png",
+      "PackagePath": "staticwebassets\\images\\loginIcons\\call.png"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\images\\loginIcons\\email.png",
+      "PackagePath": "staticwebassets\\images\\loginIcons\\email.png"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\images\\loginIcons\\house.png",
+      "PackagePath": "staticwebassets\\images\\loginIcons\\house.png"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\images\\loginIcons\\padlock.png",
+      "PackagePath": "staticwebassets\\images\\loginIcons\\padlock.png"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\images\\loginIcons\\photo.png",
+      "PackagePath": "staticwebassets\\images\\loginIcons\\photo.png"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\images\\loginIcons\\user.png",
+      "PackagePath": "staticwebassets\\images\\loginIcons\\user.png"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\Utility\\Images\\044fa8f8-b588-413d-baf6-22c38cbe8469.jpg",
+      "PackagePath": "staticwebassets\\uploads\\images\\044fa8f8-b588-413d-baf6-22c38cbe8469.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\Utility\\Images\\059c5a61-477a-4675-bd1c-0d78395d90a3.jpg",
+      "PackagePath": "staticwebassets\\uploads\\images\\059c5a61-477a-4675-bd1c-0d78395d90a3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\Utility\\Images\\09c23959-4205-46a8-9d76-f7c78ae6b52a.jpg",
+      "PackagePath": "staticwebassets\\uploads\\images\\09c23959-4205-46a8-9d76-f7c78ae6b52a.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\Utility\\Images\\27476df9-2acb-496a-a422-bf761526015d.jpg",
+      "PackagePath": "staticwebassets\\uploads\\images\\27476df9-2acb-496a-a422-bf761526015d.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\Utility\\Images\\38b7f2cc-9942-45d3-9b4b-9b362dc72b2b.jpg",
+      "PackagePath": "staticwebassets\\uploads\\images\\38b7f2cc-9942-45d3-9b4b-9b362dc72b2b.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\Utility\\Images\\5ba39e0e-bb46-470b-b858-d5171a4d51b1.jpg",
+      "PackagePath": "staticwebassets\\uploads\\images\\5ba39e0e-bb46-470b-b858-d5171a4d51b1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\Utility\\Images\\7507e9a8-d7ff-4a91-aae1-96a688737f43.jpg",
+      "PackagePath": "staticwebassets\\uploads\\images\\7507e9a8-d7ff-4a91-aae1-96a688737f43.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\Utility\\Images\\801a126f-d7ba-4fda-8635-f400888c664f.jpg",
+      "PackagePath": "staticwebassets\\uploads\\images\\801a126f-d7ba-4fda-8635-f400888c664f.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\Utility\\Images\\887e136a-7158-434e-974c-88222b94969a.jpg",
+      "PackagePath": "staticwebassets\\uploads\\images\\887e136a-7158-434e-974c-88222b94969a.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\Utility\\Images\\8e5b0301-70e4-462e-a001-dfbca2f82b75.jpg",
+      "PackagePath": "staticwebassets\\uploads\\images\\8e5b0301-70e4-462e-a001-dfbca2f82b75.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\Utility\\Images\\92263895-bc33-4876-b13d-07acf2c083f1.jpg",
+      "PackagePath": "staticwebassets\\uploads\\images\\92263895-bc33-4876-b13d-07acf2c083f1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\Utility\\Images\\bc5a91bb-4174-43df-a6b2-698c9b090c1b.jpg",
+      "PackagePath": "staticwebassets\\uploads\\images\\bc5a91bb-4174-43df-a6b2-698c9b090c1b.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\Utility\\Images\\bf19199d-2a7a-4d97-af49-a93e7c3da1b3.jpg",
+      "PackagePath": "staticwebassets\\uploads\\images\\bf19199d-2a7a-4d97-af49-a93e7c3da1b3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\Utility\\Images\\c005e228-811c-4f14-a88c-788147d7f3e7.jpg",
+      "PackagePath": "staticwebassets\\uploads\\images\\c005e228-811c-4f14-a88c-788147d7f3e7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\Utility\\Images\\dd0a3d82-5882-4d8b-b642-df96e0565923.jpg",
+      "PackagePath": "staticwebassets\\uploads\\images\\dd0a3d82-5882-4d8b-b642-df96e0565923.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\Utility\\Images\\f32715af-f9e1-417f-8ddf-598e86bd2d93.jpg",
+      "PackagePath": "staticwebassets\\uploads\\images\\f32715af-f9e1-417f-8ddf-598e86bd2d93.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\Utility\\Images\\placeholder.jpg",
+      "PackagePath": "staticwebassets\\uploads\\images\\placeholder.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.MusicCenterWebApp.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.MusicCenterWebApp.props",
+      "PackagePath": "build\\MusicCenterWebApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.MusicCenterWebApp.props",
+      "PackagePath": "buildMultiTargeting\\MusicCenterWebApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.MusicCenterWebApp.props",
+      "PackagePath": "buildTransitive\\MusicCenterWebApp.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

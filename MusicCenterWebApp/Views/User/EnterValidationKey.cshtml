@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewData["Title"] = "EnterValidationKey";
+    bool? isKeyValid = TempData["isKeyValid"] as bool?;
+    ViewBag.isKeyValid = isKeyValid;
+    Layout = "~/Views/Shared/MasterPage.cshtml";
+}
+
+<h1>Enter Validation Key!</h1>
+<form method="post"
+    action="/User/HandleValidationKey"
+    enctype="multipart/form-data">
+    <input type="hidden" name="userID" value="@ViewBag.userID"/>
+    <input name="key" id="validationKeyInput" />
+    <button type="submit">Submit</button>
+</form>
+@if (ViewBag.isKeyValid != null)
+{
+    <h4>@(ViewBag.isKeyValid? "Key input successful!": "Something went wrong..")</h4>
+}
+

@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewData["Title"] = "LoginForm";
+    Layout = "~/Views/Guest/Login.cshtml";
+    bool? success = TempData["validationKeySuccess"] as bool?;
+    ViewBag.validationKeySuccess = success;
+}
+@if (ViewBag.validationKeySuccess != null)
+{
+    @if (ViewBag.validationKeySuccess)
+    {
+        <h4>Validation key has been sent to your email address!</h4>
+    }
+    else
+    {
+        <h4>Validation key failed to be sent to your email address..</h4>
+    }
+}
+

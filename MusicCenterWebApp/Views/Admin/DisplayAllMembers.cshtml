@@ -1,0 +1,23 @@
+﻿@using MusicCenterModels
+@model List<User>
+@{
+    ViewData["Title"] = "DisplayAllMembers";
+    Layout = "~/Views/Shared/MasterPage.cshtml";
+}
+
+<h1>Display</h1>
+<ul class="profiles">
+    @foreach (var user in Model)
+    {
+        <li class="profile">
+            <div class="flexDiv">
+                <h3>@user.Name</h3>
+                <img src="@user.Image" alt="no image" />
+            </div>
+            <h4>Address: @user.Address</h4>
+            <h4>Email: @user.Email</h4>
+            <h4>Phone Number: @user.PhoneNumber</h4>
+        </li>
+    }
+</ul>
+

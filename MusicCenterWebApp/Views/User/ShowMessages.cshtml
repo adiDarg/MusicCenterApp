@@ -1,0 +1,25 @@
+﻿@using MusicCenterModels
+@model List<Message>
+@{
+    ViewData["Title"] = "ShowMessages";
+    Layout = "~/Views/Shared/MasterPage.cshtml";
+}
+
+<h1>Messages</h1>
+@if (Model == null || !Model.Any())
+{
+    <p>No messages found.</p>
+}
+else
+{
+    <ul>
+        @foreach (var message in Model)
+        {
+            <li>
+                <h5>@message.Title</h5>
+                <p>@message.Description</p>
+            </li>
+        }
+    </ul>
+}
+

@@ -1,0 +1,34 @@
+﻿@using MusicCenterModels
+@model List<Teacher>
+@{
+    ViewData["Title"] = "ViewTeachers";
+    Layout = "~/Views/Shared/MasterPage.cshtml";
+}
+
+<h1>View Teachers</h1>
+<ul class="profiles">
+    @foreach (var user in Model)
+    {
+        <li class="profile">
+            <div class="flexDiv">
+                <h5>@user.Name</h5>
+                <img src="@user.Image" alt="no image" />
+            </div>
+            <h4>Address: @user.Address</h4>
+            <h4>Email: @user.Email</h4>
+            <h4>Phone Number: @user.PhoneNumber</h4>
+            <div>
+                <h4>Instruments they teach:</h4> 
+                <ul>
+                    @foreach (var instrument in user.Instruments)
+                    {
+                        <li>
+                            @instrument.Name
+                        </li>
+                    }
+                </ul>
+            </div>
+        </li>
+    }
+</ul>
+

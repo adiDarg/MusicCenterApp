@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/MasterPage.cshtml";
+}
+@RenderBody()
+<h1>Login</h1>
+<form method="post"
+      action="/Guest/Login"
+      enctype="multipart/form-data">
+    <input name="username" placeholder="Enter Username"/>
+    <input type="password" name="password" placeholder="Enter Password"/>
+    <button type="reset">Clear</button>
+    <button type="submit">Submit</button>
+</form>
+@if (ViewBag.Error != null && ViewBag.Error)
+{
+    <h4>An error occured while trying to log in..</h4>
+}
+

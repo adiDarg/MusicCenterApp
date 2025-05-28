@@ -1,0 +1,52 @@
+﻿@using MusicCenterModels
+@model List<Group>
+@{
+    ViewData["Title"] = "RemoveParticipantFromGroup";
+    bool? success = TempData["isParticipantRemoved"] as bool?;
+    ViewBag.isParticipantRemoved = success;
+    Layout = "~/Views/Shared/MasterPage.cshtml";
+}
+
+<h1>Remove Participant From Group</h1>
+<form method="post"
+      action="/Admin/RemoveStudentFromGroup">
+    <ul class="details">
+        <li class="detail">
+            <select name="groupID" id="groupInput">
+                <option value="0" data-participants="">Select Group</option>
+                @foreach (var group in Model)
+                {
+                    <option value="@group.Id" data-participants='@Html.Raw(Json.Serialize(group.Participants))'>@group.Name</option>
+                }
+            </select>
+        </li>
+        <li class="detail">
+            <select name="userID" id="participantInput">
+                <option value="0">Select Participant</option>
+            </select>
+        </li>
+    </ul>
+    <button type="submit">Remove</button>
+</form>
+@if (ViewBag.isParticipantRemoved != null && ViewBag.isParticipantRemoved)
+{
+    <h4>@(ViewBag.isParticipantRemoved? "Participant successfully removed!" : "Removal failed..")</h4>
+}
+
+<script>
+    document.getElementById("groupInput").addEventListener("change", function () {
+        var participantInput = document.getElementById("participantInput")
+        participantInput.innerHTML = '<option value="0">Select Participant</option>';
+        var groupInput = document.getElementById("groupInput")
+        var option = groupInput.options[groupInput.selectedIndex]
+        var selectedOptions = option.getAttribute("data-participants")
+        var list = JSON.parse(selectedOptions);
+        for (var i = 0; i < list.length; i++){
+            const item = list[i]
+            var newOption = document.createElement("option");
+            newOption.value = item.id;
+            newOption.textContent = item.name;
+            participantInput.appendChild(newOption);
+        }
+    })
+</script>

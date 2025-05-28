@@ -1,0 +1,46 @@
+﻿@using MusicCenterModels
+@model List<Group>
+@{
+    ViewData["Title"] = "ScheduleMeeting";
+    bool? success = TempData["isMeetingCreated"] as bool?;
+    ViewBag.isMeetingCreated = success;
+    Layout = "~/Views/Shared/MasterPage.cshtml";
+}
+
+<h1>Schedule Meeting</h1>
+<form method="post"
+    action="/Admin/CreateMeeting"
+    >
+    <ul class="details">
+        <li class="detail">
+            <select name="groupID" id="groupInput">
+                <option value="0" data-room="">Select group</option>
+                @foreach (var group in Model)
+                {
+                    <option value="@group.Id" data-room="@group.Room">
+                        @group.Name
+                    </option>
+                }
+            </select>
+        </li>
+        <li class="detail">
+            <input type="datetime-local" name="date"/>
+        </li>
+        <li class="detail">
+            <input placeholder="Enter room" name="room" id="roomInput" />
+        </li>
+    </ul>
+    <button type="submit">Add</button>
+</form>
+<script>
+    document.getElementById("groupInput").addEventListener("change", function () {
+        var inputField = document.getElementById("roomInput")
+        var selectField = document.getElementById("groupInput")
+        var selectedOption = selectField.options[selectField.selectedIndex]
+        inputField.value = selectedOption.getAttribute("data-room")
+    })
+</script>
+@if (success != null && (bool)success)
+{
+    <h4>@((bool)success? "Meeting created!": "Meeting creation failed..")</h4>
+}

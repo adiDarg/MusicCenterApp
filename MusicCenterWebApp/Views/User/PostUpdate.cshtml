@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewData["Title"] = "PostUpdate";
+    Layout = "~/Views/Shared/UpdateProfile.cshtml";
+}
+
+@RenderBody()
+@if (ViewBag.IsUpdated)
+{
+    <h5>Profile updated!</h5>
+}
+else {
+    <h5>Profile update failed</h5>
+}
+

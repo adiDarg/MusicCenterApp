@@ -1,0 +1,38 @@
+﻿@using MusicCenterModels
+@model List<Instructor>
+@{
+    ViewData["Title"] = "CreateGroup";
+    bool? success = TempData["groupSubmitSuccess"] as bool?;
+    ViewBag.groupSubmitSuccess = success;
+    Layout = "~/Views/Shared/MasterPage.cshtml";
+}
+
+<h1>Create Group</h1>
+<form method="post"
+    enctype="multipart/form-data"
+    action="/Admin/SubmitCreateGroup">
+    <ul class="details">
+        <li class="detail">
+            <input name="Name" placeholder="Enter Group Name" />
+        </li>
+        <li class="detail">
+            <select name="InstructorID">
+                <option value="0">Choose Instructor</option>
+                @foreach (var insturctor in Model)
+                {
+                   <option value="@insturctor.Id">@insturctor.Name</option>
+                }
+            </select>
+        </li>
+        <li class="detail">
+            <input name="Room" placeholder="Enter Room" />
+        </li>
+    </ul>
+    <button type="submit">Submit</button>
+</form>
+@if (ViewBag.groupSubmitSuccess != null)
+{
+    <h4>@(ViewBag.groupSubmitSuccess? "Group created successfully!" : "Group creation failed..")</h4>
+}
+
+

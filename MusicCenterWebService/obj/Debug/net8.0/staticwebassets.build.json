@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "eeQZKNBHVGeQUp2gVzgU1bDkGeLFGYQcxSHpFlBAdlM=",
+  "Source": "MusicCenterWebService",
+  "BasePath": "_content/MusicCenterWebService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

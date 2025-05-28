@@ -1,0 +1,25 @@
+﻿@using MusicCenterModels
+@model List<User>
+@{
+    ViewData["Title"] = "PromoteToTeacher";
+    bool? success = TempData["isUserTeacher"] as bool?;
+    ViewBag.isUserTeacher = success;
+    Layout = "~/Views/Shared/MasterPage.cshtml";
+}
+
+<h1>Promote To Teacher</h1>
+<form method="post"
+    action="/Admin/MakeTeacher">
+    <select name="userID">
+        @foreach (var user in Model)
+        {
+            <option value="@user.Id">@user.Name</option>
+        }
+    </select>
+    <button type="submit">Submit</button>
+</form>
+@if (ViewBag.isUserTeacher != null)
+{
+    <h4>@(ViewBag.isUserTeacher? "User promoted!": "Promotion failed..")</h4>
+}
+

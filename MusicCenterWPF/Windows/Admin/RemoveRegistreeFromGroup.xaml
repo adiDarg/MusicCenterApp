@@ -1,0 +1,32 @@
+﻿<Window x:Class="MusicCenterWPF.Windows.Admin.RemoveRegistreeFromGroup"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MusicCenterWPF.Windows.Admin"
+        xmlns:shared="clr-namespace:MusicCenterWPF.Windows.Shared"
+        mc:Ignorable="d"
+        Title="RemoveRegistreeFromGroup" Height="450" Width="800"
+        WindowStyle="None"
+        WindowState="Maximized"
+        ResizeMode="CanMinimize"
+        AllowsTransparency="False">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <shared:CollapseAndClose/>
+            <shared:NavBar Grid.Row="1"/>
+            <Label Style="{StaticResource StyledLabel}" Grid.Row="2">Remove Registree From Group</Label>
+            <ComboBox Template="{DynamicResource ComboBoxTemplate2}" Style="{StaticResource StyledComboBox}" Grid.Row="3">Choose Group</ComboBox>
+            <ComboBox Template="{DynamicResource ComboBoxTemplate2}" Style="{StaticResource StyledComboBox}" Grid.Row="4">Choose Registree</ComboBox>
+            <Button Style="{StaticResource StyledButton}" Grid.Row="5">Remove</Button>
+        </Grid>
+    </Grid>
+</Window>

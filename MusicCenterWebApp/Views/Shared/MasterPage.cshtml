@@ -1,0 +1,72 @@
+﻿<link href="~/css/generalstyles.css" rel="stylesheet" />
+<link href="~/css/masterpagestyle.css" rel="stylesheet" />
+@{
+    ViewData["Title"] = "MasterPage";
+    var userType = Context.Session.GetString("userType");
+    if (!string.IsNullOrEmpty(userType))
+    {
+        TempData["userType"] = userType;
+    }
+    @*Set type of user for functions*@
+    ViewBag.type = userType;
+    ViewBag.linkClass = "actionLink";
+    if (userType == "Guest")
+    {
+        ViewBag.type = "";
+        ViewBag.linkClass = "hidden";
+    }
+}
+<link href="~/css/masterpagestyle.css" rel="stylesheet" />
+<div class="wrapper">
+    <header class="header">
+        <h1 class="title">Music Center</h1>
+        <nav>
+            <a>Home</a> |
+            <a>Get Started</a>
+        </nav>
+    </header>
+    <div class="mainWrapper">
+        <main class="main">
+            @RenderBody()
+        </main>
+        <aside class="aside">
+            <ul class="Actions">
+                <li class="@(ViewBag.linkClass)">
+                    <a class="actionLink" href='@(ViewBag.type == ""? " ": 
+                                                  (ViewBag.type == "Instructor"? "/Teacher/GetSchedule" : $"/{(ViewBag.type)}/GetSchedule"))'>Schedule</a>
+                </li>
+                <li class="@(ViewBag.linkClass)">
+                    <a class="actionLink" href='/User/ShowMessages'>Messages</a>
+                </li>
+                <li class="@(ViewBag.linkClass)">
+                    <a class="actionLink" href="/User/GetRequests">View Requests</a>
+                </li>
+                <li class="@(ViewBag.linkClass)">
+                    <a class="actionLink" href="/User/SendRequest">Send Requests</a>
+                </li>
+                <li class="@(ViewBag.linkClass)">
+                    <a class="actionLink" href="/@(ViewBag.type == "Instructor"? "Teacher":ViewBag.type)/AdditionalActions">Additional Actions</a>
+                </li>
+                <li class="@(ViewBag.linkClass)">
+                    <a class="actionLink" href="/User/UpdateProfile">View Profile</a>
+                </li>
+            </ul>
+        </aside>
+    </div>
+    <footer class="footer">
+        <nav>
+            <a>About us</a> |
+            <a>Links</a>
+        </nav>
+    </footer>
+</div>
+<style>
+    .actionLink {
+        text-decoration: none;
+        color: #FF6F61;
+    }
+
+    .hidden, .hidden * {
+        display: none;
+    }
+</style>

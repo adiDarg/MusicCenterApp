@@ -1,0 +1,32 @@
+﻿<Window x:Class="MusicCenterWPF.Windows.Admin.CreateGroup"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MusicCenterWPF.Windows.Admin"
+        xmlns:shared="clr-namespace:MusicCenterWPF.Windows.Shared"
+        mc:Ignorable="d"
+        Title="CreateGroup" Height="450" Width="800"
+        WindowStyle="None"
+        WindowState="Maximized"
+        ResizeMode="CanMinimize"
+        AllowsTransparency="False">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.6*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <shared:CollapseAndClose Grid.Row="0"/>
+        <shared:NavBar Grid.Row="1"/>
+        <Label Style="{StaticResource StyledLabel}" Grid.Row="2">Create Group</Label>
+        <TextBox Style="{StaticResource StyledTextBox}" Grid.Row="3">Group Name</TextBox>
+        <ComboBox Template="{DynamicResource ComboBoxTemplate2}" Style="{StaticResource StyledComboBox}" Grid.Row="4">Instructor</ComboBox>
+        <TextBox Style="{StaticResource StyledTextBox}" Grid.Row="5">Enter Room</TextBox>
+        <Button Style="{StaticResource StyledButton}" Grid.Row="6">Submit</Button>
+    </Grid>
+</Window>

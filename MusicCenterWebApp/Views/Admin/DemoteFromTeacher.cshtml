@@ -1,0 +1,25 @@
+﻿@using MusicCenterModels
+@model List<Teacher>
+@{
+    ViewData["Title"] = "DemoteFromTeacher";
+    bool? success = TempData["isTeacherDemoted"] as bool?;
+    ViewBag.isTeacherDemoted = success;
+    Layout = "~/Views/Shared/MasterPage.cshtml";
+}
+
+<h1>Demote From Teacher</h1>
+<form method="post"
+      action="/Admin/DemoteTeacher">
+    <select name="userID">
+        @foreach (var teacher in Model)
+        {
+            <option value="@teacher.Id">@teacher.Name</option>
+        }
+    </select>
+    <button type="submit">Submit</button>
+</form>
+@if (ViewBag.isTeacherDemoted != null)
+{
+    <h4>@(ViewBag.isTeacherDemoted ? "User Demoted!" : "Demotion failed.. Teacher might still have lessons scheduled. Please cancel all lessons involving this teacher beofre demotion.")</h4>
+}
+

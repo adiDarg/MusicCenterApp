@@ -1,0 +1,79 @@
+﻿@using MusicCenterModels
+@model AddGroupRegistreeViewModel
+@{
+    ViewData["Title"] = "AddRegistreeToGroup";
+    bool? success = TempData["AddRegistreeSuccess"] as bool?;
+    ViewBag.AddRegistreeSuccess = success;
+    Layout = "~/Views/Shared/MasterPage.cshtml";
+}
+
+<h1>Add Registree To Group</h1>
+<form method="post"
+      enctype="multipart/form-data"
+      action="/Admin/SubmitAddRegistreeToGroup">
+    <ul>
+        <li class="detail">
+            <select name="groupID" id="groupInput">
+                <option value="0">Choose Group</option>
+                @foreach (var group in Model.Groups)
+                {
+                    <option value="@group.Id" data-participants='@Html.Raw(Json.Serialize(group.Participants))'>
+                        <h5>@group.Name - </h5>
+                        <br />
+                        <h6>Participants:</h6>
+                        <br />
+                        <ul>
+                            @for (int i = 0; i < group.Participants.Count; i++)
+                            {
+                                var registree = group.Participants[i];
+                                <li>@registree.Name@(i < group.Participants.Count - 1 ? ", " : "")</li>
+                            }
+                            @if (group.Participants.Count == 0)
+                            {
+                                <p>None</p>
+                            }
+                        </ul>
+                    </option>
+                }
+            </select>
+        </li>
+        <li class="detail">
+            <select name="registreeID" id="registreeInput" data-registrees='@Html.Raw(Json.Serialize(Model.Registrees))'>
+                <option value="0">Select Registree</option>
+                @* @foreach (var registree in Model.Registrees)
+                {
+                    <option value="@registree.Id">@registree.Name</option>
+                } *@
+            </select>
+        </li>
+    </ul>
+    <button type="submit">Submit</button>
+</form>
+@if (ViewBag.AddRegistreeSuccess != null)
+{
+    <h4>@(ViewBag.AddRegistreeSuccess ? "Group updated successfully!" : "Group update failed..")</h4>
+}
+
+<script>
+    document.getElementById("groupInput").addEventListener("change", function () {
+        var registreeInput = document.getElementById("registreeInput")
+        registreeInput.innerHTML = '<option value="0">Select Registree</option>';
+        var groupInput = document.getElementById("groupInput")
+        var option = groupInput.options[groupInput.selectedIndex]
+        var forbiddenOptions = option.getAttribute("data-participants")
+        var forbidden = JSON.parse(forbiddenOptions);
+        forbidden = forbidden.map(item => item.id);
+        var list = JSON.parse(registreeInput.getAttribute("data-registrees"));
+        for (var i = 0; i < list.length; i++) {
+            const item = list[i]
+            if (forbidden.includes(item.id)){
+                continue;
+            }
+            var newOption = document.createElement("option");
+            newOption.value = item.id;
+            newOption.textContent = item.name;
+            registreeInput.appendChild(newOption);
+        }
+    })
+</script>
+

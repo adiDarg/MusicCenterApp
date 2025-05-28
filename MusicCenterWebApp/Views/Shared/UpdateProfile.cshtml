@@ -1,0 +1,56 @@
+﻿<link href="~/css/generalstyles.css" rel="stylesheet" />
+@using MusicCenterModels
+@model User
+@{
+    ViewData["Title"] = "UpdateProfile";
+    Layout = "~/Views/Shared/MasterPage.cshtml";
+}
+
+<h1>Update Profile</h1>
+<form method="post"
+      enctype="multipart/form-data"
+      action="/User/Update">
+      <img src="/uploads/images/@Model.Image" alt="No image.."/>
+    <ul class="details">
+        <li>
+            <input type="hidden" name="Id" value="@Model.Id" />
+        </li>
+        <li class="detail">
+            <label class="lable">Username: </label>
+            <input id="username-input" name="Name" value="@Model.Name"/>
+        </li>
+        <li class="detail">
+            <label class="lable">Password: </label>
+            <input id="password-input" type="password" name="Password" value="@Model.Password"/>
+        </li>
+        <li class="detail">
+            <label class="lable">Email: </label>
+            <input id="mail-input" type="email" name="Email" value="@Model.Email" />
+        </li>
+        <li class="detail">
+            <label class="lable">Address: </label>
+            <input id="address-input" name="Address" value="@Model.Address" />
+        </li>
+        <li class="detail">
+            <label class="lable">Phone Number: </label>
+            <input id="phone-number-input" name="PhoneNumber" value="@Model.PhoneNumber" />
+        </li>
+        <li class="detail">
+            <label class="lable">Image url: </label>
+            <input type="file" id="image-input" name="Image" value="@Model.Image" />
+        </li>
+        <li>
+            <input type="hidden" name="ValidationKey" value="@Model.ValidationKey" />
+        </li>
+        
+    </ul>
+    <button type="submit">Apply Changes</button>
+</form>
+<form method="post" action="/User/Logout" style="display:inline;">
+    <button type="submit">Log out</button>
+</form>
+@if (ViewBag.PostUpdate)
+{
+    <h4>Update @(ViewBag.isUpdated ? "Successful" : "Failed")</h4>
+}
+

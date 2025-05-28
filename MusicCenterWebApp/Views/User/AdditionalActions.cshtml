@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewData["Title"] = "AdditionalActions";
+    Layout = "~/Views/Shared/MasterPage.cshtml";
+    string message = TempData["message"] as string == null? "": TempData["message"] as string;
+    ViewBag.message = message;
+}
+
+<h1>Additional Actions</h1>
+<ul>
+    <li class="actionLinkWrapper">
+        <a class='actionLink' href="/User/EnterValidationKey">Enter Validation Key</a>
+    </li>
+    <li class="actionLinkWrapper">
+        <a class='actionLink' href="/User/SendValidationKey">Send Validation Key To Email</a>
+    </li>
+</ul>
+<h4 style="width: 250px;">@ViewBag.message</h4>
