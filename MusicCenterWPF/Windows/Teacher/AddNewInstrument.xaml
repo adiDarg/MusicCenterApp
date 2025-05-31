@@ -25,8 +25,12 @@
         <Label Style="{StaticResource StyledLabel}" Grid.Row="2">
             Add new Instrument
         </Label>
-        <ComboBox Template="{DynamicResource ComboBoxTemplate2}" Style="{StaticResource StyledComboBox}" Grid.Row="3"/>
-        <Button Style="{StaticResource StyledButton}" Grid.Row="4">
+        <ComboBox
+            Name="instrumentInput"
+            Template="{DynamicResource ComboBoxTemplate2}" 
+            Style="{StaticResource StyledComboBox}" 
+            Grid.Row="3" SelectionChanged="instrumentInput_SelectionChanged"/>
+        <Button Style="{StaticResource StyledButton}" Grid.Row="4" Click="Button_Click">
             Submit
         </Button>
     </Grid>
