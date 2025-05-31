@@ -24,9 +24,26 @@
             <shared:CollapseAndClose/>
             <shared:NavBar Grid.Row="1"/>
             <Label Style="{StaticResource StyledLabel}" Grid.Row="2">Remove Registree From Group</Label>
-            <ComboBox Template="{DynamicResource ComboBoxTemplate2}" Style="{StaticResource StyledComboBox}" Grid.Row="3">Choose Group</ComboBox>
-            <ComboBox Template="{DynamicResource ComboBoxTemplate2}" Style="{StaticResource StyledComboBox}" Grid.Row="4">Choose Registree</ComboBox>
-            <Button Style="{StaticResource StyledButton}" Grid.Row="5">Remove</Button>
+            <ComboBox Name="groupInput" 
+                      Template="{DynamicResource ComboBoxTemplate2}" 
+                      Style="{StaticResource StyledComboBox}" 
+                      Grid.Row="3"
+                      SelectionChanged="groupInput_SelectionChanged">
+                Choose Group
+            </ComboBox>
+            <ComboBox Name="registreeInput" 
+                      Template="{DynamicResource ComboBoxTemplate2}" 
+                      Style="{StaticResource StyledComboBox}" 
+                      Grid.Row="4"
+                      SelectionChanged="registreeInput_SelectionChanged">
+                Choose Registree
+            </ComboBox>
+            <Button 
+                Style="{StaticResource StyledButton}" 
+                Grid.Row="5"
+                Click="RemoveButton_Click">
+                Remove
+            </Button>
         </Grid>
     </Grid>
 </Window>

@@ -30,6 +30,7 @@ namespace MusicCenterWPF.Windows.Shared
         {
             Window parentWindow = Window.GetWindow(this);
             parentWindow.Visibility = Visibility.Hidden;
+            new Schedule().Show();
         }
 
         private void MessagesButton_Click(object sender, RoutedEventArgs e)

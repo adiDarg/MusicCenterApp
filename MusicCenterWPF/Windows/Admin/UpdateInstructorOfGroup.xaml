@@ -23,8 +23,20 @@
         <shared:CollapseAndClose Grid.Row="0"/>
         <shared:NavBar Grid.Row="1"/>
         <Label Style="{StaticResource StyledLabel}" Grid.Row="2">Update Instructor Of Group</Label>
-        <ComboBox Template="{DynamicResource ComboBoxTemplate2}" Style="{StaticResource StyledComboBox}" Grid.Row="3">Choose Group</ComboBox>
-        <ComboBox Template="{DynamicResource ComboBoxTemplate2}" Style="{StaticResource StyledComboBox}" Grid.Row="4">Choose Instructor</ComboBox>
+        <ComboBox 
+            Name="GroupInput"
+            Template="{DynamicResource ComboBoxTemplate2}" 
+            Style="{StaticResource StyledComboBox}" 
+            Grid.Row="3">
+            Choose Group
+        </ComboBox>
+        <ComboBox 
+            Name="InstructorInput"
+            Template="{DynamicResource ComboBoxTemplate2}" 
+            Style="{StaticResource StyledComboBox}" 
+            Grid.Row="4">
+            Choose Instructor
+        </ComboBox>
         <Button Style="{StaticResource StyledButton}" Grid.Row="5">Update</Button>
     </Grid>
 </Window>

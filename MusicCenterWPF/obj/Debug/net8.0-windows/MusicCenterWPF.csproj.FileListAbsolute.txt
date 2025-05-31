@@ -104,7 +104,8 @@ C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debu
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\MusicCenterWPF.pdb
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\MusicCenterWPF.genruntimeconfig.cache
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\ref\MusicCenterWPF.dll
-C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\Windows\User\Schedule.g.cs
-C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\Windows\User\Schedule.baml
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\bin\Debug\net8.0-windows\images\38b7f2cc-9942-45d3-9b4b-9b362dc72b2b.jpg
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\bin\Debug\net8.0-windows\images\7507e9a8-d7ff-4a91-aae1-96a688737f43.jpg
+C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\Windows\Shared\Schedule.g.cs
+C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\Windows\Shared\Schedule.baml
+C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\MusicCenterWPF.sourcelink.json

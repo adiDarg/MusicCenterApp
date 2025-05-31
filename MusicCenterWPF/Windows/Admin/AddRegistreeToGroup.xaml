@@ -27,9 +27,9 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <Label Style="{StaticResource StyledLabel}">Add Registree To Group</Label>
-            <ComboBox Template="{DynamicResource ComboBoxTemplate2}" Style="{StaticResource StyledComboBox}" Grid.Row="1">Choose Group</ComboBox>
-            <ComboBox Template="{DynamicResource ComboBoxTemplate2}" Style="{StaticResource StyledComboBox}" Grid.Row="2">Choose Registree</ComboBox>
-            <Button Style="{StaticResource StyledButton}" Grid.Row="4">Add</Button>
+            <ComboBox Name="groupChoice" Template="{DynamicResource ComboBoxTemplate2}" Style="{StaticResource StyledComboBox}" Grid.Row="1" SelectionChanged="groupChoice_SelectionChanged">Choose Group</ComboBox>
+            <ComboBox Name="registreeChoice" Template="{DynamicResource ComboBoxTemplate2}" Style="{StaticResource StyledComboBox}" Grid.Row="2" SelectionChanged="registreeChoice_SelectionChanged">Choose Registree</ComboBox>
+            <Button Style="{StaticResource StyledButton}" Grid.Row="3" Click="Button_Click">Add</Button>
         </Grid>
     </Grid>
 </Window>

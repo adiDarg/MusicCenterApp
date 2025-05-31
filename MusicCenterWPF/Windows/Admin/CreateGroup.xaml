@@ -24,9 +24,9 @@
         <shared:CollapseAndClose Grid.Row="0"/>
         <shared:NavBar Grid.Row="1"/>
         <Label Style="{StaticResource StyledLabel}" Grid.Row="2">Create Group</Label>
-        <TextBox Style="{StaticResource StyledTextBox}" Grid.Row="3">Group Name</TextBox>
-        <ComboBox Template="{DynamicResource ComboBoxTemplate2}" Style="{StaticResource StyledComboBox}" Grid.Row="4">Instructor</ComboBox>
-        <TextBox Style="{StaticResource StyledTextBox}" Grid.Row="5">Enter Room</TextBox>
-        <Button Style="{StaticResource StyledButton}" Grid.Row="6">Submit</Button>
+        <TextBox Name="groupNameInput" Style="{StaticResource StyledTextBox}" Grid.Row="3">Group Name</TextBox>
+        <ComboBox Name="InstructorSelection" Template="{DynamicResource ComboBoxTemplate2}" Style="{StaticResource StyledComboBox}" Grid.Row="4">Instructor</ComboBox>
+        <TextBox Name="RoomInput" Style="{StaticResource StyledTextBox}" Grid.Row="5">Enter Room</TextBox>
+        <Button Style="{StaticResource StyledButton}" Grid.Row="6" Click="SubmitButton_Click" >Submit</Button>
     </Grid>
 </Window>

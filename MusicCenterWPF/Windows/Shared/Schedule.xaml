@@ -6,7 +6,11 @@
         xmlns:local="clr-namespace:MusicCenterWPF.Windows.User"
         xmlns:shared="clr-namespace:MusicCenterWPF.Windows.Shared"
         mc:Ignorable="d"
-        Title="Schedule" Height="450" Width="800">
+        Title="Schedule" Height="450" Width="800"
+        WindowStyle="None"
+        WindowState="Maximized"
+        ResizeMode="CanMinimize"
+        AllowsTransparency="False">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.2*"/>
@@ -20,7 +24,7 @@
             Schedule
         </Label>
         <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="3">
-            <Grid>
+            <Grid Name="eventGrid">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
