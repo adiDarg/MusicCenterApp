@@ -25,6 +25,9 @@
     <Compile Update="Windows\Shared\CollapseAndClose.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\Shared\Messages.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\Shared\NavBar.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -76,6 +79,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\Shared\CollapseAndClose.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Shared\Messages.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\Shared\NavBar.xaml">

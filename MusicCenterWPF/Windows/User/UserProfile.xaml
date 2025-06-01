@@ -56,7 +56,7 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Ellipse Style="{StaticResource StyledImageBorder}" HorizontalAlignment="Left" Margin="10,-26,0,5" Width="47" Grid.ColumnSpan="2">
+            <Ellipse Style="{StaticResource StyledImageBorder}" HorizontalAlignment="Left" Margin="0,-50,0,14" Width="75" Height="75" Grid.ColumnSpan="2" Grid.RowSpan="2">
                 <Ellipse.Fill>
                     <ImageBrush x:Name="image"/>
                 </Ellipse.Fill>

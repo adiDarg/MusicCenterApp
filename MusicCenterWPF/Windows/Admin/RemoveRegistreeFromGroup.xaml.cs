@@ -23,7 +23,6 @@ namespace MusicCenterWPF.Windows.Admin
     /// </summary>
     public partial class RemoveRegistreeFromGroup : Window
     {
-        private List<Group> groups = new List<Group>();
         private List<Registree> registreesInGroup = new List<Registree>();
         private string selectedGroupId = "";
         private string selectedRegistreeId = "";
@@ -31,15 +30,16 @@ namespace MusicCenterWPF.Windows.Admin
         public RemoveRegistreeFromGroup()
         {
             InitializeComponent();
-            DbContext.GetInstance().OpenConnection();
-            groups = repositoryUOW.GetGroupRepository().GetAll();
-            DbContext.GetInstance().CloseConnection();
-
             InitializeComponent();
             this.Loaded += (s, e) => LoadGroups();
         }
-        private void LoadGroups()
+        private async void LoadGroups()
         {
+            WebClient<List<Group>> webClient = new WebClient<List<Group>>();
+            webClient.port = 5004;
+            webClient.Host = "localhost";
+            webClient.Path = "api/Admin/GetGroups";
+            List<Group> groups = await webClient.GetAsync();
             groupInput.Items.Clear();
             foreach (var group in groups)
             {
@@ -100,7 +100,7 @@ namespace MusicCenterWPF.Windows.Admin
             webClient.AddParams("groupID", selectedGroupId);
             webClient.AddParams("registreeID", selectedRegistreeId);
 
-            bool success = await webClient.PostAsync(groups.First());
+            bool success = await webClient.PostAsync(new Group());
 
             MessageBox.Show(success ? "Registree removed from group." : "Failed to remove registree.",
                 success ? "Success" : "Error",

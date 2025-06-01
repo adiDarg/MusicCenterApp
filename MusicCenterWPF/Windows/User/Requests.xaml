@@ -21,31 +21,33 @@
         <shared:CollapseAndClose/>
         <shared:NavBar Grid.Row="1"/>
         <Label Style="{StaticResource StyledLabel}" Grid.Row="2">View Requests</Label>
-        <Grid Grid.Row="3">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Grid Name="RequestsSentGrid" Grid.Column="0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="0.2*"/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Label Style="{StaticResource StyledLabel}">Requests Sent</Label>
-                <StackPanel Name="RequestsSent" Grid.Row="1">
-                    
-                </StackPanel>
-            </Grid>
-            <Grid Name="RequestsReceivedGrid" Grid.Column="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="0.2*"/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Label Style="{StaticResource StyledLabel}">Requests Recieved</Label>
-                <StackPanel Name="RequestsReceived" Grid.Row="1">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="3">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid Name="RequestsSentGrid" Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.2*"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Label Style="{StaticResource StyledLabel}">Requests Sent</Label>
+                    <StackPanel Name="RequestsSent" Grid.Row="1">
 
-                </StackPanel>
+                    </StackPanel>
+                </Grid>
+                <Grid Name="RequestsReceivedGrid" Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.2*"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Label Style="{StaticResource StyledLabel}">Requests Recieved</Label>
+                    <StackPanel Name="RequestsReceived" Grid.Row="1">
+
+                    </StackPanel>
+                </Grid>
             </Grid>
-        </Grid>
+        </ScrollViewer>
     </Grid>
 </Window>

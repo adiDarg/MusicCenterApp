@@ -23,20 +23,20 @@ namespace MusicCenterWPF.Windows.Admin
     /// </summary>
     public partial class CreateGroup : Window
     {
-        private List<Instructor> instructors = new List<Instructor>();
         private string selectedInstructorId = "";
-        private RepositoryUOW repositoryUOW = new RepositoryUOW();
         public CreateGroup()
         {
-            DbContext.GetInstance().OpenConnection();
-            instructors = repositoryUOW.GetInstructorRepository().GetAll(); // Assumes you have this repository
-            DbContext.GetInstance().CloseConnection();
 
             InitializeComponent();
             this.Loaded += (s,e) => LoadInstructors();
         }
-        private void LoadInstructors()
+        private async void LoadInstructors()
         {
+            WebClient<List<Instructor>> webClient = new WebClient<List<Instructor>>();
+            webClient.port = 5004;
+            webClient.Host = "localhost";
+            webClient.Path = "api/Admin/GetInstructors";
+            List<Instructor> instructors = await webClient.GetAsync();
             InstructorSelection.Items.Clear();
             foreach (var instructor in instructors)
             {

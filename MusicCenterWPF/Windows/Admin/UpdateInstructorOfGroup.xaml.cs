@@ -23,18 +23,12 @@ namespace MusicCenterWPF.Windows.Admin
     /// </summary>
     public partial class UpdateInstructorOfGroup : Window
     {
-        private List<Group> groups = new List<Group>();
-        private List<Instructor> instructors = new List<Instructor>();
         private string selectedGroupId = "";
         private string selectedInstructorId = "";
 
         private RepositoryUOW repositoryUOW = new RepositoryUOW();
         public UpdateInstructorOfGroup()
         {
-            DbContext.GetInstance().OpenConnection();
-            groups = repositoryUOW.GetGroupRepository().GetAll();
-            instructors = repositoryUOW.GetInstructorRepository().GetAll();
-            DbContext.GetInstance().CloseConnection();
             InitializeComponent();
             this.Loaded += (s, e) =>
             {
@@ -42,8 +36,13 @@ namespace MusicCenterWPF.Windows.Admin
                 LoadInstructors();
             };
         }
-        private void LoadGroups()
+        private async void LoadGroups()
         {
+            WebClient<List<Group>> webClient = new WebClient<List<Group>>();
+            webClient.port = 5004;
+            webClient.Host = "localhost";
+            webClient.Path = "api/Admin/GetGroups";
+            List<Group> groups = await webClient.GetAsync();
             GroupInput.Items.Clear();
             foreach (var group in groups)
             {
@@ -56,8 +55,13 @@ namespace MusicCenterWPF.Windows.Admin
             }
         }
 
-        private void LoadInstructors()
+        private async void LoadInstructors()
         {
+            WebClient<List<Instructor>> webClient = new WebClient<List<Instructor>>();
+            webClient.port = 5004;
+            webClient.Host = "localhost";
+            webClient.Path = "api/Admin/GetInstructors";
+            List<Instructor> instructors = await webClient.GetAsync();
             InstructorInput.Items.Clear();
             foreach (var instructor in instructors)
             {
@@ -102,7 +106,7 @@ namespace MusicCenterWPF.Windows.Admin
             webClient.AddParams("groupID", selectedGroupId);
             webClient.AddParams("instructorID", selectedInstructorId);
 
-            bool success = await webClient.PostAsync(groups.First());
+            bool success = await webClient.PostAsync(new Group());
 
             MessageBox.Show(success ? "Instructor updated for group." : "Failed to update instructor.",
                 success ? "Success" : "Error",
@@ -110,5 +114,4 @@ namespace MusicCenterWPF.Windows.Admin
                 success ? MessageBoxImage.Information : MessageBoxImage.Error);
         }
     }
-}
 }

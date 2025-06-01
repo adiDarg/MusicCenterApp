@@ -24,26 +24,25 @@ namespace MusicCenterWPF.Windows.Admin
     /// </summary>
     public partial class AddRegistreeToGroup : Window
     {
-        private List<Group> groups = new List<Group>();
-        private List<Registree> registrees = new List<Registree>();
         private HashSet<string> registreesInGroup = new HashSet<string>();
         private string selectedGroupId = "";
         private string selectedRegistreeId = "";
         private RepositoryUOW repositoryUOW = new RepositoryUOW();
         public AddRegistreeToGroup()
         {
-            DbContext.GetInstance().OpenConnection();
-            groups = repositoryUOW.GetGroupRepository().GetAll();
-            registrees = repositoryUOW.GetRegistreeRepository().GetAll();
-            DbContext.GetInstance().CloseConnection();
             InitializeComponent();
             this.Loaded += (s, e) =>
             {
 
             };
         }
-        private void LoadGroups()
+        private async void LoadGroups()
         {
+            WebClient<List<Group>> webClient = new WebClient<List<Group>>();
+            webClient.port = 5004;
+            webClient.Host = "localhost";
+            webClient.Path = "api/Admin/GetGroups";
+            List<Group> groups = await webClient.GetAsync();
             groupChoice.Items.Clear();
             foreach (var group in groups)
             {
@@ -53,8 +52,13 @@ namespace MusicCenterWPF.Windows.Admin
                 groupChoice.Items.Add(group);
             }
         }
-        private void LoadRegistrees()
+        private async void LoadRegistrees()
         {
+            WebClient<List<Registree>> webClient = new WebClient<List<Registree>>();
+            webClient.port = 5004;
+            webClient.Host = "localhost";
+            webClient.Path = "api/Admin/GetRegistrees";
+            List<Registree> registrees = await webClient.GetAsync();
             foreach (var registree in registrees)
             {
                 if (registreesInGroup.Contains(registree.Id))
@@ -102,7 +106,7 @@ namespace MusicCenterWPF.Windows.Admin
             webClient.Path = "api/Admin/AddRegistreeToGroup";
             webClient.AddParams("groupID", selectedGroupId);
             webClient.AddParams("registreeID", selectedRegistreeId);
-            bool success = await webClient.PostAsync(groups.First());
+            bool success = await webClient.PostAsync(new Group());
             if (success)
             {
                 MessageBox.Show("Registree added.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);

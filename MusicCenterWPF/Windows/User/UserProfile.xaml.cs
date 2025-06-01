@@ -29,34 +29,46 @@ namespace MusicCenterWPF.Windows
     public partial class UserProfile : Window
     {
         private UserModel user = null;
-        private RepositoryUOW repositoryUOW = new RepositoryUOW();
-        private DbContext db = DbContext.GetInstance();
         string newImageFileName = "";
         public UserProfile()
         {
-            db.OpenConnection();
-            user = repositoryUOW.GetUserRepository().GetById(SessionManager.UserID);
-            db.CloseConnection();
             InitializeComponent();
-            this.Loaded += (s, e) =>
+            this.Loaded += async (s, e) =>
             {
-                usernameBox.Text = user.Name;
-                passwordBox.Text = user.Password;
-                usertypeBox.Content = SessionManager.Type;
-                emailBox.Text = user.Email;
-                addressBox.Text = user.Address;
-                phoneNumberBox.Text = user.PhoneNumber;
-                string path = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Images", user.Image);
-                BitmapImage bitmap = new BitmapImage();
-                bitmap.BeginInit();
-                bitmap.UriSource = new Uri(path);
-                bitmap.CacheOption = BitmapCacheOption.OnLoad;
-                bitmap.CreateOptions = BitmapCreateOptions.IgnoreImageCache;
-                bitmap.EndInit();
-                bitmap.Freeze();
-
-                image.ImageSource = bitmap;
+                if (await LoadUser())
+                {
+                    LoadComponents();
+                };
             };
+        }
+        private async Task<bool> LoadUser()
+        {
+            WebClient<UserModel> webClient = new WebClient<UserModel>();
+            webClient.port = 5004;
+            webClient.Host = "localhost";
+            webClient.Path = "api/User/GetUserById";
+            webClient.AddParams("userID", SessionManager.UserID);
+            user = await webClient.GetAsync();
+            return user != null;
+        }
+        private void LoadComponents()
+        {
+            usernameBox.Text = user.Name;
+            passwordBox.Text = user.Password;
+            usertypeBox.Content = SessionManager.Type;
+            emailBox.Text = user.Email;
+            addressBox.Text = user.Address;
+            phoneNumberBox.Text = user.PhoneNumber;
+            string fileName = user.Image;
+            string imageUrl = $"http://localhost:5004/api/User/GetImage/{fileName}";
+            BitmapImage bitmap = new BitmapImage();
+            bitmap.BeginInit();
+            bitmap.UriSource = new Uri(imageUrl, UriKind.Absolute);
+            bitmap.CacheOption = BitmapCacheOption.OnLoad;
+            bitmap.EndInit();
+            //bitmap.Freeze();
+
+            image.ImageSource = bitmap;
         }
 
         private async void Button_Click(object sender, RoutedEventArgs e)
@@ -68,30 +80,13 @@ namespace MusicCenterWPF.Windows
             user.PhoneNumber = phoneNumberBox.Text;
             if (newImageFileName.Length > 0)
             {
-                var fileName = Guid.NewGuid().ToString() + System.IO.Path.GetExtension(newImageFileName);
-                var uploadsDirectory = "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\Utility\\Images\\";
-                var filePath = System.IO.Path.Combine(uploadsDirectory, fileName);
 
                 try
                 {
                     using (FileStream sourceStream = File.Open(newImageFileName, FileMode.Open))
-                    using (FileStream destinationStream = File.Create(filePath))
                     {
-                        if (sourceStream.Length <= 0) {
-                            throw new Exception("Empty/Corrupted image provided");
-                        }
-                        sourceStream.CopyTo(destinationStream);
+                        this.user.Image = await CopyImage(sourceStream, newImageFileName);
                     }
-                    using (FileStream sourceStream = File.Open(newImageFileName, FileMode.Open))
-                    using (FileStream destinationStream = File.Create(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Images", fileName)))
-                    {
-                        if (sourceStream.Length <= 0)
-                        {
-                            throw new Exception("Empty/Corrupted image provided");
-                        }
-                        sourceStream.CopyTo(destinationStream);
-                    }
-                    this.user.Image = fileName;
                 }
                 catch (Exception ex)
                 {
@@ -107,6 +102,7 @@ namespace MusicCenterWPF.Windows
             if (success)
             {
                 DbContext.GetInstance().OpenConnection();
+                RepositoryUOW repositoryUOW = new RepositoryUOW();
                 while (!repositoryUOW.GetUserRepository().GetById(user.Id).Equals(user))
                 {
                     Thread.Sleep(250);
@@ -118,7 +114,18 @@ namespace MusicCenterWPF.Windows
             profileWindow.messageLabel.Content = success ? "Profile Updated" : "Update Failed";
             profileWindow.Show();
         }
-
+        private async Task<string> CopyImage(FileStream sourceStream,string fileName)
+        {
+            if (sourceStream.Length <= 0)
+            {
+                throw new Exception("Empty/Corrupted image provided");
+            }
+            WebClient<string> webClient = new WebClient<string>();
+            webClient.port = 5004;
+            webClient.Host = "localhost";
+            webClient.Path = "api/User/UploadImage";
+            return await webClient.PostAsync<string>(sourceStream, fileName);
+        }
         private void imageInput_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();

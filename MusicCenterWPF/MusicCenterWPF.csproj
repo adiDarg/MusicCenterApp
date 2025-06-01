@@ -9,10 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Images\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\MusicCenterFactories\MusicCenterFactories.csproj" />
     <ProjectReference Include="..\MusicCenterModels\MusicCenterModels.csproj" />
     <ProjectReference Include="..\MusicCenterWebService\MusicCenterWebService.csproj" />
