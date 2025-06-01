@@ -18,6 +18,11 @@ namespace MusicCenterWebService.Controllers
         {
             repositoryUOW = new RepositoryUOW();
         }
+        [HttpGet]
+        public bool IsUsernameTaken(string username)
+        {
+            return repositoryUOW.GetUserRepository().GetByUsername(username) != null;
+        }
         
         [HttpPost]
         public bool AddUser(User user)

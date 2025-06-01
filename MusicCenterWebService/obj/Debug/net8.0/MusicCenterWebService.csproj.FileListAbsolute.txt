@@ -120,3 +120,4 @@ C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWebService\o
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWebService\obj\Debug\net8.0\MusicCenterWebService.pdb
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWebService\obj\Debug\net8.0\MusicCenterWebService.genruntimeconfig.cache
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWebService\obj\Debug\net8.0\ref\MusicCenterWebService.dll
+C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWebService\obj\Debug\net8.0\MusicCenterWebService.sourcelink.json

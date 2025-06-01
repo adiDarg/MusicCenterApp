@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -24,10 +24,10 @@
   </ItemGroup>
 
 	<ItemGroup>
-		<Content Include="..\Utility\Images\**\*.*">
+		<None Include="..\Utility\Images\**\*.*">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 			<Link>wwwroot\uploads\images\%(RecursiveDir)%(Filename)%(Extension)</Link>
-		</Content>
+		</None>
 	</ItemGroup>
 
 </Project>

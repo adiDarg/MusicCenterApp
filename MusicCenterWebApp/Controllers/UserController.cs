@@ -58,33 +58,26 @@ namespace MusicCenterWebApp.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> HandleRequest(
-            [FromForm]string requestID, 
-            [FromForm]bool isApproved, 
-            [FromForm]string userID)
+        public async Task<IActionResult> HandleRequest([FromForm] Request request)
         {
             WebClient<Request> webClient = new WebClient<Request>();
             webClient.port = 5004;
             webClient.Host = "localhost";
             webClient.Path = "api/User/HandleRequest";
-            DbContext db = DbContext.GetInstance();
-            db.OpenConnection();
-            Request request = repositoryUOW.GetRequestRepository().GetById(requestID);
-            db.CloseConnection();
-            request.IsSeen = true;
-            request.IsApproved = isApproved;
             webClient.AddParams("request", request.ToJson());
             TempData["requestHandled"] = await webClient.PostAsync(request);
-            return RedirectToAction("RequestsRecieved", new { userID });
+            return RedirectToAction("RequestsRecieved");
         }
 
         [HttpGet]
-        public IActionResult SendRequest()
+        public async Task<IActionResult> SendRequest()
         {
             ViewBag.userID = userID;
-            DbContext.GetInstance().OpenConnection();
-            List<User> users = repositoryUOW.GetUserRepository().GetAll();
-            DbContext.GetInstance().CloseConnection();
+            WebClient<List<User>> webClient = new WebClient<List<User>>();
+            webClient.port = 5004;
+            webClient.Host = "localhost";
+            webClient.Path = "api/User/GetUsers";
+            List<User> users = await webClient.GetAsync();
             return View(users);
         }
 
@@ -120,11 +113,14 @@ namespace MusicCenterWebApp.Controllers
         }
 
         [HttpGet]
-        public IActionResult UpdateProfile()
+        public async Task<IActionResult> UpdateProfile()
         {
-            DbContext.GetInstance().OpenConnection();
-            User user = repositoryUOW.GetUserRepository().GetById(userID);
-            DbContext.GetInstance().CloseConnection();
+            WebClient<User> webClient = new WebClient<User>();
+            webClient.port = 5004;
+            webClient.Host = "localhost";
+            webClient.Path = "api/User/GetUserById";
+            webClient.AddParams("userID",userID);
+            User user = await webClient.GetAsync();
             ViewBag.PostUpdate = false;
             return View(user);
         }
@@ -133,22 +129,19 @@ namespace MusicCenterWebApp.Controllers
         public async Task<IActionResult> Update([FromForm]User user, [FromForm] IFormFile image) {
             if (image != null && image.Length > 0)
             {
-                var fileName = Guid.NewGuid().ToString() + Path.GetExtension(image.FileName);
-                var uploadsDirectory = Path.Combine(Directory.GetCurrentDirectory(),
-                    "wwwroot", "uploads", "images");
-                var filePath = Path.Combine(uploadsDirectory, fileName);
-
-                using (var stream = new FileStream(filePath, FileMode.Create))
+                string? path = await CopyImage(image);
+                if (path != null)
                 {
-                    await image.CopyToAsync(stream);
+                    user.Image = path;
                 }
-                user.Image = "/uploads/images/" + fileName;
+                else
+                {
+                    user.Image = GetUserImage();
+                }
             }
             else
             {
-                DbContext.GetInstance().OpenConnection();
-                user.Image = repositoryUOW.GetUserRepository().GetById(user.Id).Image;
-                DbContext.GetInstance().CloseConnection();
+                user.Image = GetUserImage();
             }
 
             user.Email = user.Email == null ? "" : user.Email;
@@ -175,6 +168,30 @@ namespace MusicCenterWebApp.Controllers
             return Redirect("UpdateProfile");
         }
 
+        [HttpPost]
+        private async Task<string?> CopyImage(IFormFile image)
+        {
+            WebClient<string> webClient = new WebClient<string>();
+            webClient.port = 5004;
+            webClient.Host = "localhost";
+            webClient.Path = "api/User/UploadImage";
+            using (var stream = image.OpenReadStream())
+            {
+                return await webClient.PostAsync<string>(stream, image.FileName);
+            }
+        }
+        
+        [HttpGet]
+        private string GetUserImage()
+        {
+            WebClient<User> webClient = new WebClient<User>();
+            webClient.port = 5004;
+            webClient.Host = "localhost";
+            webClient.Path = "api/User/GetUserById";
+            webClient.AddParams("userID", userID);
+            return webClient.GetAsync().Result.Image;
+        }
+
         [HttpGet]
         public IActionResult EnterValidationKey()
         {
@@ -193,10 +210,7 @@ namespace MusicCenterWebApp.Controllers
             webClient.Path = "api/User/EnterValidationKey";
             webClient.AddParams("userID", userID);
             webClient.AddParams("key", key);
-            DbContext.GetInstance().OpenConnection();
-            User user = repositoryUOW.GetUserRepository().GetById(userID);
-            DbContext.GetInstance().CloseConnection();
-            bool result = await webClient.PostAsync(user);
+            bool result = await webClient.PostAsync(new User());
             if (result)
             {
                 HttpContext.Session.SetString("userType", "Registree");
@@ -207,10 +221,14 @@ namespace MusicCenterWebApp.Controllers
         }
         
         [HttpGet]
-        public IActionResult SendValidationKey()
+        public async Task<IActionResult> SendValidationKey()
         {
-            DbContext.GetInstance().OpenConnection();
-            User user = repositoryUOW.GetUserRepository().GetById(userID);
+            WebClient<User> webClient = new WebClient<User>();
+            webClient.port = 5004;
+            webClient.Host = "localhost";
+            webClient.Path = "api/User/GetUserById";
+            webClient.AddParams("userID", userID);
+            User user = await webClient.GetAsync();
             bool? success = null;
             if (user.Email.Equals(""))
             {
@@ -228,7 +246,6 @@ namespace MusicCenterWebApp.Controllers
             {
                 TempData["message"] = "Validation key sent to your email!";
             }
-            DbContext.GetInstance().CloseConnection();
             return RedirectToAction("AdditionalActions");
         }
         [HttpGet]

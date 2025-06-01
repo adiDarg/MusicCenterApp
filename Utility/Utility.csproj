@@ -8,17 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Images\placeholder.jpg" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="Images\placeholder.jpg">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\MusicCenterWebService\MusicCenterWebService.csproj" />
     <ProjectReference Include="..\WebApiClient\WebApiClient.csproj" />
   </ItemGroup>

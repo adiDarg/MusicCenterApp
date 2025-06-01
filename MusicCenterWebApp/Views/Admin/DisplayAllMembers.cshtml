@@ -12,7 +12,7 @@
         <li class="profile">
             <div class="flexDiv">
                 <h3>@user.Name</h3>
-                <img src="@user.Image" alt="no image" />
+                <img src="@($"http://localhost:5004/api/User/GetImage/{user.Image}")" alt="no image" />
             </div>
             <h4>Address: @user.Address</h4>
             <h4>Email: @user.Email</h4>

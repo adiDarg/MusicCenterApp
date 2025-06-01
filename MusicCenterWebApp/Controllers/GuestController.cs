@@ -42,16 +42,12 @@ namespace MusicCenterWebApp.Controllers
                 TempData["errorMessage"] = "Must enter username and password";
                 return View("RegistrationForm");
             }
-            
-            DbContext.GetInstance().OpenConnection();
-            if (new RepositoryUOW().GetUserRepository().GetByUsername(user.Name) != null)
+            if (await IsUsernameTaken(user.Name))
             {
                 TempData["errorMessage"] = "Username already taken";
                 DbContext.GetInstance().CloseConnection();
                 return View("RegistrationForm");
             }
-            DbContext.GetInstance().CloseConnection();
-
             if (image != null && image.Length > 0)
             {
                 var fileName = Guid.NewGuid().ToString() + Path.GetExtension(image.FileName);
@@ -94,6 +90,17 @@ namespace MusicCenterWebApp.Controllers
             TempData["validationKeySuccess"] = EmailUtils.SendValidationKeyEmail(user.Email, user1.ValidationKey);
             DbContext.GetInstance().CloseConnection();
             return RedirectToAction("LoginForm");
+        }
+
+        [HttpGet]
+        private async Task<bool> IsUsernameTaken(string username)
+        {
+            WebClient<bool> webClient = new WebClient<bool>();
+            webClient.port = 5004;
+            webClient.Host = "localhost";
+            webClient.Path = "api/Guest/IsUsernameTaken";
+            webClient.AddParams("username", username);
+            return await webClient.GetAsync();
         }
 
         [HttpPost]

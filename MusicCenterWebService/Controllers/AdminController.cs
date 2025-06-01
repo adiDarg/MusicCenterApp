@@ -177,6 +177,21 @@ namespace MusicCenterWebService.Controllers
         {
             return repositoryUOW.GetMessageRepository().GetByTitleAndDescription(title,description);
         }
+        [HttpGet]
+        public List<Group> GetGroupsWithParticipants()
+        {
+            List<Group> groups = GetGroups();
+            foreach (Group group in groups)
+            {
+                group.Participants = repositoryUOW.GetRegistreeRepository().GetAllByGroupId(group.Id);
+            }
+            return groups;
+        }
+        [HttpGet]
+        public Message GetMessageByTitleAndDescription(string title, string description)
+        {
+            return repositoryUOW.GetMessageRepository().GetByTitleAndDescription(title, description);
+        }
 
         [HttpPost]
         public bool MakeUserTeacher(string userID)

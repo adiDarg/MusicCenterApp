@@ -10,7 +10,7 @@
 <form method="post"
       enctype="multipart/form-data"
       action="/User/Update">
-      <img src="/uploads/images/@Model.Image" alt="No image.."/>
+    <img src="@($"http://localhost:5004/api/User/GetImage/{Model.Image}")" alt="No image.." />
     <ul class="details">
         <li>
             <input type="hidden" name="Id" value="@Model.Id" />

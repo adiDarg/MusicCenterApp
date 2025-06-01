@@ -2,6 +2,7 @@
 using MusicCenterFactories;
 using MusicCenterModels;
 using MusicCenterWebService.Repositories;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace MusicCenterWebService.Controllers
 {
@@ -82,6 +83,47 @@ namespace MusicCenterWebService.Controllers
         [HttpGet]
         public List<McEvent> GetSchedule(User user) {
             return new List<McEvent>();
+        }
+        
+        [HttpGet]
+        public List<User> GetUsers()
+        {
+            return repositoryUOW.GetUserRepository().GetAll();
+        }
+        
+        [HttpGet]
+        public User GetUserById(string userID)
+        {
+            return repositoryUOW.GetUserRepository().GetById(userID);
+        }
+
+        [HttpPost]
+        public async Task<string?> UploadImage(IFormFile file)
+        {
+            if (file == null || file.Length == 0)
+                return null;
+            var fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
+            var uploadsDirectory = Path.Combine(Directory.GetCurrentDirectory(),"Images");
+            var filePath = Path.Combine(uploadsDirectory, fileName);
+
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                await file.CopyToAsync(stream);
+            }
+
+            return fileName;
+        }
+
+        [HttpGet("{fileName}")]
+        public IActionResult GetImage(string fileName)
+        {
+            var filePath = Path.Combine("Images", fileName);
+            if (!System.IO.File.Exists(filePath))
+                return NotFound();
+
+            var contentType = "image/jpeg";
+            var stream = System.IO.File.OpenRead(filePath);
+            return File(stream, contentType);
         }
     }
 }

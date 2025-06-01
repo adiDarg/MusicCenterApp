@@ -30,17 +30,23 @@
                 <form method="post" 
                     enctype="multipart/form-data"
                     action="/User/HandleRequest">
-                    <input type="hidden" name="requestID" value="@request.Id" />
-                    <input type="hidden" name="isApproved" value="true" />
-                    <input type="hidden" name="userID" value="@ViewBag.userID" />
+                    <input type="hidden" name="Id" value="@request.Id" />
+                    <input type="hidden" name="Title" value="@request.Title" />
+                    <input type="hidden" name="Description" value="@request.Description"/>
+                    <input type="hidden" name="IsSeen" value="true" />
+                    <input type="hidden" name="IsApproved" value="true" />
+                    <input type="hidden" name="RequestType" value="@request.RequestType" />
                     <button type="submit">Approve</button>
                 </form>
                 <form method="post"
                     enctype="multipart/form-data"
                     action="/User/HandleRequest">
-                    <input type="hidden" name="requestID" value="@request.Id" />
-                    <input type="hidden" name="isApproved" value="false" />
-                    <input type="hidden" name="userID" value="@ViewBag.userID" />
+                    <input type="hidden" name="Id" value="@request.Id" />
+                    <input type="hidden" name="Title" value="@request.Title" />
+                    <input type="hidden" name="Description" value="@request.Description" />
+                    <input type="hidden" name="IsSeen" value="true" />
+                    <input type="hidden" name="IsApproved" value="false" />
+                    <input type="hidden" name="RequestType" value="@request.RequestType" />
                     <button type="submit">Deny</button>
                 </form>
             }

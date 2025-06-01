@@ -295,6 +295,26 @@
   },
   {
     "ContainingType": "MusicCenterWebService.Controllers.AdminController",
+    "Method": "GetGroupsWithParticipants",
+    "RelativePath": "api/Admin/GetGroupsWithParticipants",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[MusicCenterModels.Group, MusicCenterModels, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MusicCenterWebService.Controllers.AdminController",
     "Method": "GetInstructors",
     "RelativePath": "api/Admin/GetInstructors",
     "HttpMethod": "GET",
@@ -324,6 +344,37 @@
     "ReturnTypes": [
       {
         "Type": "MusicCenterModels.UpdateGroupInstructorViewModel",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MusicCenterWebService.Controllers.AdminController",
+    "Method": "GetMessageByTitleAndDescription",
+    "RelativePath": "api/Admin/GetMessageByTitleAndDescription",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "title",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "description",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MusicCenterModels.Message",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -636,6 +687,32 @@
   },
   {
     "ContainingType": "MusicCenterWebService.Controllers.GuestController",
+    "Method": "IsUsernameTaken",
+    "RelativePath": "api/Guest/IsUsernameTaken",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "username",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MusicCenterWebService.Controllers.GuestController",
     "Method": "Login",
     "RelativePath": "api/Guest/Login",
     "HttpMethod": "GET",
@@ -817,6 +894,22 @@
   },
   {
     "ContainingType": "MusicCenterWebService.Controllers.UserController",
+    "Method": "GetImage",
+    "RelativePath": "api/User/GetImage/{fileName}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "fileName",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MusicCenterWebService.Controllers.UserController",
     "Method": "GetSchedule",
     "RelativePath": "api/User/GetSchedule",
     "HttpMethod": "GET",
@@ -832,6 +925,52 @@
     "ReturnTypes": [
       {
         "Type": "System.Collections.Generic.List\u00601[[MusicCenterModels.McEvent, MusicCenterModels, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MusicCenterWebService.Controllers.UserController",
+    "Method": "GetUserById",
+    "RelativePath": "api/User/GetUserById",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userID",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MusicCenterModels.User",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MusicCenterWebService.Controllers.UserController",
+    "Method": "GetUsers",
+    "RelativePath": "api/User/GetUsers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[MusicCenterModels.User, MusicCenterModels, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -988,6 +1127,32 @@
     "ReturnTypes": [
       {
         "Type": "System.Boolean",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MusicCenterWebService.Controllers.UserController",
+    "Method": "UploadImage",
+    "RelativePath": "api/User/UploadImage",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
         "MediaTypes": [
           "text/plain",
           "application/json",

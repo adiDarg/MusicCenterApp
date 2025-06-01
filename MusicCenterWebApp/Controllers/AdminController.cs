@@ -1,4 +1,5 @@
 ﻿    using Microsoft.AspNetCore.Mvc;
+using Microsoft.Build.Framework;
 using MusicCenterModels;
 using MusicCenterWebService;
 using MusicCenterWebService.Repositories;
@@ -35,14 +36,11 @@ namespace MusicCenterWebApp.Controllers
         [HttpPost]
         public async Task<IActionResult> SubmitCreateGroup([FromForm]Group group, [FromForm] string instructorID)
         {
-            DbContext.GetInstance().OpenConnection();
-            Instructor instructor = new RepositoryUOW().GetInstructorRepository().GetById(instructorID);
-            group.Instructor = instructor;
-            DbContext.GetInstance().CloseConnection();
             WebClient<Group> webClient = new WebClient<Group>();
             webClient.port = 5004;
             webClient.Host = "localhost";
             webClient.Path = "api/Admin/CreateGroup";
+            group.Instructor = new Instructor { Id = instructorID };
             webClient.AddParams("group", group.ToJson());
             bool success = await webClient.PostAsync(group);
             TempData["groupSubmitSuccess"] = success;
@@ -240,12 +238,9 @@ namespace MusicCenterWebApp.Controllers
             [FromForm] string room,
             [FromForm] string date)
         {
-            RepositoryUOW repository = new RepositoryUOW();
             Lesson lesson = new Lesson();
-            DbContext.GetInstance().OpenConnection();
-            lesson.Student = repository.GetRegistreeRepository().GetById(registreeID);
-            lesson.Teacher = repository.GetTeacherRepository().GetById(teacherID);
-            DbContext.GetInstance().CloseConnection();
+            lesson.Student = new Registree { Id = registreeID };
+            lesson.Teacher = new Teacher { Id = teacherID };            
             lesson.Room = room;
             lesson.Date = date;
             
@@ -278,9 +273,7 @@ namespace MusicCenterWebApp.Controllers
         {
             RepositoryUOW repository = new RepositoryUOW();
             Meeting meeting = new Meeting();
-            DbContext.GetInstance().OpenConnection();
-            meeting.Group = repository.GetGroupRepository().GetById(groupID);
-            DbContext.GetInstance().CloseConnection();
+            meeting.Group = new Group { Id = groupID };
             meeting.Room = room;
             meeting.Date = date;
 
@@ -300,15 +293,8 @@ namespace MusicCenterWebApp.Controllers
             WebClient<List<Group>> webClient = new WebClient<List<Group>>();
             webClient.port = 5004;
             webClient.Host = "localhost";
-            webClient.Path = "api/Admin/GetGroups";
+            webClient.Path = "api/Admin/GetGroupsWithParticipants";
             List<Group> groups = await webClient.GetAsync();
-            DbContext.GetInstance().OpenConnection();
-            RepositoryUOW repository = new RepositoryUOW();
-            foreach (Group group in groups)
-            {
-                group.Participants = repository.GetRegistreeRepository().GetAllByGroupId(group.Id);
-            }
-            DbContext.GetInstance().CloseConnection();
             return View(groups);
         }
 
@@ -354,9 +340,7 @@ namespace MusicCenterWebApp.Controllers
         public async Task<IActionResult> SendMessage([FromForm] Message message, [FromForm]string recieversIDs)
         {
             List<string> ids = JsonSerializer.Deserialize<List<string>>(recieversIDs).ToList();
-            DbContext.GetInstance().OpenConnection();
-            Message? dbMessage = new RepositoryUOW().GetMessageRepository().GetByTitleAndDescription(message.Title, message.Description);
-            DbContext.GetInstance().CloseConnection();
+            Message? dbMessage = await GetMessageByTitleAndDescription(message.Title, message.Description);
             bool success = true;
             if (dbMessage == null)
             {
@@ -395,6 +379,18 @@ namespace MusicCenterWebApp.Controllers
             TempData["messageSent"] = success;
             return Redirect("SendMessageForm");
         }
+        [HttpGet]
+        private async Task<Message> GetMessageByTitleAndDescription(string title, string description)
+        {
+            WebClient<Message> webClient = new WebClient<Message>();
+            webClient.port = 5004;
+            webClient.Host = "localhost";
+            webClient.Path = "api/Admin/GetMessageByTitleAndDescription";
+            webClient.AddParams("title", title);
+            webClient.AddParams("description", description);
+            return await webClient.GetAsync();
+        }
+
         [HttpPost]
         private async Task<bool> AddReceiver(Message message, string userID)
         {

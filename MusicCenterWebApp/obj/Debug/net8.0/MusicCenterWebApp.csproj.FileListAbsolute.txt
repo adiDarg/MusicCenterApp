@@ -1,18 +1,3 @@
-C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWebApp\bin\Debug\net8.0\wwwroot\uploads\images\044fa8f8-b588-413d-baf6-22c38cbe8469.jpg
-C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWebApp\bin\Debug\net8.0\wwwroot\uploads\images\059c5a61-477a-4675-bd1c-0d78395d90a3.jpg
-C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWebApp\bin\Debug\net8.0\wwwroot\uploads\images\09c23959-4205-46a8-9d76-f7c78ae6b52a.jpg
-C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWebApp\bin\Debug\net8.0\wwwroot\uploads\images\27476df9-2acb-496a-a422-bf761526015d.jpg
-C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWebApp\bin\Debug\net8.0\wwwroot\uploads\images\5ba39e0e-bb46-470b-b858-d5171a4d51b1.jpg
-C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWebApp\bin\Debug\net8.0\wwwroot\uploads\images\801a126f-d7ba-4fda-8635-f400888c664f.jpg
-C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWebApp\bin\Debug\net8.0\wwwroot\uploads\images\887e136a-7158-434e-974c-88222b94969a.jpg
-C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWebApp\bin\Debug\net8.0\wwwroot\uploads\images\8e5b0301-70e4-462e-a001-dfbca2f82b75.jpg
-C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWebApp\bin\Debug\net8.0\wwwroot\uploads\images\92263895-bc33-4876-b13d-07acf2c083f1.jpg
-C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWebApp\bin\Debug\net8.0\wwwroot\uploads\images\bc5a91bb-4174-43df-a6b2-698c9b090c1b.jpg
-C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWebApp\bin\Debug\net8.0\wwwroot\uploads\images\bf19199d-2a7a-4d97-af49-a93e7c3da1b3.jpg
-C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWebApp\bin\Debug\net8.0\wwwroot\uploads\images\c005e228-811c-4f14-a88c-788147d7f3e7.jpg
-C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWebApp\bin\Debug\net8.0\wwwroot\uploads\images\dd0a3d82-5882-4d8b-b642-df96e0565923.jpg
-C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWebApp\bin\Debug\net8.0\wwwroot\uploads\images\f32715af-f9e1-417f-8ddf-598e86bd2d93.jpg
-C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWebApp\bin\Debug\net8.0\wwwroot\uploads\images\placeholder.jpg
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWebApp\bin\Debug\net8.0\MusicCenterFactories.deps.json
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWebApp\bin\Debug\net8.0\MusicCenterFactories.runtimeconfig.json
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWebApp\bin\Debug\net8.0\MusicCenterModels.deps.json
@@ -268,5 +253,4 @@ C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWebApp\obj\D
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWebApp\obj\Debug\net8.0\MusicCenterWebApp.pdb
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWebApp\obj\Debug\net8.0\MusicCenterWebApp.genruntimeconfig.cache
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWebApp\obj\Debug\net8.0\ref\MusicCenterWebApp.dll
-C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWebApp\bin\Debug\net8.0\wwwroot\uploads\images\38b7f2cc-9942-45d3-9b4b-9b362dc72b2b.jpg
-C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWebApp\bin\Debug\net8.0\wwwroot\uploads\images\7507e9a8-d7ff-4a91-aae1-96a688737f43.jpg
+C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWebApp\obj\Debug\net8.0\MusicCenterWebApp.sourcelink.json

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MusicCenterWebService")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+94beac885a4beb0c932c4c76e73428a580910188")]
 [assembly: System.Reflection.AssemblyProductAttribute("MusicCenterWebService")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MusicCenterWebService")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
