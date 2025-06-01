@@ -27,25 +27,41 @@
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
+                <RowDefinition/>
             </Grid.RowDefinitions>
             <TextBox 
+                Name="titleInput"
                 Grid.Row="0" 
                 Style="{StaticResource StyledTextBox}">
                 Title
             </TextBox>
             <TextBox 
+                Name="descriptionInput"
                 Grid.Row="1" 
                 Style="{StaticResource StyledTextBox}">
                 Description
             </TextBox>
             <ComboBox 
+                Name="recieverInput"
                 Template="{DynamicResource ComboBoxTemplate1}" 
                 Grid.Row="2" 
                 Text="Choose Reciever" 
                 Style="{StaticResource StyledComboBox}"/>
+            <ComboBox
+                Name="typeInput"
+                Template="{DynamicResource ComboBoxTemplate1}"
+                Grid.Row="3"
+                Text="Choose Request Type"
+                Style="{StaticResource StyledComboBox}">
+                <ComboBoxItem Content="Invite" />
+                <ComboBoxItem Content="Add Event" />
+                <ComboBoxItem Content="Cancel" />
+                <ComboBoxItem Content="Leave Group" />
+                <ComboBoxItem Content="Join Group" />
+            </ComboBox>
             <Button 
-                Grid.Row="3" 
-                Style="{StaticResource StyledButton}">
+                Grid.Row="4" 
+                Style="{StaticResource StyledButton}" Click="Button_Click">
                 Submit
             </Button>
         </Grid>
