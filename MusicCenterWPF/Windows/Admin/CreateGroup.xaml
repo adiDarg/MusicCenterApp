@@ -13,20 +13,44 @@
         AllowsTransparency="False">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.6*"/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.3*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <shared:CollapseAndClose Grid.Row="0"/>
         <shared:NavBar Grid.Row="1"/>
         <Label Style="{StaticResource StyledLabel}" Grid.Row="2">Create Group</Label>
-        <TextBox Name="groupNameInput" Style="{StaticResource StyledTextBox}" Grid.Row="3">Group Name</TextBox>
-        <ComboBox Name="InstructorSelection" Template="{DynamicResource ComboBoxTemplate2}" Style="{StaticResource StyledComboBox}" Grid.Row="4">Instructor</ComboBox>
-        <TextBox Name="RoomInput" Style="{StaticResource StyledTextBox}" Grid.Row="5">Enter Room</TextBox>
-        <Button Style="{StaticResource StyledButton}" Grid.Row="6" Click="SubmitButton_Click" >Submit</Button>
+        <Grid Grid.Row="3">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBox Name="groupNameInput" 
+                     Style="{StaticResource StyledTextBox}" 
+                     Grid.Row="0">
+                Group Name
+            </TextBox>
+            <ComboBox 
+                Name="InstructorSelection" 
+                Template="{DynamicResource ComboBoxTemplate2}" 
+                Style="{StaticResource StyledComboBox}" 
+                Grid.Row="1">
+                Instructor
+            </ComboBox>
+            <TextBox Name="RoomInput" 
+                     Style="{StaticResource StyledTextBox}" 
+                     Grid.Row="2">
+                Enter Room
+            </TextBox>
+            <Button 
+                Style="{StaticResource StyledButton}" 
+                Grid.Row="3" 
+                Click="SubmitButton_Click">
+                Submit
+            </Button>
+        </Grid>
     </Grid>
 </Window>

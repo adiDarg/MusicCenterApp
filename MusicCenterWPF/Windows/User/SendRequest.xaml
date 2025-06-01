@@ -13,20 +13,41 @@
         AllowsTransparency="False">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.5*"/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.3*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <shared:CollapseAndClose/>
         <shared:NavBar Grid.Row="1"/>
         <Label Grid.Row="2" Style="{StaticResource StyledLabel}">Send Request</Label>
-        <TextBox Grid.Row="3" Style="{StaticResource StyledTextBox}">Title</TextBox>
-        <TextBox Grid.Row="4" Style="{StaticResource StyledTextBox}">Description</TextBox>
-        <ComboBox Template="{DynamicResource ComboBoxTemplate1}" Grid.Row="3" Text="Choose Reciever" Style="{StaticResource StyledComboBox}">
-        </ComboBox>
-        <Button Grid.Row="5" Style="{StaticResource StyledButton}">Submit</Button>
+        <Grid Grid.Row="3">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBox 
+                Grid.Row="0" 
+                Style="{StaticResource StyledTextBox}">
+                Title
+            </TextBox>
+            <TextBox 
+                Grid.Row="1" 
+                Style="{StaticResource StyledTextBox}">
+                Description
+            </TextBox>
+            <ComboBox 
+                Template="{DynamicResource ComboBoxTemplate1}" 
+                Grid.Row="2" 
+                Text="Choose Reciever" 
+                Style="{StaticResource StyledComboBox}"/>
+            <Button 
+                Grid.Row="3" 
+                Style="{StaticResource StyledButton}">
+                Submit
+            </Button>
+        </Grid>
     </Grid>
 </Window>

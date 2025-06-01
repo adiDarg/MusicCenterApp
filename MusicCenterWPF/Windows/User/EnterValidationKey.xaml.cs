@@ -35,10 +35,10 @@ namespace MusicCenterWPF.Windows
             if (result) {
                 SessionManager.Type = "Registree";
             }
-            else
-            {
-                errorLabel.Content = "Error in validation key entry(maybe the key entered was wrong?)";
-            }
+            MessageBox.Show(result ? "Validation Key entered successfully." : "Validation Key entry failed. Make sure you entered the correct key.",
+                result ? "Success" : "Error",
+                MessageBoxButton.OK,
+                result ? MessageBoxImage.Information : MessageBoxImage.Error);
         }
     }
 }

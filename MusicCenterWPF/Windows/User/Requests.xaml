@@ -13,9 +13,9 @@
         AllowsTransparency="False">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.2*"/>
             <RowDefinition Height="0.3*"/>
-            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.3*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <shared:CollapseAndClose/>

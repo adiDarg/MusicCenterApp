@@ -62,7 +62,7 @@ namespace MusicCenterWPF.Windows.User {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MusicCenterWPF;component/windows/shared/schedule.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MusicCenterWPF;V1.0.0.0;component/windows/shared/schedule.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Windows\Shared\Schedule.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

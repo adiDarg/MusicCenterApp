@@ -13,20 +13,23 @@
         AllowsTransparency="False">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.15*"/>
-            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.3*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <shared:CollapseAndClose/>
         <shared:NavBar Grid.Row="1"/>
-        <Grid Grid.Row="2">
+        <Label Grid.Row="2" Style="{StaticResource StyledLabel}">
+            Add Registree To Group
+        </Label>
+        <Grid Grid.Row="3">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Label Style="{StaticResource StyledLabel}">Add Registree To Group</Label>
             <ComboBox Name="groupChoice" Template="{DynamicResource ComboBoxTemplate2}" Style="{StaticResource StyledComboBox}" Grid.Row="1" SelectionChanged="groupChoice_SelectionChanged">Choose Group</ComboBox>
             <ComboBox Name="registreeChoice" Template="{DynamicResource ComboBoxTemplate2}" Style="{StaticResource StyledComboBox}" Grid.Row="2" SelectionChanged="registreeChoice_SelectionChanged">Choose Registree</ComboBox>
             <Button Style="{StaticResource StyledButton}" Grid.Row="3" Click="Button_Click">Add</Button>

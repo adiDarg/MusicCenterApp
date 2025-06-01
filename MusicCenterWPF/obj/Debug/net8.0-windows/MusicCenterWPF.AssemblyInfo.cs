@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MusicCenterWPF")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+94beac885a4beb0c932c4c76e73428a580910188")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+691862341b17feb51add4f4e2db30e9d1f8dffc0")]
 [assembly: System.Reflection.AssemblyProductAttribute("MusicCenterWPF")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MusicCenterWPF")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

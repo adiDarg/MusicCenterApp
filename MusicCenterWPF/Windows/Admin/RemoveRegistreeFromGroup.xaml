@@ -14,36 +14,41 @@
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="0.5*"/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="0.3*"/>
+                <RowDefinition Height="0.3*"/>
+                <RowDefinition Height="0.3*"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <shared:CollapseAndClose/>
             <shared:NavBar Grid.Row="1"/>
             <Label Style="{StaticResource StyledLabel}" Grid.Row="2">Remove Registree From Group</Label>
-            <ComboBox Name="groupInput" 
-                      Template="{DynamicResource ComboBoxTemplate2}" 
-                      Style="{StaticResource StyledComboBox}" 
-                      Grid.Row="3"
-                      SelectionChanged="groupInput_SelectionChanged">
-                Choose Group
-            </ComboBox>
-            <ComboBox Name="registreeInput" 
-                      Template="{DynamicResource ComboBoxTemplate2}" 
-                      Style="{StaticResource StyledComboBox}" 
-                      Grid.Row="4"
-                      SelectionChanged="registreeInput_SelectionChanged">
-                Choose Registree
-            </ComboBox>
-            <Button 
-                Style="{StaticResource StyledButton}" 
-                Grid.Row="5"
-                Click="RemoveButton_Click">
-                Remove
-            </Button>
+            <Grid Grid.Row="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <ComboBox Name="groupInput" 
+                    Template="{DynamicResource ComboBoxTemplate2}" 
+                    Style="{StaticResource StyledComboBox}" 
+                    Grid.Row="0"
+                    SelectionChanged="groupInput_SelectionChanged">
+                        Choose Group
+                </ComboBox>
+                <ComboBox Name="registreeInput" 
+                    Template="{DynamicResource ComboBoxTemplate2}" 
+                    Style="{StaticResource StyledComboBox}" 
+                    Grid.Row="1"
+                    SelectionChanged="registreeInput_SelectionChanged">
+                        Choose Registree
+                </ComboBox>
+                <Button 
+                    Style="{StaticResource StyledButton}" 
+                    Grid.Row="2"
+                    Click="RemoveButton_Click">
+                        Remove
+                </Button>
+            </Grid>
         </Grid>
     </Grid>
 </Window>

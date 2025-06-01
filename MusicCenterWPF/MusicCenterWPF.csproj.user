@@ -22,6 +22,9 @@
     <Compile Update="Windows\Guest\StartupWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\Shared\AdditionalActions.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\Shared\CollapseAndClose.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -76,6 +79,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\Guest\StartupWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Shared\AdditionalActions.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\Shared\CollapseAndClose.xaml">

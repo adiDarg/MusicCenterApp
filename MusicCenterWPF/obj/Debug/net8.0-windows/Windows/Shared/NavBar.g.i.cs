@@ -101,7 +101,7 @@ namespace MusicCenterWPF.Windows.Shared {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MusicCenterWPF;component/windows/shared/navbar.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MusicCenterWPF;V1.0.0.0;component/windows/shared/navbar.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Windows\Shared\NavBar.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

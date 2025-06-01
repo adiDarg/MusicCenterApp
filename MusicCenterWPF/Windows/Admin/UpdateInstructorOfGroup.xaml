@@ -13,30 +13,41 @@
         AllowsTransparency="False">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.5*"/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.3*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <shared:CollapseAndClose Grid.Row="0"/>
         <shared:NavBar Grid.Row="1"/>
-        <Label Style="{StaticResource StyledLabel}" Grid.Row="2">Update Instructor Of Group</Label>
-        <ComboBox 
-            Name="GroupInput"
-            Template="{DynamicResource ComboBoxTemplate2}" 
-            Style="{StaticResource StyledComboBox}" 
-            Grid.Row="3">
-            Choose Group
-        </ComboBox>
-        <ComboBox 
-            Name="InstructorInput"
-            Template="{DynamicResource ComboBoxTemplate2}" 
-            Style="{StaticResource StyledComboBox}" 
-            Grid.Row="4">
-            Choose Instructor
-        </ComboBox>
-        <Button Style="{StaticResource StyledButton}" Grid.Row="5">Update</Button>
+        <Label Style="{StaticResource StyledLabel}" 
+               Grid.Row="2">
+            Update Instructor Of Group
+        </Label>
+        <Grid Grid.Row="3">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <ComboBox 
+                Name="GroupInput"
+                Template="{DynamicResource ComboBoxTemplate2}" 
+                Style="{StaticResource StyledComboBox}" 
+                Grid.Row="0">
+                Choose Group
+            </ComboBox>
+            <ComboBox 
+                Name="InstructorInput"
+                Template="{DynamicResource ComboBoxTemplate2}" 
+                Style="{StaticResource StyledComboBox}" 
+                Grid.Row="1">
+                Choose Instructor
+            </ComboBox>
+            <Button Style="{StaticResource StyledButton}" 
+                    Grid.Row="2">
+                Update
+            </Button>
+        </Grid>
     </Grid>
 </Window>
