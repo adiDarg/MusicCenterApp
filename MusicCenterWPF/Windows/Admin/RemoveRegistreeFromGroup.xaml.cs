@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WebApiClient;
+using RegistreeModel = MusicCenterModels.Registree;
 
 namespace MusicCenterWPF.Windows.Admin
 {
@@ -23,7 +24,7 @@ namespace MusicCenterWPF.Windows.Admin
     /// </summary>
     public partial class RemoveRegistreeFromGroup : Window
     {
-        private List<Registree> registreesInGroup = new List<Registree>();
+        private List<RegistreeModel> registreesInGroup = new List<RegistreeModel>();
         private string selectedGroupId = "";
         private string selectedRegistreeId = "";
         private RepositoryUOW repositoryUOW = new RepositoryUOW();

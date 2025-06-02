@@ -86,7 +86,7 @@ namespace MusicCenterWPF.Windows.User {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MusicCenterWPF;V1.0.0.0;component/windows/user/sendrequest.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MusicCenterWPF;component/windows/user/sendrequest.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Windows\User\SendRequest.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

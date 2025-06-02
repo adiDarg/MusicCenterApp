@@ -13,6 +13,9 @@
     <Compile Update="Windows\Admin\CreateGroup.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\Admin\DisplayMembers.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\Admin\RemoveRegistreeFromGroup.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -35,6 +38,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\Shared\NavBar.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Shared\ProfileCard.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\Teacher\AddNewInstrument.xaml.cs">
@@ -72,6 +78,9 @@
     <Page Update="Windows\Admin\CreateGroup.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Windows\Admin\DisplayMembers.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Windows\Admin\RemoveRegistreeFromGroup.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -94,6 +103,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\Shared\NavBar.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Shared\ProfileCard.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\Teacher\AddNewInstrument.xaml">

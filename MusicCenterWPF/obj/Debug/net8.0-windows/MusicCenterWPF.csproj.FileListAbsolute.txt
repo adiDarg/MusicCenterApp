@@ -94,3 +94,9 @@ C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debu
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\MusicCenterWPF.pdb
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\MusicCenterWPF.genruntimeconfig.cache
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\ref\MusicCenterWPF.dll
+C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\Windows\Registree\ViewTeachers.g.cs
+C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\Windows\Shared\ProfileCard.g.cs
+C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\Windows\Registree\ViewTeachers.baml
+C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\Windows\Shared\ProfileCard.baml
+C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\Windows\Admin\DisplayMembers.g.cs
+C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\Windows\Admin\DisplayMembers.baml

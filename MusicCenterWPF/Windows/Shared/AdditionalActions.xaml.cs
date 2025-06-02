@@ -1,4 +1,5 @@
 ﻿using MusicCenterWPF.Windows.Admin;
+using MusicCenterWPF.Windows.Registree;
 using MusicCenterWPF.Windows.Teacher;
 using System;
 using System.Collections.Generic;
@@ -103,7 +104,7 @@ namespace MusicCenterWPF.Windows.Shared
             viewTeachersButton.Click += (s, e) =>
             {
                 this.Visibility = Visibility.Hidden;
-                //new ViewTeachers().Show();
+                new ViewTeachers().Show();
             };
             
             //Only 1 child so no need for setup
@@ -150,7 +151,7 @@ namespace MusicCenterWPF.Windows.Shared
 
             //Display Members
             Button displayMembersButton = new Button { Content = "Display Members" };
-            //displayMembersButton.Click += (s, e) => { new DisplayMembers().Show(); };
+            displayMembersButton.Click += (s, e) => { new DisplayMembers().Show(); };
             actions.Add(displayMembersButton);
 
             //Promote & Demote

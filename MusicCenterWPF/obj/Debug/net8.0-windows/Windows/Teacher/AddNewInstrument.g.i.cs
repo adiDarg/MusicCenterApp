@@ -63,7 +63,7 @@ namespace MusicCenterWPF.Windows.Teacher {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MusicCenterWPF;V1.0.0.0;component/windows/teacher/addnewinstrument.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MusicCenterWPF;component/windows/teacher/addnewinstrument.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Windows\Teacher\AddNewInstrument.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

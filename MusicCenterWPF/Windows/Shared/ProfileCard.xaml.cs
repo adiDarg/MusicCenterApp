@@ -25,15 +25,31 @@ namespace MusicCenterWPF.Windows.Shared
         {
             InitializeComponent();
             this.Loaded += (s, e) => {
-                string fileName = Profile.Image;
-                string imageUrl = $"http://localhost:5004/api/User/GetImage/{fileName}";
-                BitmapImage bitmap = new BitmapImage();
-                bitmap.BeginInit();
-                bitmap.UriSource = new Uri(imageUrl, UriKind.Absolute);
-                bitmap.CacheOption = BitmapCacheOption.OnLoad;
-                bitmap.EndInit();
-                image.ImageSource = bitmap;
+                LoadCard();
             };
+        }
+        private void LoadCard()
+        {
+            LoadImage();
+            //Load Username
+            usernameLabel.Content = Profile.Name;
+            //Load Email
+            emailLabel.Content = Profile.Email;
+            //Load PhoneNumber
+            phoneNumberLabel.Content = Profile.PhoneNumber;
+            //Load Address
+            addressLabel.Content = Profile.Address;
+        }
+        private void LoadImage()
+        {
+            string fileName = Profile.Image;
+            string imageUrl = $"http://localhost:5004/api/User/GetImage/{fileName}";
+            BitmapImage bitmap = new BitmapImage();
+            bitmap.BeginInit();
+            bitmap.UriSource = new Uri(imageUrl, UriKind.Absolute);
+            bitmap.CacheOption = BitmapCacheOption.OnLoad;
+            bitmap.EndInit();
+            image.ImageSource = bitmap;
         }
         public MusicCenterModels.User Profile
         {

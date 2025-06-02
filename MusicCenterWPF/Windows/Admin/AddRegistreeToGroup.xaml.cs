@@ -17,6 +17,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WebApiClient;
+using RegistreeModel = MusicCenterModels.Registree;
 
 namespace MusicCenterWPF.Windows.Admin
 {
@@ -56,11 +57,11 @@ namespace MusicCenterWPF.Windows.Admin
         private async void LoadRegistrees()
         {
             registreeChoice.Items.Clear();
-            WebClient<List<Registree>> webClient = new WebClient<List<Registree>>();
+            WebClient<List<RegistreeModel>> webClient = new WebClient<List<RegistreeModel>>();
             webClient.port = 5004;
             webClient.Host = "localhost";
             webClient.Path = "api/Admin/GetRegistrees";
-            List<Registree> registrees = await webClient.GetAsync();
+            List<RegistreeModel> registrees = await webClient.GetAsync();
             foreach (var registree in registrees)
             {
                 if (registreesInGroup.Contains(registree.Id))

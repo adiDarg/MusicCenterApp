@@ -26,23 +26,19 @@
         <Label Style="{StaticResource StyledLabel}"
                VerticalAlignment="Top"
                HorizontalAlignment="Center"
-               FontSize="35"
                Margin="0,25,0,0"
-               Content="{Binding Name, StringFormat=Username: {0}}"/>
+               Name="usernameLabel"/>
         <Label Style="{StaticResource StyledLabel}"
                HorizontalAlignment="Left"
-               FontSize="30"
+               Grid.Row="1"
+               Name="emailLabel"/>
+        <Label Style="{StaticResource StyledLabel}"
+               HorizontalAlignment="Left"
                Grid.Row="2"
-               Content="{Binding Email, StringFormat=Email: {0}}"/>
+               Name="phoneNumberLabel"/>
         <Label Style="{StaticResource StyledLabel}"
                HorizontalAlignment="Left"
-               FontSize="30"
                Grid.Row="3"
-               Content="{Binding PhoneNumber, StringFormat=Phone Number: {0}}"/>
-        <Label Style="{StaticResource StyledLabel}"
-               HorizontalAlignment="Left"
-               FontSize="30"
-               Grid.Row="4"
-               Content="{Binding Address, StringFormat=Address: {0}}"/>
+               Name="addressLabel"/>
     </Grid>
 </UserControl>

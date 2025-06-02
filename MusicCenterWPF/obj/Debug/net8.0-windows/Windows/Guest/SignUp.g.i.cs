@@ -110,7 +110,7 @@ namespace MusicCenterWPF {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MusicCenterWPF;V1.0.0.0;component/windows/guest/signup.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MusicCenterWPF;component/windows/guest/signup.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Windows\Guest\SignUp.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
