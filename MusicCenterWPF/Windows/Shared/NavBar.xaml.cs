@@ -37,6 +37,7 @@ namespace MusicCenterWPF.Windows.Shared
         {
             Window parentWindow = Window.GetWindow(this);
             parentWindow.Visibility = Visibility.Hidden;
+            new Messages().Show();
         }
 
         private void ViewRequestsButton_Click(object sender, RoutedEventArgs e)
@@ -57,6 +58,7 @@ namespace MusicCenterWPF.Windows.Shared
         {
             Window parentWindow = Window.GetWindow(this);
             parentWindow.Visibility = Visibility.Hidden;
+            new AdditionalActions().Show();
         }
 
         private void ViewProfileButton_Click(object sender, RoutedEventArgs e)

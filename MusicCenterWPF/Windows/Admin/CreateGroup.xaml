@@ -30,20 +30,20 @@
             </Grid.RowDefinitions>
             <TextBox Name="groupNameInput" 
                      Style="{StaticResource StyledTextBox}" 
-                     Grid.Row="0">
-                Group Name
+                     Grid.Row="0"
+                     shared:TextBoxHelper.Placeholder="Enter Name">
             </TextBox>
             <ComboBox 
                 Name="InstructorSelection" 
                 Template="{DynamicResource ComboBoxTemplate2}" 
                 Style="{StaticResource StyledComboBox}" 
-                Grid.Row="1">
-                Instructor
+                Grid.Row="1"
+                shared:ComboBoxHelper.Placeholder="Enter Instructor">
             </ComboBox>
             <TextBox Name="RoomInput" 
                      Style="{StaticResource StyledTextBox}" 
-                     Grid.Row="2">
-                Enter Room
+                     Grid.Row="2"
+                     shared:TextBoxHelper.Placeholder="Enter Room">
             </TextBox>
             <Button 
                 Style="{StaticResource StyledButton}" 

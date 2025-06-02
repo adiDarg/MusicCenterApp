@@ -32,15 +32,15 @@
                     Template="{DynamicResource ComboBoxTemplate2}" 
                     Style="{StaticResource StyledComboBox}" 
                     Grid.Row="0"
-                    SelectionChanged="groupInput_SelectionChanged">
-                        Choose Group
+                    SelectionChanged="groupInput_SelectionChanged"
+                    shared:ComboBoxHelper.Placeholder="Choose Group">
                 </ComboBox>
                 <ComboBox Name="registreeInput" 
                     Template="{DynamicResource ComboBoxTemplate2}" 
                     Style="{StaticResource StyledComboBox}" 
                     Grid.Row="1"
-                    SelectionChanged="registreeInput_SelectionChanged">
-                        Choose Registree
+                    SelectionChanged="registreeInput_SelectionChanged"
+                    shared:ComboBoxHelper.Placeholder="Choose Registree">
                 </ComboBox>
                 <Button 
                     Style="{StaticResource StyledButton}" 

@@ -29,12 +29,14 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <TextBox Name="inputTextBox" Style="{StaticResource StyledTextBox}" 
-                 Text="Enter Validation Key"
-                 Grid.Row="0" Width="223" />
-            <Button Name="submitButton" Style="{StaticResource StyledButton}"
-                Content="Submit"
-                Grid.Row="1" Click="Submit_ClickAsync"/>
+            <TextBox Name="inputTextBox" 
+                     Style="{StaticResource StyledTextBox}" 
+                     shared:TextBoxHelper.Placeholder="Enter Validation Key"
+                     Grid.Row="0" Width="223" />
+            <Button Name="submitButton" 
+                    Style="{StaticResource StyledButton}"
+                    Content="Submit"
+                    Grid.Row="1" Click="Submit_ClickAsync"/>
         </Grid>
     </Grid>
 </Window>

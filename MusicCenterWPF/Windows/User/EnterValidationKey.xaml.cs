@@ -34,6 +34,8 @@ namespace MusicCenterWPF.Windows
             bool result = await webClient.PostAsync(user);
             if (result) {
                 SessionManager.Type = "Registree";
+                this.Visibility = Visibility.Hidden;
+                new UserProfile().Show();
             }
             MessageBox.Show(result ? "Validation Key entered successfully." : "Validation Key entry failed. Make sure you entered the correct key.",
                 result ? "Success" : "Error",

@@ -24,9 +24,18 @@
         FontSize="30px"
         >Sign In
         </Label>
-        <TextBox Name="usernameInput" Style="{StaticResource StyledTextBox}" Text="Username"/>
-        <TextBox Name="passwordInput" Style="{StaticResource StyledTextBox}" Text="Password"/>
-        <Button Name="signInButton" Style="{StaticResource StyledButton}" Content="Sign In" Click="signInButton_Click"/>
-        <Label Name="errorLabel" Style="{StaticResource ErrorLabel}"/>
+        <TextBox Name="usernameInput" 
+                 Style="{StaticResource StyledTextBox}" 
+                 shared:TextBoxHelper.Placeholder="Enter Username"/>
+        <TextBox 
+            Name="passwordInput" 
+            Style="{StaticResource StyledTextBox}" 
+            shared:TextBoxHelper.Placeholder="Enter Password"/>
+        <Button Name="signInButton" 
+                Style="{StaticResource StyledButton}" 
+                Content="Sign In" 
+                Click="signInButton_Click"/>
+        <Label Name="errorLabel" 
+               Style="{StaticResource ErrorLabel}"/>
     </StackPanel>
 </Window>

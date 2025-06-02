@@ -12,6 +12,12 @@
         <Setter Property="Margin" Value="0,10,0,0"/>
         <Setter Property="TextAlignment" Value="Center"/>
     </Style>
+    <Style x:Key="SmallStyledTextBox" TargetType="TextBox" BasedOn="{StaticResource StyledTextBox}">
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="Height" Value="20"/>
+        <Setter Property="Width" Value="140"/>
+        <Setter Property="FontSize" Value="14"/>
+    </Style>
     <Style x:Key="CellBorderStyle" TargetType="Border">
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="BorderBrush" Value="Gray"/>
@@ -26,12 +32,25 @@
         <Setter Property="FontSize" Value="20"/>
         <Setter Property="Margin" Value="0,10,0,0"/>
     </Style>
+    <Style x:Key="SmallStyledComboBox" TargetType="ComboBox" BasedOn="{StaticResource StyledComboBox}">
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="Height" Value="20"/>
+        <Setter Property="Width" Value="140"/>
+        <Setter Property="FontSize" Value="14"/>
+    </Style>
+    
     <Style x:Key="StyledComboBoxItem" TargetType="ComboBoxItem">
         <Setter Property="BorderThickness" Value="3"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="Width" Value="172"/>
         <Setter Property="Height" Value="34"/>
         <Setter Property="FontSize" Value="20"/>
+    </Style>
+    <Style x:Key="SmallStyledComboBoxItem" TargetType="ComboBoxItem" BasedOn="{StaticResource StyledComboBoxItem}">
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="Height" Value="20"/>
+        <Setter Property="Width" Value="140"/>
+        <Setter Property="FontSize" Value="14"/>
     </Style>
 
     <Style x:Key="StyledButton" TargetType="Button">
@@ -71,12 +90,22 @@
             </Setter.Value>
         </Setter>
     </Style>
+    <Style x:Key="SmallStyledButton" TargetType="Button" BasedOn="{StaticResource StyledButton}">
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="Height" Value="20"/>
+        <Setter Property="Width" Value="140"/>
+        <Setter Property="FontSize" Value="14"/>
+    </Style>
+    
     <Style x:Key="StyledLabel" TargetType="Label">
         <Setter Property="FontSize" Value="20"/>
         <Setter Property="Margin" Value="0,10,0,0"/>
         <Setter Property="Foreground" Value="Black"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="FontFamily" Value="Impact"/>
+    </Style>
+    <Style x:Key="SmallStyledLabel" TargetType="Label" BasedOn="{StaticResource StyledLabel}">
+        <Setter Property="FontSize" Value="14"/>
     </Style>
     <Style x:Key="ErrorLabel" TargetType="Label">
         <Setter Property="FontSize" Value="16"/>
@@ -86,7 +115,7 @@
         <Setter Property="FontFamily" Value="Verdana Bold"/>
     </Style>
     <Style x:Key="StyledImageBorder" TargetType="Ellipse">
-        <Setter Property="Height" Value="50"/>
-        <Setter Property="Width" Value="50"/>
+        <Setter Property="Height" Value="75"/>
+        <Setter Property="Width" Value="75"/>
     </Style>
 </ResourceDictionary>

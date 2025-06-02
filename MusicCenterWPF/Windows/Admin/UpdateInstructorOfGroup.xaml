@@ -34,14 +34,15 @@
                 Name="GroupInput"
                 Template="{DynamicResource ComboBoxTemplate2}" 
                 Style="{StaticResource StyledComboBox}" 
-                Grid.Row="0">
-                Choose Group
+                Grid.Row="0"
+                shared:ComboBoxHelper.Placeholder="Choose Group">
             </ComboBox>
             <ComboBox 
                 Name="InstructorInput"
                 Template="{DynamicResource ComboBoxTemplate2}" 
                 Style="{StaticResource StyledComboBox}" 
-                Grid.Row="1">
+                Grid.Row="1"
+                shared:ComboBoxHelper.Placeholder="Choose Instructor">
                 Choose Instructor
             </ComboBox>
             <Button Style="{StaticResource StyledButton}" 

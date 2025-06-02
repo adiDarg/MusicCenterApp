@@ -1,0 +1,24 @@
+﻿<Window x:Class="MusicCenterWPF.Windows.Registree.ViewTeachers"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MusicCenterWPF.Windows.Registree"
+        xmlns:shared="clr-namespace:MusicCenterWPF.Windows.Shared"
+        mc:Ignorable="d"
+        Title="ViewTeachers" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <shared:CollapseAndClose Grid.Row="0"/>
+        <shared:NavBar Grid.Row="1"/>
+        <Label Style="{StaticResource StyledLabel}"
+               Grid.Row="2">
+            View Teachers
+        </Label>
+    </Grid>
+</Window>

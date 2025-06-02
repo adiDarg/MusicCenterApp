@@ -55,7 +55,7 @@ namespace MusicCenterWPF
             string password = passwordInput.Text;
             if (username.Equals("") || password.Equals(""))
             {
-                errorLabel.Content = "Must enter username and password";
+                MessageBox.Show("Must enter username and password","Error",MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
             string email = emailInput.Text;
@@ -90,7 +90,7 @@ namespace MusicCenterWPF
                 }
                 catch (Exception ex)
                 {
-                    errorLabel.Content = $"Error copying file: {ex.Message}";
+                    MessageBox.Show($"Error copying file: {ex.Message}","Error",MessageBoxButton.OK,MessageBoxImage.Error);
                     await Task.Delay(1000);
                     Thread.Sleep(1000);
                     user.Image = "placeholder.jpg";
@@ -106,11 +106,12 @@ namespace MusicCenterWPF
             string userJson = JsonSerializer.Serialize(user);
             client.AddParams("user", userJson);
             bool success = await client.PostAsync(user);
+            MessageBox.Show(success? "Sign up successfull":"Sign up failed",
+                success? "Success":"Error",
+                MessageBoxButton.OK, 
+                success? MessageBoxImage.Information : MessageBoxImage.Error);
             if (success)
             {
-                errorLabel.Content = "Loading...";
-                await Task.Delay(100);
-
                 DbContext.GetInstance().OpenConnection();
                 while (new RepositoryUOW().GetUserRepository().GetByUsername(username) == null)
                 {
@@ -122,10 +123,6 @@ namespace MusicCenterWPF
                 SessionManager.Type = "User";
                 Visibility = Visibility.Hidden;
                 new UserProfile().Show();
-            }
-            else
-            {
-                errorLabel.Content = "Sign up failed";
             }
         }
     }

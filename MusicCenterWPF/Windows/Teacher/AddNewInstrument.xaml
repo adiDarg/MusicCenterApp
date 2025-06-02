@@ -34,7 +34,8 @@
                 Template="{DynamicResource ComboBoxTemplate2}" 
                 Style="{StaticResource StyledComboBox}" 
                 Grid.Row="0" 
-                SelectionChanged="instrumentInput_SelectionChanged"/>
+                SelectionChanged="instrumentInput_SelectionChanged"
+                shared:ComboBoxHelper.Placeholder="choose instrument"/>
             <Button 
                 Style="{StaticResource StyledButton}" 
                 Grid.Row="1" 

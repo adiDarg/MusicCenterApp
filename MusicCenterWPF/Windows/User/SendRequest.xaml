@@ -32,26 +32,26 @@
             <TextBox 
                 Name="titleInput"
                 Grid.Row="0" 
-                Style="{StaticResource StyledTextBox}">
-                Title
+                Style="{StaticResource StyledTextBox}"
+                shared:TextBoxHelper.Placeholder="Enter Title">
             </TextBox>
             <TextBox 
                 Name="descriptionInput"
                 Grid.Row="1" 
-                Style="{StaticResource StyledTextBox}">
-                Description
+                Style="{StaticResource StyledTextBox}"
+                shared:TextBoxHelper.Placeholder="Enter Description">
             </TextBox>
             <ComboBox 
                 Name="recieverInput"
                 Template="{DynamicResource ComboBoxTemplate1}" 
                 Grid.Row="2" 
-                Text="Choose Reciever" 
+                shared:ComboBoxHelper.Placeholder="Choose Reciever" 
                 Style="{StaticResource StyledComboBox}"/>
             <ComboBox
                 Name="typeInput"
                 Template="{DynamicResource ComboBoxTemplate1}"
                 Grid.Row="3"
-                Text="Choose Request Type"
+                shared:ComboBoxHelper.Placeholder="Choose Type"
                 Style="{StaticResource StyledComboBox}">
                 <ComboBoxItem Content="Invite" />
                 <ComboBoxItem Content="Add Event" />

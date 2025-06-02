@@ -11,145 +11,119 @@
         WindowState="Maximized"
         ResizeMode="CanMinimize"
         AllowsTransparency="False">
-    <Window.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/Resources/GeneralStyles.xaml" />
-                <ResourceDictionary Source="/Resources/UserProfileStyles.xaml"/>
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </Window.Resources>
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="0.5*"/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.17*"/>
-            <RowDefinition Height="0.15*"/>
-            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.25*"/>
+            <RowDefinition Height="0.2*"/>
             <RowDefinition/>
-            <RowDefinition Height="0.24*"/>
+            <RowDefinition Height="0.2*"/>
         </Grid.RowDefinitions>
 
         <shared:CollapseAndClose Grid.Row="0"/>
-        <Canvas Grid.Row="1">
-            <shared:NavBar ClipToBounds="False" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        </Canvas>
-        <Canvas Grid.Row="2" Grid.Column="1">
-            <Label Name="errorLabel" Style="{StaticResource ErrorLabel}" ClipToBounds="False"/>
-        </Canvas>
-        <Grid Width="385" Grid.Row="3">
+        <shared:NavBar Grid.Row="1"/>
+        <Ellipse Style="{StaticResource StyledImageBorder}"
+             Grid.Row="2">
+            <Ellipse.Fill>
+                <ImageBrush x:Name="image"/>
+            </Ellipse.Fill>
+        </Ellipse>
+        <Grid Grid.Row="3">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="24*"/>
-                <ColumnDefinition Width="361*"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <Ellipse Style="{StaticResource StyledImageBorder}" HorizontalAlignment="Left" Margin="0,-50,0,14" Width="75" Height="75" Grid.ColumnSpan="2" Grid.RowSpan="2">
-                <Ellipse.Fill>
-                    <ImageBrush x:Name="image"/>
-                </Ellipse.Fill>
-            </Ellipse>
-            <!--Username Label-->
-            <Canvas Grid.Row="1" ClipToBounds="False" Grid.ColumnSpan="2">
-                <Label Style="{StaticResource UPlabel}" Content="Username:" Canvas.Left="0" Canvas.Top="0"/>
-            </Canvas>
-
-            <!--Password Label-->
-            <Canvas Grid.Row="1" ClipToBounds="False" Grid.ColumnSpan="2" Margin="0,28,0,28" Grid.RowSpan="3">
-                <Label Style="{StaticResource UPlabel}" Content="Password:" Canvas.Left="0" Canvas.Top="0"/>
-            </Canvas>
-
-            <!--User type Label-->
-            <Canvas Grid.Row="3" ClipToBounds="False" Grid.ColumnSpan="2">
-                <Label Style="{StaticResource UPlabel}" Content="User Type:" Canvas.Left="0" Canvas.Top="0"/>
-            </Canvas>
-
-            <!--Email Label-->
-            <Canvas Grid.Row="3" ClipToBounds="False" Grid.ColumnSpan="2" Margin="0,28,0,28" Grid.RowSpan="3">
-                <Label Style="{StaticResource UPlabel}" Content="Email:" Canvas.Left="0" Canvas.Top="0"/>
-            </Canvas>
-
-            <!--Phone Number Label-->
-            <Canvas Grid.Row="5" ClipToBounds="False" Grid.ColumnSpan="2">
-                <Label Style="{StaticResource UPlabel}" Content="Phone Number:" Canvas.Left="0" Canvas.Top="0"/>
-            </Canvas>
-
-            <!--Address Label-->
-            <Canvas Grid.Row="5" ClipToBounds="False" Grid.ColumnSpan="2" Margin="0,28,0,28" Grid.RowSpan="3">
-                <Label Style="{StaticResource UPlabel}" Content="Address:" Canvas.Left="0" Canvas.Top="0"/>
-            </Canvas>
-
-            <!--Upload Image Label-->
-            <Canvas Grid.Row="7" ClipToBounds="False" Grid.ColumnSpan="2">
-                <Label Style="{StaticResource UPlabel}" Content="Update Image:" Canvas.Left="0" Canvas.Top="0"/>
-            </Canvas>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <!--Username Label-->
+                <Label Style="{StaticResource SmallStyledLabel}"
+                       Grid.Row="0">
+                    Enter Username:
+                </Label>
+                <!--Password Label-->
+                <Label Style="{StaticResource SmallStyledLabel}"
+                       Grid.Row="1">
+                    Enter Password:
+                </Label>
+                <!--User type Label-->
+                <Label Style="{StaticResource SmallStyledLabel}"
+                       Grid.Row="2">
+                    User Type:
+                </Label>
+                <!--Email Label-->
+                <Label Style="{StaticResource SmallStyledLabel}"
+                       Grid.Row="3">
+                    Enter Email:
+                </Label>
+                <!--Phone Number Label-->
+                <Label Style="{StaticResource SmallStyledLabel}"
+                       Grid.Row="4">
+                    Enter Phone Number:
+                </Label>
+                <!--Address Label-->
+                <Label Style="{StaticResource SmallStyledLabel}"
+                       Grid.Row="5">
+                    Enter Address:
+                </Label>
+                <!--Upload Image Label-->
+                <Label Style="{StaticResource SmallStyledLabel}"
+                       Grid.Row="6">
+                    Upload new Image:
+                </Label>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <!-- Username -->
+                <TextBox Name="usernameBox"
+                         Style="{StaticResource SmallStyledTextBox}"
+                         Grid.Row="0"/>
+                <!-- Password -->
+                <TextBox Name="passwordBox"
+                         Style="{StaticResource SmallStyledTextBox}"
+                         Grid.Row="1"/>
+                <!-- User Type -->
+                <Label Name="usertypeBox"
+                       Style="{StaticResource SmallStyledLabel}"
+                       Grid.Row="2"/>
+                <!-- Email -->
+                <TextBox Name="emailBox"
+                         Style="{StaticResource SmallStyledTextBox}"
+                         Grid.Row="3"/>
+                <!-- Phone Number -->
+                <TextBox Name="phoneNumberBox"
+                         Style="{StaticResource SmallStyledTextBox}"
+                         Grid.Row="4"/>
+                <!-- Address -->
+                <TextBox Name="addressBox"
+                         Style="{StaticResource SmallStyledTextBox}"
+                         Grid.Row="5"/>
+                <!-- Upload Image Button -->
+                <Button Name="imageUploadButton"
+                        Style="{StaticResource SmallStyledButton}"
+                        Grid.Row="6"
+                        Click="imageInput_Click">
+                    Input Image
+                </Button>
+            </Grid>
         </Grid>
-        <Grid Grid.Column="2" Grid.Row="3">
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <!-- Username -->
-            <Canvas Grid.Row="1" ClipToBounds="False">
-                <TextBox Name="usernameBox" Style="{StaticResource UPtextBox}" Canvas.Left="0" Canvas.Top="0"/>
-            </Canvas>
-
-            <!-- Password -->
-            <Canvas Grid.Row="2" ClipToBounds="False">
-                <TextBox Name="passwordBox" Style="{StaticResource UPtextBox}" Canvas.Left="0" Canvas.Top="0"/>
-            </Canvas>
-
-            <!-- User Type -->
-            <Canvas Grid.Row="3" ClipToBounds="False">
-                <Label Name="usertypeBox" Style="{StaticResource UPlabel}" Canvas.Left="0" Canvas.Top="0"/>
-            </Canvas>
-
-            <!-- Email -->
-            <Canvas Grid.Row="4" ClipToBounds="False">
-                <TextBox Name="emailBox" Style="{StaticResource UPtextBox}" Canvas.Left="0" Canvas.Top="0"/>
-            </Canvas>
-
-            <!-- Phone Number -->
-            <Canvas Grid.Row="5" ClipToBounds="False">
-                <TextBox Name="phoneNumberBox" Style="{StaticResource UPtextBox}" Canvas.Left="0" Canvas.Top="0"/>
-            </Canvas>
-
-            <!-- Address -->
-            <Canvas Grid.Row="6" ClipToBounds="False">
-                <TextBox Name="addressBox" Style="{StaticResource UPtextBox}" Canvas.Left="0" Canvas.Top="0"/>
-            </Canvas>
-
-            <!-- Upload Image Button -->
-            <Canvas Grid.Row="7" ClipToBounds="False">
-                <Button Name="imageInput" Content="Upload Image" Style="{StaticResource StyledButton}" Margin="0,20,0,0"  Canvas.Left="0" Canvas.Top="0" Click="imageInput_Click"/>
-            </Canvas>
-        </Grid>
-        <Canvas Grid.Row="4" Grid.Column="1">
-            <Button Style="{StaticResource StyledButton}" Grid.Row="1" Grid.Column="1" Click="Button_Click">
-                Submit Changes
-            </Button>
-        </Canvas>
-        <Canvas Grid.Row="4" Grid.Column="2">
-            <Label Name="messageLabel" Style="{StaticResource StyledLabel}" ClipToBounds="False" HorizontalAlignment="Center"/>
-        </Canvas>
+        <Button Style="{StaticResource StyledButton}" Grid.Row="4" Click="Button_Click">
+            Submit Changes
+        </Button>
     </Grid>
 </Window>

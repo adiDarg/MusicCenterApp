@@ -43,7 +43,6 @@ C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\bin\Debu
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\bin\Debug\net8.0-windows\WebApiClient.pdb
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\MusicCenterWPF.csproj.AssemblyReference.cache
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\Resources\GeneralStyles.baml
-C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\Resources\UserProfileStyles.baml
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\Windows\Admin\AddRegistreeToGroup.g.cs
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\Windows\Admin\CreateGroup.g.cs
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\Windows\Admin\RemoveRegistreeFromGroup.g.cs
@@ -51,8 +50,11 @@ C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debu
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\Windows\Guest\SignIn.g.cs
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\Windows\Guest\SignUp.g.cs
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\Windows\Guest\StartupWindow.g.cs
+C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\Windows\Shared\AdditionalActions.g.cs
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\Windows\Shared\CollapseAndClose.g.cs
+C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\Windows\Shared\Messages.g.cs
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\Windows\Shared\NavBar.g.cs
+C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\Windows\Shared\Schedule.g.cs
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\Windows\Teacher\AddNewInstrument.g.cs
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\Windows\User\EnterValidationKey.g.cs
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\Windows\User\Requests.g.cs
@@ -70,8 +72,11 @@ C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debu
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\Windows\Guest\SignIn.baml
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\Windows\Guest\SignUp.baml
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\Windows\Guest\StartupWindow.baml
+C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\Windows\Shared\AdditionalActions.baml
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\Windows\Shared\CollapseAndClose.baml
+C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\Windows\Shared\Messages.baml
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\Windows\Shared\NavBar.baml
+C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\Windows\Shared\Schedule.baml
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\Windows\Teacher\AddNewInstrument.baml
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\Windows\User\EnterValidationKey.baml
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\Windows\User\Requests.baml
@@ -82,14 +87,10 @@ C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debu
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\MusicCenterWPF.AssemblyInfoInputs.cache
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\MusicCenterWPF.AssemblyInfo.cs
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\MusicCenterWPF.csproj.CoreCompileInputs.cache
+C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\MusicCenterWPF.sourcelink.json
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\MusicCen.C23E0C95.Up2Date
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\MusicCenterWPF.dll
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\refint\MusicCenterWPF.dll
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\MusicCenterWPF.pdb
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\MusicCenterWPF.genruntimeconfig.cache
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\ref\MusicCenterWPF.dll
-C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\Windows\Shared\Schedule.g.cs
-C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\Windows\Shared\Schedule.baml
-C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\MusicCenterWPF.sourcelink.json
-C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\Windows\Shared\Messages.g.cs
-C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\obj\Debug\net8.0-windows\Windows\Shared\Messages.baml

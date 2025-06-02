@@ -5,6 +5,7 @@ using MusicCenterWebService.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -33,7 +34,7 @@ namespace MusicCenterWPF.Windows.Admin
             InitializeComponent();
             this.Loaded += (s, e) =>
             {
-
+                LoadGroups();
             };
         }
         private async void LoadGroups()
@@ -48,12 +49,13 @@ namespace MusicCenterWPF.Windows.Admin
             {
                 ComboBoxItem item = new ComboBoxItem();
                 item.Content = group.Name;
-                item.Tag = group.Id;
-                groupChoice.Items.Add(group);
+                item.Tag = (string)group.Id;
+                groupChoice.Items.Add(item);
             }
         }
         private async void LoadRegistrees()
         {
+            registreeChoice.Items.Clear();
             WebClient<List<Registree>> webClient = new WebClient<List<Registree>>();
             webClient.port = 5004;
             webClient.Host = "localhost";
@@ -90,6 +92,7 @@ namespace MusicCenterWPF.Windows.Admin
                 selectedRegistreeId = "";
                 registreeChoice.SelectedIndex = 0;
             }
+            LoadRegistrees();
         }
 
         private void registreeChoice_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -110,12 +113,13 @@ namespace MusicCenterWPF.Windows.Admin
             if (success)
             {
                 MessageBox.Show("Registree added.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
-                this.Close();
             }
             else
             {
                 MessageBox.Show("Failed to add registree.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+            this.Visibility = Visibility.Hidden;
+            new AddRegistreeToGroup().Show();
         }
     }
 }

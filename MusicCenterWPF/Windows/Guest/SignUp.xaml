@@ -24,13 +24,36 @@
             FontSize="30px"
             >Sign Up
         </Label>
-        <Label Name="errorLabel" Style="{StaticResource ErrorLabel}"/>
-        <TextBox Name="usernameInput" Style="{StaticResource StyledTextBox}" Text="Username"/>
-        <TextBox Name="passwordInput" Style="{StaticResource StyledTextBox}" Text="Password"/>
-        <TextBox Name="emailInput" Style="{StaticResource StyledTextBox}" Text="Email"/>
-        <TextBox Name="addressInput" Style="{StaticResource StyledTextBox}" Text="Address"/>
-        <TextBox Name="phoneNumberInput" Style="{StaticResource StyledTextBox}" Text="Phone Number"/>
-        <Button Name="fileOpener" Style="{StaticResource StyledButton}" Content="Select Image" Width="174" Click="fileOpener_Click"/>
-        <Button Name="SignUpButton" Style="{StaticResource StyledButton}" Content="Sign Up" Click="SignUpButton_ClickAsync"/>
+        <TextBox 
+            Name="usernameInput" 
+            Style="{StaticResource StyledTextBox}" 
+            shared:TextBoxHelper.Placeholder="Username"/>
+        <TextBox 
+            Name="passwordInput" 
+            Style="{StaticResource StyledTextBox}" 
+            shared:TextBoxHelper.Placeholder="Password"/>
+        <TextBox 
+            Name="emailInput" 
+            Style="{StaticResource StyledTextBox}" 
+            shared:TextBoxHelper.Placeholder="Email"/>
+        <TextBox 
+            Name="addressInput" 
+            Style="{StaticResource StyledTextBox}" 
+            shared:TextBoxHelper.Placeholder="Address"/>
+        <TextBox 
+            Name="phoneNumberInput" 
+            Style="{StaticResource StyledTextBox}" 
+            shared:TextBoxHelper.Placeholder="Phone Number"/>
+        <Button 
+            Name="fileOpener" 
+            Style="{StaticResource StyledButton}" 
+            Content="Select Image" 
+            Width="174" 
+            Click="fileOpener_Click"/>
+        <Button 
+            Name="SignUpButton" 
+            Style="{StaticResource StyledButton}" 
+            Content="Sign Up" 
+            Click="SignUpButton_ClickAsync"/>
     </StackPanel>
 </Window>

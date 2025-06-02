@@ -20,7 +20,8 @@
         </Grid.RowDefinitions>
         <shared:CollapseAndClose/>
         <shared:NavBar Grid.Row="1"/>
-        <Label Grid.Row="2" Style="{StaticResource StyledLabel}">
+        <Label Grid.Row="2" 
+               Style="{StaticResource StyledLabel}">
             Add Registree To Group
         </Label>
         <Grid Grid.Row="3">
@@ -30,9 +31,27 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <ComboBox Name="groupChoice" Template="{DynamicResource ComboBoxTemplate2}" Style="{StaticResource StyledComboBox}" Grid.Row="1" SelectionChanged="groupChoice_SelectionChanged">Choose Group</ComboBox>
-            <ComboBox Name="registreeChoice" Template="{DynamicResource ComboBoxTemplate2}" Style="{StaticResource StyledComboBox}" Grid.Row="2" SelectionChanged="registreeChoice_SelectionChanged">Choose Registree</ComboBox>
-            <Button Style="{StaticResource StyledButton}" Grid.Row="3" Click="Button_Click">Add</Button>
+            <ComboBox 
+                Name="groupChoice" 
+                Template="{DynamicResource ComboBoxTemplate2}" 
+                Style="{StaticResource StyledComboBox}" 
+                Grid.Row="1" 
+                SelectionChanged="groupChoice_SelectionChanged"
+                shared:ComboBoxHelper.Placeholder="Choose Group">
+            </ComboBox>
+            <ComboBox 
+                Name="registreeChoice" 
+                Template="{DynamicResource ComboBoxTemplate2}" 
+                Style="{StaticResource StyledComboBox}" 
+                Grid.Row="2" 
+                SelectionChanged="registreeChoice_SelectionChanged"
+                shared:ComboBoxHelper.Placeholder="Choose Registree">
+            </ComboBox>
+            <Button Style="{StaticResource StyledButton}" 
+                    Grid.Row="3" 
+                    Click="Button_Click">
+                Add
+            </Button>
         </Grid>
     </Grid>
 </Window>

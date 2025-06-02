@@ -74,6 +74,13 @@ namespace MusicCenterWPF.Windows
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
             user.Name = usernameBox.Text;
+            DbContext.GetInstance().OpenConnection();
+            if (new RepositoryUOW().GetUserRepository().GetByUsername(user.Name) != null) {
+                MessageBox.Show("Username Taken", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                DbContext.GetInstance().CloseConnection();
+                return;
+            }
+            DbContext.GetInstance().CloseConnection();
             user.Password = passwordBox.Text;
             user.Email = emailBox.Text;
             user.Address = addressBox.Text;
@@ -90,7 +97,10 @@ namespace MusicCenterWPF.Windows
                 }
                 catch (Exception ex)
                 {
-                    errorLabel.Content = $"Error copying file: {ex.Message}";
+                    MessageBox.Show($"Error copying file: {ex.Message}",
+                        "Error",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Error);
                 }
             }
             WebClient<UserModel> webClient = new WebClient<UserModel>();
@@ -111,7 +121,10 @@ namespace MusicCenterWPF.Windows
             }
             Visibility = Visibility.Hidden;
             UserProfile profileWindow = new UserProfile();
-            profileWindow.messageLabel.Content = success ? "Profile Updated" : "Update Failed";
+            MessageBox.Show(success ? "Profile Updated" : "Update Failed",
+                success? "Success":"Error",
+                MessageBoxButton.OK,
+                success? MessageBoxImage.Information:MessageBoxImage.Error);
             profileWindow.Show();
         }
         private async Task<string> CopyImage(FileStream sourceStream,string fileName)
