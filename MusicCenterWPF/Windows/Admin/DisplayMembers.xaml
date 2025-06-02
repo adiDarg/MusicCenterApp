@@ -1,0 +1,56 @@
+﻿<Window x:Class="MusicCenterWPF.Windows.Admin.DisplayMembers"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MusicCenterWPF.Windows.Admin"
+        xmlns:shared="clr-namespace:MusicCenterWPF.Windows.Shared"
+        mc:Ignorable="d"
+        Title="DisplayMembers" Height="450" Width="800"
+        WindowStyle="None"
+        WindowState="Maximized"
+        ResizeMode="CanMinimize"
+        AllowsTransparency="False">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <shared:CollapseAndClose Grid.Row="0"/>
+        <shared:NavBar Grid.Row="1"/>
+        <Label Style="{StaticResource StyledLabel}"
+       Grid.Row="2">
+            View Members
+        </Label>
+        <Grid Grid.Row="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.3*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <ComboBox Style="{StaticResource StyledComboBox}"
+                      Template="{DynamicResource ComboBoxTemplate1}"
+                      Name="typeChoiceBox"
+                      shared:ComboBoxHelper.Placeholder="Choose Type" 
+                      SelectionChanged="typeChoiceBox_SelectionChanged">
+                <ComboBoxItem Content="Users"/>
+                <ComboBoxItem Content="Registrees"/>
+                <ComboBoxItem Content="Teachers"/>
+                <ComboBoxItem Content="Instructors"/>
+                <ComboBoxItem Content="Admins"/>
+            </ComboBox>
+            <ScrollViewer VerticalScrollBarVisibility="Auto"
+                          Grid.Row="1">
+                <Grid Name="profileCardsGrid">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                </Grid>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</Window>
