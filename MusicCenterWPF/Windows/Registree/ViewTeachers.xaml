@@ -6,7 +6,11 @@
         xmlns:local="clr-namespace:MusicCenterWPF.Windows.Registree"
         xmlns:shared="clr-namespace:MusicCenterWPF.Windows.Shared"
         mc:Ignorable="d"
-        Title="ViewTeachers" Height="450" Width="800">
+        Title="ViewTeachers" Height="450" Width="800"
+        WindowStyle="None"
+        WindowState="Maximized"
+        ResizeMode="CanMinimize"
+        AllowsTransparency="False">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.3*"/>
@@ -20,5 +24,16 @@
                Grid.Row="2">
             View Teachers
         </Label>
+        <ScrollViewer VerticalScrollBarVisibility="Auto"
+                      Grid.Row="3">
+            <Grid Name="profileCardsGrid">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+        </Grid>
+        </ScrollViewer>
     </Grid>
 </Window>
