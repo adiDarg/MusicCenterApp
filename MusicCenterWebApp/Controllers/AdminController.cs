@@ -21,7 +21,7 @@ namespace MusicCenterWebApp.Controllers
         {
             return View();
         }
-        
+
         [HttpGet]
         public async Task<IActionResult> CreateGroup()
         {
@@ -34,8 +34,13 @@ namespace MusicCenterWebApp.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> SubmitCreateGroup([FromForm]Group group, [FromForm] string instructorID)
+        public async Task<IActionResult> SubmitCreateGroup([FromForm] Group group, [FromForm] string instructorID)
         {
+            if (group.Name == null || group.Room == null || instructorID == "0")
+            {
+                TempData["message"] = "Please fill all fields";
+                return Redirect("CreateGroup");
+            }
             WebClient<Group> webClient = new WebClient<Group>();
             webClient.port = 5004;
             webClient.Host = "localhost";
@@ -43,7 +48,7 @@ namespace MusicCenterWebApp.Controllers
             group.Instructor = new Instructor { Id = instructorID };
             webClient.AddParams("group", group.ToJson());
             bool success = await webClient.PostAsync(group);
-            TempData["groupSubmitSuccess"] = success;
+            TempData["message"] = success ? "Group created." : "Group creation failed.";
             return Redirect("CreateGroup");
         }
 
@@ -61,6 +66,11 @@ namespace MusicCenterWebApp.Controllers
         [HttpPost]
         public async Task<IActionResult> AddInstructorToGroup([FromForm] string groupID, [FromForm] string instructorID)
         {
+            if (groupID == "0" || instructorID == "0")
+            {
+                TempData["message"] = "Please fill all fields";
+                return Redirect("UpdateInstructorToGroup");
+            }
             WebClient<Group> webClient = new WebClient<Group>();
             webClient.port = 5004;
             webClient.Host = "localhost";
@@ -68,7 +78,7 @@ namespace MusicCenterWebApp.Controllers
             webClient.AddParams("groupID", groupID);
             webClient.AddParams("instructorID", instructorID);
             bool success = await webClient.PostAsync(new Group());
-            TempData["instructorUpdateSuccess"] = success;
+            TempData["message"] = success ? "Instructor updated." : "Failed to update instructor.";
             return Redirect("UpdateInstructorToGroup");
         }
 
@@ -86,6 +96,11 @@ namespace MusicCenterWebApp.Controllers
         [HttpPost]
         public async Task<IActionResult> SubmitAddRegistreeToGroup([FromForm] string groupID, [FromForm] string registreeID)
         {
+            if (groupID == "0" || registreeID == "0")
+            {
+                TempData["message"] = "Please fill all fields";
+                return Redirect("AddRegistreeToGroup");
+            }
             WebClient<Group> webClient = new WebClient<Group>();
             webClient.port = 5004;
             webClient.Host = "localhost";
@@ -93,12 +108,12 @@ namespace MusicCenterWebApp.Controllers
             webClient.AddParams("groupID", groupID);
             webClient.AddParams("registreeID", registreeID);
             bool success = await webClient.PostAsync(new Group());
-            TempData["AddRegistreeSuccess"] = success;
+            TempData["message"] = success ? "Registree added." : "Failed to add registree.";
             return Redirect("AddRegistreeToGroup");
         }
 
         [HttpGet]
-        public async Task<IActionResult> DisplayAllMembers([FromQuery]string type)
+        public async Task<IActionResult> DisplayAllMembers([FromQuery] string type)
         {
             WebClient<List<User>> webClient = new WebClient<List<User>>();
             webClient.port = 5004;
@@ -128,13 +143,17 @@ namespace MusicCenterWebApp.Controllers
         [HttpPost]
         public async Task<IActionResult> MakeTeacher([FromForm] string userID)
         {
+            if (userID == "0") {
+                TempData["message"] = "Please fill all fields";
+                return Redirect("PromoteToTeacher");
+            }
             WebClient<Teacher> webClient = new WebClient<Teacher>();
             webClient.port = 5004;
             webClient.Host = "localhost";
             webClient.Path = "api/Admin/MakeUserTeacher";
             webClient.AddParams("userID", userID);
             bool success = await webClient.PostAsync(new Teacher());
-            TempData["isUserTeacher"] = success;
+            TempData["message"] = success ? "User promoted." : "Failed to promote.";
             return Redirect("PromoteToTeacher");
         }
         [HttpGet]
@@ -151,13 +170,17 @@ namespace MusicCenterWebApp.Controllers
         [HttpPost]
         public async Task<IActionResult> MakeInstructor([FromForm] string userID)
         {
+            if (userID == "0") {
+                TempData["message"] = "Please fill all fields";
+                return Redirect("PromoteToInstructor");
+            }
             WebClient<Teacher> webClient = new WebClient<Teacher>();
             webClient.port = 5004;
             webClient.Host = "localhost";
             webClient.Path = "api/Admin/MakeUserInstructor";
             webClient.AddParams("userID", userID);
             bool success = await webClient.PostAsync(new Teacher());
-            TempData["isTeacherInstructor"] = success;
+            TempData["message"] = success ? "Teacher promoted." : "Failed to promote teacher.";
             return Redirect("PromoteToInstructor");
         }
         [HttpGet]
@@ -174,13 +197,18 @@ namespace MusicCenterWebApp.Controllers
         [HttpPost]
         public async Task<IActionResult> DemoteTeacher([FromForm] string userID)
         {
+            if (userID == "0")
+            {
+                TempData["message"] = "Please fill all fields";
+                return Redirect("DemoteFromTeacher");
+            }
             WebClient<Teacher> webClient = new WebClient<Teacher>();
             webClient.port = 5004;
             webClient.Host = "localhost";
             webClient.Path = "api/Admin/DemoteTeacher";
             webClient.AddParams("userID", userID);
             bool success = await webClient.PostAsync(new Teacher());
-            TempData["isTeacherDemoted"] = success;
+            TempData["message"] = success ? "Teacher demoted." : "Failed to demote teacher.";
             return Redirect("DemoteFromTeacher");
         }
         [HttpGet]
@@ -197,13 +225,18 @@ namespace MusicCenterWebApp.Controllers
         [HttpPost]
         public async Task<IActionResult> DemoteInstructor([FromForm] string userID)
         {
+            if (userID == "0")
+            {
+                TempData["message"] = "Please fill all fields";
+                return Redirect("DemoteFromInstructor");
+            }
             WebClient<Instructor> webClient = new WebClient<Instructor>();
             webClient.port = 5004;
             webClient.Host = "localhost";
             webClient.Path = "api/Admin/DemoteInstructor";
             webClient.AddParams("userID", userID);
             bool success = await webClient.PostAsync(new Instructor());
-            TempData["isInstructorDemoted"] = success;
+            TempData["message"] = success ? "Demoted instructor." : "Failed to demote instructor.";
             return Redirect("DemoteFromInstructor");
         }
 
@@ -221,12 +254,22 @@ namespace MusicCenterWebApp.Controllers
         [HttpGet]
         public async Task<IActionResult> ChooseTeacherForLesson([FromQuery] string registreeID)
         {
+            if (registreeID == "0")
+            {
+                TempData["message"] = "Please fill all fields";
+                return Redirect("ScheduleLesson");
+            }
             WebClient<List<Teacher>> webClient = new WebClient<List<Teacher>>();
             webClient.port = 5004;
             webClient.Host = "localhost";
             webClient.Path = "api/Admin/GetTeachersByRegistree";
             webClient.AddParams("registreeID", registreeID);
             List<Teacher> teachers = await webClient.GetAsync();
+            if (teachers.Count == 0)
+            {
+                TempData["message"] = "Cant schedule lesson for user with no teachers.";
+                return Redirect("ScheduleLesson");
+            }
             ViewBag.registreeID = registreeID;
             return View(teachers);
         }
@@ -238,19 +281,24 @@ namespace MusicCenterWebApp.Controllers
             [FromForm] string room,
             [FromForm] string date)
         {
+            if (registreeID == "0" || teacherID == "0" || room == null || date == null)
+            {
+                TempData["message"] = "Please fill all fields";
+                return Redirect("ScheduleLesson");
+            }
             Lesson lesson = new Lesson();
             lesson.Student = new Registree { Id = registreeID };
-            lesson.Teacher = new Teacher { Id = teacherID };            
+            lesson.Teacher = new Teacher { Id = teacherID };
             lesson.Room = room;
             lesson.Date = date;
-            
+
             WebClient<Lesson> webClient = new WebClient<Lesson>();
             webClient.port = 5004;
             webClient.Host = "localhost";
             webClient.Path = "api/Admin/CreateLesson";
             webClient.AddParams("lesson", lesson.ToJson());
             bool success = await webClient.PostAsync(lesson);
-            TempData["isLessonCreated"] = success;
+            TempData["message"] = success ? "Lesson scheduled." : "Failed to schedule lesson.";
             return Redirect("ScheduleLesson");
         }
 
@@ -271,6 +319,11 @@ namespace MusicCenterWebApp.Controllers
             [FromForm] string date,
             [FromForm] string room)
         {
+            if (groupID == "0" || date == null || room == null)
+            {
+                TempData["message"] = "Please fill all fields";
+                return Redirect("ScheduleMeeting");
+            }
             RepositoryUOW repository = new RepositoryUOW();
             Meeting meeting = new Meeting();
             meeting.Group = new Group { Id = groupID };
@@ -283,7 +336,7 @@ namespace MusicCenterWebApp.Controllers
             webClient.Path = "api/Admin/CreateMeeting";
             webClient.AddParams("meeting", meeting.ToJson());
             bool success = await webClient.PostAsync(meeting);
-            TempData["isMeetingCreated"] = success;
+            TempData["message"] = success? "Meeting created.":"Failed to create meeting.";
             return Redirect("ScheduleMeeting");
         }
 
@@ -303,6 +356,11 @@ namespace MusicCenterWebApp.Controllers
             [FromForm] string groupID,
             [FromForm] string userID)
         {
+            if (userID == "0" || groupID == "0")
+            {
+                TempData["message"] = "Please fill all fields";
+                return Redirect("RemoveParticipantFromGroup");
+            }
             WebClient<Group> webClient = new WebClient<Group>();
             webClient.port = 5004;
             webClient.Host = "localhost";
@@ -310,7 +368,7 @@ namespace MusicCenterWebApp.Controllers
             webClient.AddParams("groupID",groupID);
             webClient.AddParams("userID", userID);
             bool success = await webClient.PostAsync(new Group());
-            TempData["isParticipantRemoved"] = success;
+            TempData["message"] = success? "Participant removed.":"Failed to remove participant.";
             return Redirect("RemoveParticipantFromGroup");
         }
 
@@ -339,7 +397,16 @@ namespace MusicCenterWebApp.Controllers
         [HttpPost]
         public async Task<IActionResult> SendMessage([FromForm] Message message, [FromForm]string recieversIDs)
         {
+            if (message.Title == null || message.Description == null)
+            {
+                TempData["message"] = "Please fill all fields";
+                return Redirect("SendMessageForm");
+            }
             List<string> ids = JsonSerializer.Deserialize<List<string>>(recieversIDs).ToList();
+            if (ids.Count == 0) {
+                TempData["message"] = "Please include recievers";
+                return Redirect("SendMessageForm");
+            }
             Message? dbMessage = await GetMessageByTitleAndDescription(message.Title, message.Description);
             bool success = true;
             if (dbMessage == null)
@@ -360,10 +427,9 @@ namespace MusicCenterWebApp.Controllers
             }
             message = dbMessage;
             bool firstFail = true;
-            TempData["errorMessage"] = success ? "" : "Failed to post message";
+            TempData["message"] = success ? "Message sent successfully." : "Failed to post message.";
             if (!success)
             {
-                TempData["messageSent"] = false;
                 return Redirect("SendMessageForm");
             }
             foreach (string id in ids) {
@@ -371,12 +437,11 @@ namespace MusicCenterWebApp.Controllers
                 if (!success)
                 {
                     DbContext.GetInstance().OpenConnection();
-                    TempData["errorMesssage"] += (firstFail? "" : ", \n") + "Failed to add " + new RepositoryUOW().GetUserRepository().GetById(id).Name;
+                    TempData["messsage"] += (firstFail? "" : ", \n") + "Failed to add " + new RepositoryUOW().GetUserRepository().GetById(id).Name;
                     DbContext.GetInstance().CloseConnection();
                     firstFail = false;
                 }
             }
-            TempData["messageSent"] = success;
             return Redirect("SendMessageForm");
         }
         [HttpGet]
@@ -414,10 +479,14 @@ namespace MusicCenterWebApp.Controllers
             StudentTeacherPairViewModel result = await webClient.GetAsync();
             return View(result);
         }
-        
+
         [HttpPost]
         public async Task<IActionResult> PostStudentTeacherPair(string registreeID, string teacherID)
         {
+            if (registreeID == "0" || teacherID == "0")
+            {
+                TempData["message"] = "Please fill all fields.";
+            }
             WebClient<Teacher> webClient = new WebClient<Teacher> {
                 port = 5004,
                 Host = "localhost",
@@ -426,7 +495,7 @@ namespace MusicCenterWebApp.Controllers
             webClient.AddParams("teacherID", teacherID);
             webClient.AddParams("registreeID", registreeID);
             bool success = await webClient.PostAsync(new Teacher());
-            TempData["postStudentTeacherPairMessage"] = success ? "Pair added or exists!" : "Failed to register user..";
+            TempData["message"] = success ? "Pair added." : "Failed to register user.";
             return Redirect("AddStudentTeacherPair");
         }
     }

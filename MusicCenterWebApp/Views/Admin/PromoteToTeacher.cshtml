@@ -2,8 +2,6 @@
 @model List<User>
 @{
     ViewData["Title"] = "PromoteToTeacher";
-    bool? success = TempData["isUserTeacher"] as bool?;
-    ViewBag.isUserTeacher = success;
     Layout = "~/Views/Shared/MasterPage.cshtml";
 }
 
@@ -18,8 +16,4 @@
     </select>
     <button type="submit">Submit</button>
 </form>
-@if (ViewBag.isUserTeacher != null)
-{
-    <h4>@(ViewBag.isUserTeacher? "User promoted!": "Promotion failed..")</h4>
-}
 

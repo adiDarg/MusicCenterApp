@@ -1,0 +1,25 @@
+﻿@using MusicCenterModels
+@model StudentTeacherPairViewModel 
+@{
+    ViewData["Title"] = "AddStudentTeacherPair";
+    Layout = "~/Views/Shared/MasterPage.cshtml";
+}
+
+<h1>Register Student To Teacher</h1>
+<form method="post" action="/Admin/PostStudentTeacherPair">
+    <select name="registreeID">
+        <option value="0">Choose Student</option>
+        @foreach (var registree in Model.Registrees)
+        {
+            <option value="@registree.Id">@registree.Name</option>
+        }
+    </select>
+    <select name="teacherID">
+        <option value="0">Choose Teacher</option>
+        @foreach (var teacher in Model.Teachers)
+        {
+            <option value="@teacher.Id">@teacher.Name</option>
+        }
+    </select>
+    <button type="submit">Add</button>
+</form>

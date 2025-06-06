@@ -50,20 +50,19 @@ namespace MusicCenterWebApp.Controllers
             }
             if (image != null && image.Length > 0)
             {
-                var fileName = Guid.NewGuid().ToString() + Path.GetExtension(image.FileName);
-                var uploadsDirectory = Path.Combine(Directory.GetCurrentDirectory(), 
-                    "wwwroot", "uploads", "images");
-                var filePath = Path.Combine(uploadsDirectory, fileName);
-
-                using (var stream = new FileStream(filePath, FileMode.Create))
+                string? path = await CopyImage(image);
+                if (path != null)
                 {
-                    await image.CopyToAsync(stream);
+                    user.Image = path;
                 }
-                user.Image = "/uploads/images/" + fileName;
+                else
+                {
+                    user.Image = "placeholder.jpg";
+                }
             }
             else
             {
-                user.Image = "/uploads/images/placeholder.jpg";
+                user.Image = "placeholder.jpg";
             }
 
             user.Email = user.Email == null ? "" : user.Email;
@@ -91,6 +90,18 @@ namespace MusicCenterWebApp.Controllers
             DbContext.GetInstance().CloseConnection();
             return RedirectToAction("LoginForm");
         }
+        [HttpPost]
+        private async Task<string?> CopyImage(IFormFile image)
+        {
+            WebClient<string> webClient = new WebClient<string>();
+            webClient.port = 5004;
+            webClient.Host = "localhost";
+            webClient.Path = "api/User/UploadImage";
+            using (var stream = image.OpenReadStream())
+            {
+                return await webClient.PostAsync<string>(stream, image.FileName);
+            }
+        }
 
         [HttpGet]
         private async Task<bool> IsUsernameTaken(string username)
@@ -104,8 +115,13 @@ namespace MusicCenterWebApp.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login([FromForm]string username, [FromForm]string password)
+        public async Task<IActionResult> Login([FromForm] string username, [FromForm] string password)
         {
+            if (username == null || password == null)
+            {
+                TempData["message"] = "Please fill all fields.";
+                return Redirect("Login");
+            }
             WebClient<String> client = new WebClient<String>();
             client.port = 5004;
             client.Path = "api/Guest/Login";
@@ -122,7 +138,7 @@ namespace MusicCenterWebApp.Controllers
                 //return RedirectToAction("Index");
                 return RedirectToAction("Index", "User");
             }
-            ViewBag.Error = true;
+            TempData["message"] = "Login failed.";
             return View("LoginForm");
         }
     }

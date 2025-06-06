@@ -1,10 +1,6 @@
 ﻿<link href="~/css/generalstyles.css" rel="stylesheet" />
 @{
     ViewData["Title"] = "RegistrationForm";
-    bool? success = TempData["isRegistrerSuccessful"] as bool?;
-    ViewBag.success = success;
-    string errorMessage = TempData["errorMessage"] as string == null ? "" : TempData["errorMessage"] as string;
-    ViewBag.errorMessage = errorMessage;
     Layout = "~/Views/Shared/MasterPage.cshtml";
 }
 
@@ -41,9 +37,4 @@
     </ul>
     <button type="submit">Submit</button>
 </form>
-@if (ViewBag.success != null && !ViewBag.success)
-{
-    <h4>Login failed..</h4>
-}
-<h4>@ViewBag.errorMessage</h4>
 

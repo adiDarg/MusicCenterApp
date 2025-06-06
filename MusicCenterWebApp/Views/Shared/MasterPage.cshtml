@@ -15,6 +15,12 @@
         ViewBag.type = "";
         ViewBag.linkClass = "hidden";
     }
+    if (TempData["message"] != null)
+    {
+        <script>
+            alert('@TempData["message"]')
+        </script>
+    }
 }
 <link href="~/css/masterpagestyle.css" rel="stylesheet" />
 <div class="wrapper">

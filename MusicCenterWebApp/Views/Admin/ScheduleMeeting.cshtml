@@ -2,8 +2,6 @@
 @model List<Group>
 @{
     ViewData["Title"] = "ScheduleMeeting";
-    bool? success = TempData["isMeetingCreated"] as bool?;
-    ViewBag.isMeetingCreated = success;
     Layout = "~/Views/Shared/MasterPage.cshtml";
 }
 
@@ -40,7 +38,3 @@
         inputField.value = selectedOption.getAttribute("data-room")
     })
 </script>
-@if (success != null && (bool)success)
-{
-    <h4>@((bool)success? "Meeting created!": "Meeting creation failed..")</h4>
-}

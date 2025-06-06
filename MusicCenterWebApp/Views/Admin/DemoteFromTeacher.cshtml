@@ -2,8 +2,6 @@
 @model List<Teacher>
 @{
     ViewData["Title"] = "DemoteFromTeacher";
-    bool? success = TempData["isTeacherDemoted"] as bool?;
-    ViewBag.isTeacherDemoted = success;
     Layout = "~/Views/Shared/MasterPage.cshtml";
 }
 
@@ -18,8 +16,4 @@
     </select>
     <button type="submit">Submit</button>
 </form>
-@if (ViewBag.isTeacherDemoted != null)
-{
-    <h4>@(ViewBag.isTeacherDemoted ? "User Demoted!" : "Demotion failed.. Teacher might still have lessons scheduled. Please cancel all lessons involving this teacher beofre demotion.")</h4>
-}
 

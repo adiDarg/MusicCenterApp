@@ -2,8 +2,6 @@
 @model List<Group>
 @{
     ViewData["Title"] = "RemoveParticipantFromGroup";
-    bool? success = TempData["isParticipantRemoved"] as bool?;
-    ViewBag.isParticipantRemoved = success;
     Layout = "~/Views/Shared/MasterPage.cshtml";
 }
 
@@ -28,10 +26,6 @@
     </ul>
     <button type="submit">Remove</button>
 </form>
-@if (ViewBag.isParticipantRemoved != null && ViewBag.isParticipantRemoved)
-{
-    <h4>@(ViewBag.isParticipantRemoved? "Participant successfully removed!" : "Removal failed..")</h4>
-}
 
 <script>
     document.getElementById("groupInput").addEventListener("change", function () {

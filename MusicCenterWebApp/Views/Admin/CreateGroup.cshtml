@@ -2,8 +2,6 @@
 @model List<Instructor>
 @{
     ViewData["Title"] = "CreateGroup";
-    bool? success = TempData["groupSubmitSuccess"] as bool?;
-    ViewBag.groupSubmitSuccess = success;
     Layout = "~/Views/Shared/MasterPage.cshtml";
 }
 
@@ -30,9 +28,5 @@
     </ul>
     <button type="submit">Submit</button>
 </form>
-@if (ViewBag.groupSubmitSuccess != null)
-{
-    <h4>@(ViewBag.groupSubmitSuccess? "Group created successfully!" : "Group creation failed..")</h4>
-}
 
 

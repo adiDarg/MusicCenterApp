@@ -2,8 +2,6 @@
 @model List<Instrument>
 @{
     ViewData["Title"] = "AddInstrument";
-    bool? isInstrumentAdded = TempData["isInstrumentAdded"] as bool?;
-    ViewBag.isInstrumentAdded = isInstrumentAdded;
     Layout = "~/Views/Shared/MasterPage.cshtml";
 }
 
@@ -19,9 +17,5 @@
     </select>
     <button type="submit">Add</button>
 </form>
-@if (ViewBag.isInstrumentAdded != null)
-{
-    <h4>@(ViewBag.isInstrumentAdded? "Instrument added succesfully!": "Instrument addition failed..")</h4>
-}
 
 

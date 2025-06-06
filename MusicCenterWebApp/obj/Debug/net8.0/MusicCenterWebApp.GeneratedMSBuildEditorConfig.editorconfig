@@ -34,6 +34,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkUmVnaXN0cmVlVG9Hcm91cC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Owner/Desktop/ביה''ס/מדמ''ח/MusicCenter/MusicCenterWebApp/Views/Admin/AddStudentTeacherPair.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkU3R1ZGVudFRlYWNoZXJQYWlyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Owner/Desktop/ביה''ס/מדמ''ח/MusicCenter/MusicCenterWebApp/Views/Admin/ChooseMemberTypeToDisplay.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ2hvb3NlTWVtYmVyVHlwZVRvRGlzcGxheS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -176,6 +180,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Owner/Desktop/ביה''ס/מדמ''ח/MusicCenter/MusicCenterWebApp/Views/User/GetRequests.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxHZXRSZXF1ZXN0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Owner/Desktop/ביה''ס/מדמ''ח/MusicCenter/MusicCenterWebApp/Views/User/GetSchedule.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxHZXRTY2hlZHVsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Owner/Desktop/ביה''ס/מדמ''ח/MusicCenter/MusicCenterWebApp/Views/User/Index.cshtml]

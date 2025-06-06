@@ -2,8 +2,6 @@
 @model UpdateGroupInstructorViewModel
 @{
     ViewData["Title"] = "UpdateInstructorToGroup";
-    bool? success = TempData["instructorUpdateSuccess"] as bool?;
-    ViewBag.instructorUpdateSuccess = success;
     Layout = "~/Views/Shared/MasterPage.cshtml";
 }
 
@@ -33,8 +31,4 @@
       </ul>
     <button type="submit">Submit</button>
 </form>
-@if (ViewBag.instructorUpdateSuccess != null)
-{
-    <h4>@(ViewBag.instructorUpdateSuccess ? "Group updated successfully!" : "Group update failed..")</h4>
-}
 

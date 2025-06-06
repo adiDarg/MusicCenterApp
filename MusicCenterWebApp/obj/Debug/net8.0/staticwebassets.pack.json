@@ -277,6 +277,10 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "C:\\Users\\Owner\\Desktop\\ביה''ס\\מדמ''ח\\MusicCenter\\MusicCenterWebApp\\wwwroot\\uploads\\images\\08d64c92-5277-4fec-b5aa-642d6cb25b5b.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\images\\08d64c92-5277-4fec-b5aa-642d6cb25b5b.jpeg"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.MusicCenterWebApp.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

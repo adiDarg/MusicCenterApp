@@ -3,10 +3,8 @@ using WebApiClient;
 using MusicCenterWebService.Repositories;
 using MusicCenterModels;
 using MusicCenterWebService;
-using NuGet.Protocol;
 using Utility;
-using System.Diagnostics.Metrics;
-
+using NuGet.Protocol;
 namespace MusicCenterWebApp.Controllers
 {
    
@@ -65,7 +63,8 @@ namespace MusicCenterWebApp.Controllers
             webClient.Host = "localhost";
             webClient.Path = "api/User/HandleRequest";
             webClient.AddParams("request", request.ToJson());
-            TempData["requestHandled"] = await webClient.PostAsync(request);
+            bool success = await webClient.PostAsync(request);
+            TempData["message"] = success? "Request sent.":"Failed to send request.";
             return RedirectToAction("RequestsRecieved");
         }
 
@@ -88,10 +87,16 @@ namespace MusicCenterWebApp.Controllers
             [FromForm] string Description,
             [FromForm] bool IsSeen,
             [FromForm] bool IsApproved,
-            [FromForm] string SenderID,
+            [FromForm] string senderID,
             [FromForm] string RequestType,
-            [FromForm] string RecieverID)
+            [FromForm] string recieverID)
         {
+            if (Title == null || Description == null ||
+                RequestType == "0" || senderID == "0" || recieverID == "0")
+            {
+                TempData["message"] = "Please fill all fields";
+                return Redirect("SendRequest");
+            }
             Request request = new Request();
             request.Id = RequestID;
             request.Title = Title;
@@ -99,10 +104,10 @@ namespace MusicCenterWebApp.Controllers
             request.IsSeen = IsSeen;
             request.IsApproved = IsApproved;
             request.Sender = new User();
-            request.Sender.Id = SenderID;
+            request.Sender.Id = senderID;
             request.RequestType = RequestType;
             request.Reciever = new User();
-            request.Reciever.Id = RecieverID;
+            request.Reciever.Id = recieverID;
             WebClient<Request> client = new WebClient<Request>();
             client.port = 5004;
             client.Host = "localhost";
@@ -126,7 +131,23 @@ namespace MusicCenterWebApp.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Update([FromForm]User user, [FromForm] IFormFile image) {
+        public async Task<IActionResult> Update([FromForm] User user, [FromForm] IFormFile image) {
+            if (user.Name == null || user.Password == null) {
+                TempData["message"] = "Username and Password cannot be empty.";
+                return Redirect("UpdateProfile");
+            }
+
+            DbContext.GetInstance().OpenConnection();
+            User? userFromDb = new RepositoryUOW().GetUserRepository().GetByUsername(user.Name);
+            if (userFromDb != null && userFromDb.Id != userID)
+            {
+                TempData["message"] = "Username taken.";
+                DbContext.GetInstance().CloseConnection();
+                return Redirect("UpdateProfile");
+            }
+            DbContext.GetInstance().CloseConnection();
+
+
             if (image != null && image.Length > 0)
             {
                 string? path = await CopyImage(image);
@@ -143,7 +164,6 @@ namespace MusicCenterWebApp.Controllers
             {
                 user.Image = GetUserImage();
             }
-
             user.Email = user.Email == null ? "" : user.Email;
             user.Address = user.Address == null? "" : user.Address;
             user.PhoneNumber = user.PhoneNumber == null ? "" : user.PhoneNumber;
@@ -200,10 +220,13 @@ namespace MusicCenterWebApp.Controllers
         }
         
         [HttpPost]
-        public async Task<IActionResult> HandleValidationKey(
-            [FromForm] string userID,
-            [FromForm] string key)
+        public async Task<IActionResult> HandleValidationKey([FromForm] string key)
         {
+            if (key == null)
+            {
+                TempData["message"] = "please fill all fields";
+                return Redirect("Enter Validation Key");
+            }
             WebClient<User> webClient = new WebClient<User>();
             webClient.port = 5004;
             webClient.Host = "localhost";
@@ -216,7 +239,7 @@ namespace MusicCenterWebApp.Controllers
                 HttpContext.Session.SetString("userType", "Registree");
                 TempData["userType"] = "Registree";
             }
-            TempData["isKeyValid"] = result;
+            TempData["message"] = result? "Key input successfull.":"Key entry failed. Make sure The correct key was entered.";
             return Redirect("EnterValidationKey");
         }
         
@@ -268,6 +291,12 @@ namespace MusicCenterWebApp.Controllers
             HttpContext.Session.SetString("userID", "");
             TempData["userID"] = "";
             return RedirectToAction("Index","Guest");
+        }
+        
+        [HttpGet]
+        public IActionResult GetSchedule()
+        {
+            return View(new ScheduleViewModel { Lessons = new List<Lesson>(), Meetings = new List<Meeting>() });
         }
     }
 }

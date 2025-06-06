@@ -26,7 +26,7 @@
             <input type="hidden" name="IsApproved" value="false" />
         </li>
         <li class="detail">
-            <input type="hidden" name="SenderID" value="@ViewBag.userID" />
+            <input type="hidden" name="senderID" value="@ViewBag.userID" />
         </li>
         <li class="detail">
             <select name="RequestType">
@@ -39,7 +39,7 @@
             </select>
         </li>
         <li class="detail">
-            <select name="RecieverID" value="@ViewBag.RecieverID">
+            <select name="recieverID" value="@ViewBag.RecieverID">
                 <option value="0">Choose Reciever</option>
                 @foreach (User user in Model)
                 {

@@ -30,13 +30,19 @@ namespace MusicCenterWebApp.Controllers
         [HttpPost]
         public async Task<IActionResult> AddNewInstrument([FromForm] string instrumentID)
         {
+            if (instrumentID == "0")
+            {
+                TempData["message"] = "Please fill all fields";
+                return Redirect("AddInstrument");
+            }
             WebClient<Instrument> webClient = new WebClient<Instrument>();
             webClient.port = 5004;
             webClient.Host = "localhost";
             webClient.Path = "api/Teacher/AddInstrument";
             webClient.AddParams("teacherID", HttpContext.Session.GetString("userID"));
             webClient.AddParams("instrumentID", instrumentID);
-            TempData["isInstrumentAdded"] = await webClient.PostAsync(new Instrument());
+            bool success = await webClient.PostAsync(new Instrument());
+            TempData["message"] = success ? "Instrument added." : "Failed to add instrument.";
             return Redirect("AddInstrument");
         }
 

@@ -3,10 +3,6 @@
 @{
     ViewData["Title"] = "SendMessageForm";
     Layout = "~/Views/Shared/MasterPage.cshtml";
-    bool? success = TempData["messageSent"] as bool?;
-    string? errorMessage = TempData["errorMesssage"] as string;
-    ViewBag.messageSent = success;
-    ViewBag.errorMessage = errorMessage;
 }
 
 <h1>Send Message</h1>
@@ -46,18 +42,6 @@
     <input type="hidden" name="recieversIDs" id="recieversIDs" />
     <button type="submit">Send</button>
 </form>
-@if (ViewBag.messageSent != null)
-{
-    @if (ViewBag.messageSent)
-    {
-        <h5>Message sent!</h5>
-    }
-    else
-    {
-        <h5>@(ViewBag.errorMessage)</h5>
-    }
-}
-
 <script>
     sessionStorage.setItem("selectedItems", JSON.stringify([]));
     
