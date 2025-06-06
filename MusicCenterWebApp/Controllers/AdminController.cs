@@ -402,5 +402,32 @@ namespace MusicCenterWebApp.Controllers
             webClient.AddParams("receiverID", userID);
             return await webClient.PostAsync(message);
         }
+        
+        [HttpGet]
+        public async Task<IActionResult> AddStudentTeacherPair()
+        {
+            WebClient<StudentTeacherPairViewModel> webClient = new WebClient<StudentTeacherPairViewModel> {
+                port = 5004,
+                Host = "localhost",
+                Path = "api/Admin/GetStudentTeacherPairViewModel"
+            };
+            StudentTeacherPairViewModel result = await webClient.GetAsync();
+            return View(result);
+        }
+        
+        [HttpPost]
+        public async Task<IActionResult> PostStudentTeacherPair(string registreeID, string teacherID)
+        {
+            WebClient<Teacher> webClient = new WebClient<Teacher> {
+                port = 5004,
+                Host = "localhost",
+                Path = "api/Admin/AddTeacherStudentPair"
+            };
+            webClient.AddParams("teacherID", teacherID);
+            webClient.AddParams("registreeID", registreeID);
+            bool success = await webClient.PostAsync(new Teacher());
+            TempData["postStudentTeacherPairMessage"] = success ? "Pair added or exists!" : "Failed to register user..";
+            return Redirect("AddStudentTeacherPair");
+        }
     }
 }

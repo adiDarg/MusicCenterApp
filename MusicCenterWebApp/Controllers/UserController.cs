@@ -104,12 +104,12 @@ namespace MusicCenterWebApp.Controllers
             request.Reciever = new User();
             request.Reciever.Id = RecieverID;
             WebClient<Request> client = new WebClient<Request>();
+            client.port = 5004;
             client.Host = "localhost";
             client.Path = "api/User/SendRequest";
             client.AddParams("request", request.ToJson());
             TempData["requestSentSuccessfully"] = await client.PostAsync(request);
-            string userID = SenderID;
-            return RedirectToAction("RequestsSent", new { userID });
+            return RedirectToAction("RequestsSent");
         }
 
         [HttpGet]
