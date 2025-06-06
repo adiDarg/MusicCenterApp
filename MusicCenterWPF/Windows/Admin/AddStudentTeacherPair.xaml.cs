@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MusicCenterModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,17 +27,17 @@ namespace MusicCenterWPF.Windows.Admin
         {
             InitializeComponent();
             this.Loaded += (s, e) => { 
-                LoadRegistrees();
-                LoadTeachers();
+                LoadViewModel();
             };
         }
-        private async void LoadRegistrees() {
-            WebClient<List<RegistreeModel>> webClient = new WebClient<List<RegistreeModel>> { 
+        private async void LoadViewModel() {
+            WebClient<StudentTeacherPairViewModel> webClient = new WebClient<StudentTeacherPairViewModel> { 
                 port = 5004,
                 Host = "localhost",
-                Path = "api/Admin/GetRegistrees"
+                Path = "api/Admin/GetStudentTeacherPairViewModel"
             };
-            List<RegistreeModel> registrees = await webClient.GetAsync();
+            StudentTeacherPairViewModel result = await webClient.GetAsync();
+            List<RegistreeModel> registrees = result.Registrees;
             foreach (var registree in registrees) {
                 ComboBoxItem item = new ComboBoxItem {
                     Content = registree.Name,
@@ -44,15 +45,8 @@ namespace MusicCenterWPF.Windows.Admin
                 };
                 registreeInput.Items.Add(item);
             }
-        }
-        private async void LoadTeachers() {
-            WebClient<List<TeacherModel>> webClient = new WebClient<List<TeacherModel>>
-            {
-                port = 5004,
-                Host = "localhost",
-                Path = "api/Admin/GetTeachers"
-            };
-            List<TeacherModel> teachers = await webClient.GetAsync();
+            
+            List<TeacherModel> teachers = result.Teachers;
             foreach (var teacher in teachers)
             {
                 ComboBoxItem item = new ComboBoxItem
