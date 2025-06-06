@@ -80,7 +80,22 @@ namespace MusicCenterWebService
         public IDataReader Read(string sql)
         {
             _command.CommandText = sql;
-            return _command.ExecuteReader();
+            int count = 0;
+            string eMessage = "";
+            while (count < 10)
+            {
+                try
+                {
+                    return _command.ExecuteReader();
+                }
+                catch (Exception e)
+                {
+                    eMessage = e.Message;
+                    count++;
+                    Thread.Sleep(1000);
+                }
+            }
+            throw new Exception(eMessage);
         }
 
         public IDataReader ReadValue(string sql)
