@@ -1,4 +1,5 @@
 ﻿using MusicCenterModels;
+using MusicCenterWPF.Windows.Shared;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -75,12 +76,21 @@ namespace MusicCenterWPF.Windows.Admin
                 if ((actionChoiceBox.SelectedItem as ComboBoxItem).Content.Equals("Lesson"))
                 {
                     LessonGrid.Visibility = Visibility.Visible;
+                    ComboBoxHelper.SetPlaceholder(studnetComboBox, "Choose Student");
+                    ComboBoxHelper.SetPlaceholder(teacherComboBox, "Choose Teacher");
+                    
                     MeetingGrid.Visibility = Visibility.Hidden;
+                    ComboBoxHelper.SetPlaceholder(groupComboBox, "");
+
                 }
                 else if ((actionChoiceBox.SelectedItem as ComboBoxItem).Content.Equals("Meeting"))
                 {
                     LessonGrid.Visibility = Visibility.Hidden;
+                    ComboBoxHelper.SetPlaceholder(studnetComboBox, "");
+                    ComboBoxHelper.SetPlaceholder(teacherComboBox, "");
+
                     MeetingGrid.Visibility = Visibility.Visible;
+                    ComboBoxHelper.SetPlaceholder(groupComboBox, "Choose Group");
                 }
             }
         }
@@ -118,8 +128,12 @@ namespace MusicCenterWPF.Windows.Admin
         {
             try
             {
-                DateTime dateTime = datePicker.DisplayDate;
-                string date = dateTime.ToString("s");
+                DateTime dateTime = (DateTime)datePicker.Value;
+                DateTime withoutSeconds = new DateTime(
+                    dateTime.Year, dateTime.Month, dateTime.Day,
+                    dateTime.Hour, dateTime.Minute, 0
+                );
+                string date = withoutSeconds.ToString("s");
                 string room = roomTextBox.Text;
                 if (((actionChoiceBox.SelectedItem as ComboBoxItem).Content as string).Equals("Lesson"))
                 {

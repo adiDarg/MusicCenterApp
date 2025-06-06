@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MusicCenterWPF.Windows.Admin"
         xmlns:shared="clr-namespace:MusicCenterWPF.Windows.Shared"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
         Title="ScheduleEvent" Height="450" Width="800"
         WindowStyle="None"
@@ -39,7 +40,6 @@
                 <ComboBox Style="{StaticResource StyledComboBox}"
                           Template="{DynamicResource ComboBoxTemplate1}"
                           Name="actionChoiceBox"
-                          shared:ComboBoxHelper.Placeholder="Choose Event" 
                           Canvas.Left="-86" 
                           SelectionChanged="actionChoiceBox_SelectionChanged">
                     <ComboBoxItem Content="Lesson"/>
@@ -55,7 +55,7 @@
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <Calendar Name="datePicker"
+                <xctk:DateTimePicker Name="datePicker"
                             Width="172"
                             Background="AliceBlue"
                             BorderThickness="3"
@@ -75,11 +75,9 @@
                 </Grid.RowDefinitions>
                 <ComboBox Style="{StaticResource SmallStyledComboBox}"
                           Template="{DynamicResource ComboBoxTemplate1}"
-                          shared:ComboBoxHelper.Placeholder="Choose Student"
                           Name="studnetComboBox"/>
                 <ComboBox Style="{StaticResource SmallStyledComboBox}"
                           Template="{DynamicResource ComboBoxTemplate1}"
-                          shared:ComboBoxHelper.Placeholder="Choose Teacher"
                           Name="teacherComboBox"
                           Grid.Row="1"
                           SelectionChanged="studentComboBox_SelectionChanged"/>
@@ -94,7 +92,6 @@
                 </Grid.RowDefinitions>
                 <ComboBox Style="{StaticResource StyledComboBox}"
               Template="{DynamicResource ComboBoxTemplate1}"
-              shared:ComboBoxHelper.Placeholder="Choose Group"
               Name="groupComboBox"/>
             </Grid>
 
