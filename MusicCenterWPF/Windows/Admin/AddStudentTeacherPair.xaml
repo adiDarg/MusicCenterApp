@@ -1,0 +1,56 @@
+﻿<Window x:Class="MusicCenterWPF.Windows.Admin.AddStudentTeacherPair"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MusicCenterWPF.Windows.Admin"
+        xmlns:shared="clr-namespace:MusicCenterWPF.Windows.Shared"
+        mc:Ignorable="d"
+        Title="AddStudentTeacherPair" Height="450" Width="800"
+        WindowStyle="None"
+        WindowState="Maximized"
+        ResizeMode="CanMinimize"
+        AllowsTransparency="False">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <shared:CollapseAndClose/>
+        <shared:NavBar Grid.Row="1"/>
+        <Label Grid.Row="2" 
+       Style="{StaticResource StyledLabel}">
+            Register Studnet For Teacher
+        </Label>
+        <Grid Grid.Row="3">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <ComboBox 
+        Name="registreeInput" 
+        Template="{DynamicResource ComboBoxTemplate2}" 
+        Style="{StaticResource StyledComboBox}" 
+        Grid.Row="1" 
+        shared:ComboBoxHelper.Placeholder="Choose Studnet">
+            </ComboBox>
+            <ComboBox 
+        Name="teacherInput" 
+        Template="{DynamicResource ComboBoxTemplate2}" 
+        Style="{StaticResource StyledComboBox}" 
+        Grid.Row="2" 
+        shared:ComboBoxHelper.Placeholder="Choose Teacher"
+        IsTextSearchEnabled="True">
+            </ComboBox>
+            <Button Style="{StaticResource StyledButton}" 
+            Grid.Row="3" 
+            Click="Button_Click">
+                Add
+            </Button>
+        </Grid>
+    </Grid>
+</Window>
