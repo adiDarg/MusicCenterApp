@@ -106,6 +106,7 @@ C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWebService\o
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWebService\obj\Debug\net8.0\MusicCenterWebService.csproj.CoreCompileInputs.cache
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWebService\obj\Debug\net8.0\MusicCenterWebService.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWebService\obj\Debug\net8.0\MusicCenterWebService.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWebService\obj\Debug\net8.0\MusicCenterWebService.sourcelink.json
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWebService\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWebService\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWebService\obj\Debug\net8.0\staticwebassets\msbuild.MusicCenterWebService.Microsoft.AspNetCore.StaticWebAssets.props
@@ -120,4 +121,3 @@ C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWebService\o
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWebService\obj\Debug\net8.0\MusicCenterWebService.pdb
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWebService\obj\Debug\net8.0\MusicCenterWebService.genruntimeconfig.cache
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWebService\obj\Debug\net8.0\ref\MusicCenterWebService.dll
-C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWebService\obj\Debug\net8.0\MusicCenterWebService.sourcelink.json

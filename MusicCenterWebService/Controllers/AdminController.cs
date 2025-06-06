@@ -49,9 +49,9 @@ namespace MusicCenterWebService.Controllers
         }
 
         [HttpGet]
-        public List<User> GetRegistrees()
+        public List<Registree> GetRegistrees()
         {
-            List<User> res = [.. repositoryUOW.GetRegistreeRepository().GetAll()];
+            List<Registree> res = [.. repositoryUOW.GetRegistreeRepository().GetAll()];
             return res;
         }
 
@@ -72,6 +72,14 @@ namespace MusicCenterWebService.Controllers
         public List<Admin> GetAdmins()
         {
             List<Admin> res = [.. repositoryUOW.GetAdminRepository().GetAll()];
+            return res;
+        }
+
+        [HttpGet]
+        public StudentTeacherPairViewModel GetStudentTeacherPairViewModel() {
+            StudentTeacherPairViewModel res = new StudentTeacherPairViewModel();
+            res.Teachers = GetTeachers();
+            res.Registrees = GetRegistrees();
             return res;
         }
 
@@ -147,6 +155,11 @@ namespace MusicCenterWebService.Controllers
         public List<Group> GetGroups()
         {
             return repositoryUOW.GetGroupRepository().GetAll();
+        }
+        [HttpGet]
+        public Group GetGroupById(string groupID)
+        {
+            return repositoryUOW.GetGroupRepository().GetById(groupID);
         }
 
         [HttpGet]
@@ -233,12 +246,26 @@ namespace MusicCenterWebService.Controllers
         [HttpPost]
         public bool SendMessage(Message message)
         {
+            if (repositoryUOW.GetMessageRepository().GetByTitleAndDescription(message.Title,message.Description) != null)
+            {
+                return true;
+            }
             return repositoryUOW.GetMessageRepository().Create(message);
         }
         [HttpPost]
         public bool AddReceiver(string messageID, string receiverID)
         {
             return repositoryUOW.GetMessageRepository().AddReciever(messageID, receiverID);
+        }
+        
+        [HttpPost]
+        public bool AddTeacherStudentPair(string teacherID, string registreeID)
+        {
+            if (repositoryUOW.GetTeacherRepository().DoesPairExist(teacherID, registreeID))
+            {
+                return true;
+            }
+            return repositoryUOW.GetTeacherRepository().AddStudent(teacherID,registreeID);
         }
     }
 }

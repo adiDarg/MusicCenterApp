@@ -6,6 +6,7 @@ C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\WebApiClient\obj\Debug\
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\WebApiClient\obj\Debug\net8.0\WebApiClient.AssemblyInfoInputs.cache
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\WebApiClient\obj\Debug\net8.0\WebApiClient.AssemblyInfo.cs
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\WebApiClient\obj\Debug\net8.0\WebApiClient.csproj.CoreCompileInputs.cache
+C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\WebApiClient\obj\Debug\net8.0\WebApiClient.sourcelink.json
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\WebApiClient\obj\Debug\net8.0\WebApiClient.dll
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\WebApiClient\obj\Debug\net8.0\refint\WebApiClient.dll
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\WebApiClient\obj\Debug\net8.0\WebApiClient.pdb

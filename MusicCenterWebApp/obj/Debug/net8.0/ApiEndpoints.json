@@ -306,6 +306,32 @@
   },
   {
     "ContainingType": "MusicCenterWebService.Controllers.AdminController",
+    "Method": "GetGroupById",
+    "RelativePath": "api/Admin/GetGroupById",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "groupID",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MusicCenterModels.Group",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MusicCenterWebService.Controllers.AdminController",
     "Method": "GetGroups",
     "RelativePath": "api/Admin/GetGroups",
     "HttpMethod": "GET",

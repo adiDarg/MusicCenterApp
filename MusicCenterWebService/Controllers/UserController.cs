@@ -81,11 +81,6 @@ namespace MusicCenterWebService.Controllers
         }
         
         [HttpGet]
-        public List<McEvent> GetSchedule(User user) {
-            return new List<McEvent>();
-        }
-        
-        [HttpGet]
         public List<User> GetUsers()
         {
             return repositoryUOW.GetUserRepository().GetAll();
@@ -95,6 +90,11 @@ namespace MusicCenterWebService.Controllers
         public User GetUserById(string userID)
         {
             return repositoryUOW.GetUserRepository().GetById(userID);
+        }
+        [HttpGet]
+        public ScheduleViewModel GetSchedule(string userID)
+        {
+            return new ScheduleViewModel { Lessons = new List<Lesson>(), Meetings = new List<Meeting>() };
         }
 
         [HttpPost]

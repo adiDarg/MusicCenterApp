@@ -13,6 +13,7 @@ C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterFactories\ob
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterFactories\obj\Debug\net8.0\MusicCenterFactories.AssemblyInfoInputs.cache
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterFactories\obj\Debug\net8.0\MusicCenterFactories.AssemblyInfo.cs
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterFactories\obj\Debug\net8.0\MusicCenterFactories.csproj.CoreCompileInputs.cache
+C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterFactories\obj\Debug\net8.0\MusicCenterFactories.sourcelink.json
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterFactories\obj\Debug\net8.0\MusicCen.3A6B2883.Up2Date
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterFactories\obj\Debug\net8.0\MusicCenterFactories.dll
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterFactories\obj\Debug\net8.0\refint\MusicCenterFactories.dll

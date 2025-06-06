@@ -6,5 +6,6 @@
         Task<bool> PostAsync(T model);
         Task<bool> PostAsync(T model, Stream file);
         Task<bool> PostAsync(T model, List<Stream> files);
+        Task<string> PostAsync<TResult>(Stream file, string fileName);
     }
 }

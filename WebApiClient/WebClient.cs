@@ -122,5 +122,34 @@ namespace WebApiClient
             }
             return false;
         }
+        public async Task<string> PostAsync<TResult>(Stream file, string fileName = "placeholder.jpg")
+        {
+            this.request.Method = HttpMethod.Post;
+            this.request.RequestUri = new Uri(this.uriBuilder.ToString());
+
+            MultipartFormDataContent content = new MultipartFormDataContent();
+
+            var streamContent = new StreamContent(file);
+            streamContent.Headers.ContentDisposition = new System.Net.Http.Headers.ContentDispositionHeaderValue("form-data")
+            {
+                Name = "\"file\"",
+                FileName = $"\"{fileName}\""
+            };
+            streamContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/octet-stream");
+
+            content.Add(streamContent, "file", fileName);
+            this.request.Content = content;
+
+            using (HttpClient client = new HttpClient())
+            {
+                this.response = await client.SendAsync(this.request);
+                if (this.response.IsSuccessStatusCode)
+                {
+                    return await this.response.Content.ReadAsStringAsync();
+                }
+            }
+
+            return default;
+        }
     }
 }

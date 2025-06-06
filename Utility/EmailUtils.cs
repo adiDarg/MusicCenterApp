@@ -5,6 +5,8 @@ using System.Net.Mail;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using WebApiClient;
+using MusicCenterModels;
 
 namespace Utility
 {
@@ -47,6 +49,17 @@ In order to enter it, login and go to Additional Actions->Enter Validation Key."
                 Console.WriteLine("Sending validation key failed! " + ex.ToString());
             }
             return false;
+        }
+        public static async Task<bool> SendValidationKeyEmail(string userID)
+        {
+            WebClient<User> webClient = new WebClient<User> {
+                port = 5004,
+                Host = "localhost",
+                Path = "api/User/GetUserById"
+            };
+            webClient.AddParams("userID", userID);
+            User user = await webClient.GetAsync();
+            return SendValidationKeyEmail(user.Email, user.ValidationKey);
         }
     }
 }

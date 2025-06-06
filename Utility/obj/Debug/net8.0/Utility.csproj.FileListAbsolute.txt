@@ -42,10 +42,10 @@ C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\Utility\obj\Debug\net8.
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\Utility\obj\Debug\net8.0\Utility.AssemblyInfoInputs.cache
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\Utility\obj\Debug\net8.0\Utility.AssemblyInfo.cs
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\Utility\obj\Debug\net8.0\Utility.csproj.CoreCompileInputs.cache
+C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\Utility\obj\Debug\net8.0\Utility.sourcelink.json
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\Utility\obj\Debug\net8.0\Utility.csproj.Up2Date
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\Utility\obj\Debug\net8.0\Utility.dll
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\Utility\obj\Debug\net8.0\refint\Utility.dll
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\Utility\obj\Debug\net8.0\Utility.pdb
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\Utility\obj\Debug\net8.0\Utility.genruntimeconfig.cache
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\Utility\obj\Debug\net8.0\ref\Utility.dll
-C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\Utility\obj\Debug\net8.0\Utility.sourcelink.json

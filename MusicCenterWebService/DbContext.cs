@@ -86,7 +86,8 @@ namespace MusicCenterWebService
             {
                 try
                 {
-                    return _command.ExecuteReader();
+                    IDataReader reader = _command.ExecuteReader();
+                    return reader;
                 }
                 catch (Exception e)
                 {

@@ -1,5 +1,6 @@
 ﻿using MusicCenterFactories;
 using MusicCenterModels;
+using System.Collections.Generic;
 using System.Data;
 
 namespace MusicCenterWebService.Repositories
@@ -23,6 +24,30 @@ namespace MusicCenterWebService.Repositories
             int res = GetDbContext().Create(sql);
             GetDbContext().ClearParameters();
             return res > 0;
+        }
+        public bool AddStudent(string teacherID, string studentID)
+        {
+            string sql = @"INSERT INTO TeachersRegistrees(TeacherID,RegistreeID)
+                           VALUES(@TeacherID,@RegistreeID)";
+            GetDbContext().AddParameter("@TeacherID", teacherID)
+                .AddParameter("@RegistreeID", studentID);
+            int res = GetDbContext().Create(sql);
+            GetDbContext().ClearParameters();
+            return res > 0;
+        }
+        public bool DoesPairExist(string teacherID, string studentID)
+        {
+            string sql = @"SELECT * FROM TeachersRegistrees
+                           WHERE TeacherID=@TeacherID AND RegistreeID=@RegistreeID";
+            GetDbContext().AddParameter("@TeacherID", teacherID)
+                .AddParameter("@RegistreeID", studentID);
+            bool res = false;
+            using (IDataReader reader = GetDbContext().Read(sql))
+            {
+                res = reader.Read();
+            }
+            GetDbContext().ClearParameters();
+            return res;
         }
         public bool Delete(Teacher entity)
         {
