@@ -50,13 +50,15 @@ namespace MusicCenterWPF.Windows.User
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
             string recieverID = (recieverInput.SelectedItem as ComboBoxItem).Tag as string;
-            if (recieverID == null)
+            string title = titleInput.Text;
+            string description = descriptionInput.Text;
+            string requestType = (typeInput.SelectedItem as ComboBoxItem).Content as string;
+            if (string.IsNullOrEmpty(recieverID) || string.IsNullOrEmpty(title) || string.IsNullOrEmpty(description) || string.IsNullOrEmpty(requestType))
             {
                 MessageBox.Show("Please select a reciever.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-            string title = titleInput.Text;
-            string description = descriptionInput.Text;
+
             Request request = new Request { 
                 Title = title,
                 Description = description,
@@ -64,13 +66,8 @@ namespace MusicCenterWPF.Windows.User
                 Sender = new MusicCenterModels.User { Id = SessionManager.UserID },
                 IsApproved = false,
                 IsSeen = false,
-                RequestType = (typeInput.SelectedItem as ComboBoxItem).Content as string
+                RequestType = requestType
             };
-            if (request.RequestType == null)
-            {
-                MessageBox.Show("Please enter a request type.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
             WebClient<Request> client = new WebClient<Request>();
             client.port = 5004;
             client.Host = "localhost";

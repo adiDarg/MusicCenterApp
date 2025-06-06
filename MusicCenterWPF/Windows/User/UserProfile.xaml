@@ -94,8 +94,8 @@
                          Style="{StaticResource SmallStyledTextBox}"
                          Grid.Row="0"/>
                 <!-- Password -->
-                <TextBox Name="passwordBox"
-                         Style="{StaticResource SmallStyledTextBox}"
+                <PasswordBox Name="passwordBox"
+                         Style="{StaticResource SmallStyledPasswordBox}"
                          Grid.Row="1"/>
                 <!-- User Type -->
                 <Label Name="usertypeBox"
@@ -122,8 +122,21 @@
                 </Button>
             </Grid>
         </Grid>
-        <Button Style="{StaticResource StyledButton}" Grid.Row="4" Click="Button_Click">
-            Submit Changes
-        </Button>
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Style="{StaticResource StyledButton}" 
+                        Grid.Column="0" 
+                        Click="Button_Click">
+                Submit Changes
+            </Button>
+            <Button Style="{StaticResource StyledButton}"
+                    Name="LogOutButton"
+                    Grid.Column="1" Click="LogOutButton_Click">
+                Log Out
+            </Button>
+        </Grid>
     </Grid>
 </Window>

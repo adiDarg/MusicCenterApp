@@ -30,10 +30,10 @@ namespace MusicCenterWPF.Windows
         private async void signInButton_Click(object sender, RoutedEventArgs e)
         {
             string username = usernameInput.Text;
-            string password = passwordInput.Text;
+            string password = passwordInput.Password;
             if (username == null || username.Length == 0 || password == null || password.Length == 0)
             {
-                errorLabel.Content = "Must fill all fields";
+                MessageBox.Show("Please fill all fields.", "Validation", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
             WebClient<string> client = new WebClient<string>();
@@ -48,8 +48,12 @@ namespace MusicCenterWPF.Windows
                 SessionManager.Type = UserTypeGetter.GetUserType(userID);
                 this.Visibility = Visibility.Hidden;
                 new UserProfile().Show();
+                return;
             }
-            errorLabel.Content = "Failed to log in. Try checking username or password";
+            MessageBox.Show("An error occured during login. Please verify that username and password are correct.",
+                "Error",
+                MessageBoxButton.OK,
+                MessageBoxImage.Error);
         }
     }
 }

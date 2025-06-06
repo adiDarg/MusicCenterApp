@@ -62,8 +62,8 @@ namespace MusicCenterWPF.Windows.Admin
         {
             ComboBoxItem teacherItem = teacherInput.SelectedItem as ComboBoxItem;
             ComboBoxItem registreeItem = registreeInput.SelectedItem as ComboBoxItem;
-            if (registreeItem == null || teacherItem == null) { 
-                MessageBox.Show("Please select a student and a teacher","Error",MessageBoxButton.OK,MessageBoxImage.Error);
+            if (registreeItem == null || teacherItem == null) {
+                MessageBox.Show("Please fill all fields.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
             WebClient<TeacherModel> webClient = new WebClient<TeacherModel> {

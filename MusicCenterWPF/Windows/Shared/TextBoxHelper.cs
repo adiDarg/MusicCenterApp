@@ -95,7 +95,9 @@ namespace MusicCenterWPF.Windows.Shared
         }
         public class PlaceholderAdorner : Adorner
         {
-            public PlaceholderAdorner(TextBox textBox) : base(textBox) { }
+            public PlaceholderAdorner(TextBox textBox) : base(textBox) {
+                IsHitTestVisible = false;
+            }
 
             protected override void OnRender(DrawingContext drawingContext)
             {

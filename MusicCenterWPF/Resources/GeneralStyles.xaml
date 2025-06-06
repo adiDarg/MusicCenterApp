@@ -12,6 +12,16 @@
         <Setter Property="Margin" Value="0,10,0,0"/>
         <Setter Property="TextAlignment" Value="Center"/>
     </Style>
+    <Style x:Key="StyledPasswordBox" TargetType="PasswordBox">
+        <Setter Property="BorderThickness" Value="3"/>
+        <Setter Property="BorderBrush" Value="Black"/>
+        <Setter Property="Background" Value="AliceBlue"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="Width" Value="172"/>
+        <Setter Property="Height" Value="34"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="Margin" Value="0,10,0,0"/>
+    </Style>
     <Style x:Key="StyledRichTextBox" TargetType="RichTextBox">
         <Setter Property="BorderThickness" Value="3"/>
         <Setter Property="BorderBrush" Value="Black"/>
@@ -22,6 +32,12 @@
         <Setter Property="Margin" Value="0,10,0,0"/>
     </Style>
     <Style x:Key="SmallStyledTextBox" TargetType="TextBox" BasedOn="{StaticResource StyledTextBox}">
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="Height" Value="20"/>
+        <Setter Property="Width" Value="140"/>
+        <Setter Property="FontSize" Value="14"/>
+    </Style>
+    <Style x:Key="SmallStyledPasswordBox" TargetType="PasswordBox" BasedOn="{StaticResource StyledPasswordBox}">
         <Setter Property="BorderThickness" Value="2"/>
         <Setter Property="Height" Value="20"/>
         <Setter Property="Width" Value="140"/>

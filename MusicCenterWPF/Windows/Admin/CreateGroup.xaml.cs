@@ -85,7 +85,6 @@ namespace MusicCenterWPF.Windows.Admin
             if (success)
             {
                 MessageBox.Show("Group created successfully.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
-                this.Close();
             }
             else
             {

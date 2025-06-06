@@ -35,18 +35,21 @@
                 Template="{DynamicResource ComboBoxTemplate2}" 
                 Style="{StaticResource StyledComboBox}" 
                 Grid.Row="0"
-                shared:ComboBoxHelper.Placeholder="Choose Group">
+                shared:ComboBoxHelper.Placeholder="Choose Group"
+                SelectionChanged="GroupInput_SelectionChanged">
             </ComboBox>
             <ComboBox 
                 Name="InstructorInput"
                 Template="{DynamicResource ComboBoxTemplate2}" 
                 Style="{StaticResource StyledComboBox}" 
                 Grid.Row="1"
-                shared:ComboBoxHelper.Placeholder="Choose Instructor">
+                shared:ComboBoxHelper.Placeholder="Choose Instructor"
+                SelectionChanged="InstructorInput_SelectionChanged">
                 Choose Instructor
             </ComboBox>
             <Button Style="{StaticResource StyledButton}" 
-                    Grid.Row="2">
+                    Grid.Row="2"
+                    Click="UpdateButton_Click">
                 Update
             </Button>
         </Grid>

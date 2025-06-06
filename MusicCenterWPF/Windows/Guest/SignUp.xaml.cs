@@ -115,7 +115,7 @@ namespace MusicCenterWPF
                 DbContext.GetInstance().OpenConnection();
                 while (new RepositoryUOW().GetUserRepository().GetByUsername(username) == null)
                 {
-                    Thread.Sleep(1000);
+                    Thread.Sleep(250);
                 }
                 SessionManager.UserID = new RepositoryUOW().GetUserRepository().GetByUsername(username).Id;
                 DbContext.GetInstance().CloseConnection();

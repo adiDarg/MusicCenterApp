@@ -104,6 +104,11 @@ namespace MusicCenterWPF.Windows.Admin
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
+            if (selectedGroupId == "" || selectedRegistreeId == "")
+            {
+                MessageBox.Show("Please fill all fields.","Error",MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
             WebClient<Group> webClient = new WebClient<Group>();
             webClient.port = 5004;
             webClient.Host = "localhost";

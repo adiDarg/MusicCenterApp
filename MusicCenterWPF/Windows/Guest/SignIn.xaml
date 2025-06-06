@@ -11,13 +11,6 @@
         WindowState="Maximized"
         ResizeMode="CanMinimize"
         AllowsTransparency="False">
-    <Window.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/Resources/GeneralStyles.xaml" />
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </Window.Resources>
     <StackPanel>
         <shared:CollapseAndClose/>
         <Label Style="{StaticResource StyledLabel}"
@@ -27,15 +20,12 @@
         <TextBox Name="usernameInput" 
                  Style="{StaticResource StyledTextBox}" 
                  shared:TextBoxHelper.Placeholder="Enter Username"/>
-        <TextBox 
+        <PasswordBox 
             Name="passwordInput" 
-            Style="{StaticResource StyledTextBox}" 
-            shared:TextBoxHelper.Placeholder="Enter Password"/>
+            Style="{StaticResource StyledPasswordBox}" />
         <Button Name="signInButton" 
                 Style="{StaticResource StyledButton}" 
                 Content="Sign In" 
                 Click="signInButton_Click"/>
-        <Label Name="errorLabel" 
-               Style="{StaticResource ErrorLabel}"/>
     </StackPanel>
 </Window>

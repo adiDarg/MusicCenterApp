@@ -20,6 +20,7 @@ using WebApiClient;
 using System.Text.Json.Nodes;
 using System.Text.Json;
 using Microsoft.Win32;
+using MusicCenterWPF.Windows.Guest;
 
 namespace MusicCenterWPF.Windows
 {
@@ -54,7 +55,7 @@ namespace MusicCenterWPF.Windows
         private void LoadComponents()
         {
             usernameBox.Text = user.Name;
-            passwordBox.Text = user.Password;
+            passwordBox.Password = user.Password;
             usertypeBox.Content = SessionManager.Type;
             emailBox.Text = user.Email;
             addressBox.Text = user.Address;
@@ -75,13 +76,14 @@ namespace MusicCenterWPF.Windows
         {
             user.Name = usernameBox.Text;
             DbContext.GetInstance().OpenConnection();
-            if (new RepositoryUOW().GetUserRepository().GetByUsername(user.Name) != null) {
+            UserModel? userFromDb = new RepositoryUOW().GetUserRepository().GetByUsername(user.Name);
+            if (userFromDb != null && userFromDb.Id != SessionManager.UserID) {
                 MessageBox.Show("Username Taken", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 DbContext.GetInstance().CloseConnection();
                 return;
             }
             DbContext.GetInstance().CloseConnection();
-            user.Password = passwordBox.Text;
+            user.Password = passwordBox.Password;
             user.Email = emailBox.Text;
             user.Address = addressBox.Text;
             user.PhoneNumber = phoneNumberBox.Text;
@@ -146,6 +148,14 @@ namespace MusicCenterWPF.Windows
             openFileDialog.Title = "Choose Image";
             openFileDialog.ShowDialog();
             newImageFileName = openFileDialog.FileName;
+        }
+
+        private void LogOutButton_Click(object sender, RoutedEventArgs e)
+        {
+            SessionManager.UserID = "";
+            SessionManager.Type = "Guest";
+            this.Visibility = Visibility.Hidden;
+            new StartupWindow().Show();
         }
     }
 }

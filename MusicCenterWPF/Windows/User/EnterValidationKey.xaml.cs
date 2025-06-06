@@ -25,6 +25,11 @@ namespace MusicCenterWPF.Windows
         private async void Submit_ClickAsync(object sender, RoutedEventArgs e)
         {
             string key = inputTextBox.Text;
+            if (string.IsNullOrEmpty(key))
+            {
+                MessageBox.Show("Please fill all fields.", "Validation", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
             WebClient<UserClass> webClient = new WebClient<UserClass>();
             webClient.port = 5004;
             webClient.Host = "localhost";

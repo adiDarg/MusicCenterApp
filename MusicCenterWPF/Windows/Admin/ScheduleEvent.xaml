@@ -91,8 +91,9 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <ComboBox Style="{StaticResource StyledComboBox}"
-              Template="{DynamicResource ComboBoxTemplate1}"
-              Name="groupComboBox"/>
+                          Template="{DynamicResource ComboBoxTemplate1}"
+                          Name="groupComboBox"
+                          SelectionChanged="groupComboBox_SelectionChanged"/>
             </Grid>
 
             <Canvas Grid.Column="1"

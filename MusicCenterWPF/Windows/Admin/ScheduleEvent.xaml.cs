@@ -23,6 +23,7 @@ namespace MusicCenterWPF.Windows.Admin
     /// </summary>
     public partial class ScheduleEvent : Window
     {
+        Group? currentGroup = null;
         public ScheduleEvent()
         {
             InitializeComponent();
@@ -81,7 +82,8 @@ namespace MusicCenterWPF.Windows.Admin
                     
                     MeetingGrid.Visibility = Visibility.Hidden;
                     ComboBoxHelper.SetPlaceholder(groupComboBox, "");
-
+                    currentGroup = null;
+                    roomTextBox.Text = null;
                 }
                 else if ((actionChoiceBox.SelectedItem as ComboBoxItem).Content.Equals("Meeting"))
                 {
@@ -93,6 +95,22 @@ namespace MusicCenterWPF.Windows.Admin
                     ComboBoxHelper.SetPlaceholder(groupComboBox, "Choose Group");
                 }
             }
+        }
+        private async void groupComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ComboBoxItem item = groupComboBox.SelectedItem as ComboBoxItem;
+            if (item == null)
+            {
+                return;
+            }
+            WebClient<Group> webClient = new WebClient<Group> { 
+                port = 5004,
+                Host = "localhost",
+                Path = "api/Admin/GetGroupById"
+            };
+            webClient.AddParams("groupID", item.Tag as string);
+            currentGroup = await webClient.GetAsync();
+            roomTextBox.Text = currentGroup == null ? "" : currentGroup.Room;
         }
         private async void studentComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

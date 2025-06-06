@@ -78,14 +78,14 @@ namespace MusicCenterWPF.Windows.Admin
         {
             var item = GroupInput.SelectedItem as ComboBoxItem;
             if (item != null)
-                selectedGroupId = item.Tag.ToString();
+                selectedGroupId = item.Tag as string;
         }
 
         private void InstructorInput_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var item = InstructorInput.SelectedItem as ComboBoxItem;
             if (item != null)
-                selectedInstructorId = item.Tag.ToString();
+                selectedInstructorId = item.Tag as string;
         }
 
         private async void UpdateButton_Click(object sender, RoutedEventArgs e)

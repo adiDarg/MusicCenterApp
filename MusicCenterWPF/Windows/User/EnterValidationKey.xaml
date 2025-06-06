@@ -11,7 +11,7 @@
         WindowState="Maximized"
         ResizeMode="CanMinimize"
         AllowsTransparency="False">
-    <Grid Height="434" VerticalAlignment="Bottom">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.3*"/>
             <RowDefinition Height="0.3*"/>

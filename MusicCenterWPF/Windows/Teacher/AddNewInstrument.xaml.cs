@@ -26,33 +26,26 @@ namespace MusicCenterWPF.Windows.Teacher
         private string instrumentIDselected = "";
         public AddNewInstrument()
         {
-            DbContext.GetInstance().OpenConnection();
-            RepositoryUOW repository = new RepositoryUOW();
-            List<Instrument> instruments = repository.GetInstrumentRepository().GetAll();
-            List<Instrument> final = new List<Instrument>();
-            HashSet<string> toRemove = repository.GetInstrumentRepository()
-            .GetByTeacherID(SessionManager.UserID)
-            .Select(instr => instr.Id)
-            .ToHashSet();
-            foreach (Instrument instr in instruments)
-            {
-                if (!toRemove.Contains(instr.Id))
-                {
-                    final.Add(instr);
-                }
-            }
-            DbContext.GetInstance().CloseConnection();
             InitializeComponent();
-            this.Loaded += (s, e) => LoadInstruments(final);
+            this.Loaded += (s, e) => LoadInstruments();
         }
-        private void LoadInstruments(List<Instrument> instruments)
+        private async void LoadInstruments()
         {
+            WebClient<List<Instrument>> webClient = new WebClient<List<Instrument>>
+            {
+                port = 5004,
+                Host = "localhost",
+                Path = "api/Teacher/GetNewInstruments"
+            };
+            webClient.AddParams("teacherID", SessionManager.UserID);
+            List<Instrument> instruments = await webClient.GetAsync();
             foreach (var instrument in instruments)
             {
                 ComboBoxItem item = new ComboBoxItem { 
                     Content = instrument.Name,
                     Tag = instrument.Id
                 };
+                instrumentInput.Items.Add(item);
             }
         }
 
@@ -64,6 +57,11 @@ namespace MusicCenterWPF.Windows.Teacher
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
+            if (instrumentIDselected == "")
+            {
+                MessageBox.Show("Please fill all fields.", "Validation", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
             WebClient<Instrument> webClient = new WebClient<Instrument> {
                 port = 5004,
                 Host = "localhost",

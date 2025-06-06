@@ -98,7 +98,9 @@ namespace MusicCenterWPF.Windows.Shared
     }
     public class PlaceholderAdorner : Adorner
     {
-        public PlaceholderAdorner(ComboBox comboBox) : base(comboBox) { }
+        public PlaceholderAdorner(ComboBox comboBox) : base(comboBox) {
+            IsHitTestVisible = false;
+        }
 
         protected override void OnRender(DrawingContext drawingContext)
         {

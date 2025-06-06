@@ -41,13 +41,14 @@ namespace MusicCenterWPF.Windows.User
             if (SessionManager.Type.Equals("Instructor"))
             {
                 webClient.Path = $"api/Teacher/GetSchedule";
+                webClient.AddParams($"teacherID", userID);
+
             }
             else
             {
                 webClient.Path = $"api/{SessionManager.Type}/GetSchedule";
-                string debug = $"api/{SessionManager.Type}/GetSchedule";
+                webClient.AddParams($"{SessionManager.Type.ToLower()}ID", userID);
             }
-            webClient.AddParams($"{SessionManager.Type.ToLower()}ID", userID);
             return await webClient.GetAsync();
         }
         private void DisplaySchedule(ScheduleViewModel schedule)

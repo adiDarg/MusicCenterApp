@@ -55,11 +55,29 @@ namespace MusicCenterWPF.Windows.Admin
 
         private async void actionChoiceBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (actionChoiceBox.SelectedItem == null)
+            {
+                return;
+            }
+            string action = (actionChoiceBox.SelectedItem as ComboBoxItem).Tag as string;
+            string finalPartOfPath = "";
+            switch (action)
+            {
+                case "Users":
+                    finalPartOfPath = "GetNonTeacherUsers";
+                    break;
+                case "Teachers":
+                    finalPartOfPath = "GetNonInstructorTeachers";
+                    break;
+                case "Instructors":
+                    finalPartOfPath = "GetInstructors";
+                    break;
+            }
             WebClient<List<MusicCenterModels.User>> webClient = new WebClient<List<MusicCenterModels.User>>
             {
                 port = 5004,
                 Host = "localhost",
-                Path = "api/Admin/Get" + (actionChoiceBox.SelectedItem as ComboBoxItem).Tag as string
+                Path = ("api/Admin/" + finalPartOfPath)
             };
             var result = await webClient.GetAsync();
             LoadUsers(result);
@@ -67,6 +85,10 @@ namespace MusicCenterWPF.Windows.Admin
 
         private async void submitButton_Click(object sender, RoutedEventArgs e)
         {
+            if (userChoiceBox.SelectedItem == null){
+                MessageBox.Show("Please fill all fields.", "Validation", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
             bool success = false;
             switch ((actionChoiceBox.SelectedItem as ComboBoxItem).Content as string) {
                 case "Promote To Teacher":
