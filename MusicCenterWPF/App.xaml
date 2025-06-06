@@ -9,6 +9,8 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/Resources/GeneralStyles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+            <local:InverseBooleanToVisibilityConverter x:Key="InverseBooleanToVisibilityConverter"/>
             <LinearGradientBrush x:Key="ComboBox.Static.Background" EndPoint="0,1" StartPoint="0,0">
                 <GradientStop Color="AliceBlue" Offset="0.0"/>
                 <GradientStop Color="AliceBlue" Offset="1.0"/>
@@ -192,6 +194,7 @@
             </ControlTemplate>
 
 
+            
             <ControlTemplate x:Key="ComboBoxTemplate1" TargetType="{x:Type ComboBox}">
                 <Grid x:Name="templateRoot" SnapsToDevicePixels="true">
                     <Grid.ColumnDefinitions>
@@ -214,6 +217,17 @@
                     </Popup>
                     <ToggleButton x:Name="toggleButton" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Grid.ColumnSpan="2" IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource Mode=TemplatedParent}}" Style="{StaticResource ComboBoxToggleButton}"/>
                     <ContentPresenter x:Name="contentPresenter" ContentStringFormat="{TemplateBinding SelectionBoxItemStringFormat}" ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}" Content="{TemplateBinding SelectionBoxItem}" ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" IsHitTestVisible="false" Margin="{TemplateBinding Padding}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    <TextBox x:Name="PART_EditableTextBox"
+                             Visibility="{TemplateBinding IsEditable, Converter={StaticResource BooleanToVisibilityConverter}}"
+                             Style="{StaticResource StyledTextBox}"
+                             Background="Transparent"
+                             Foreground="Black"
+                             CaretBrush="Black"
+                             HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                             VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                             Margin="{TemplateBinding Padding}"
+                             Focusable="True"
+                             />
                 </Grid>
                 <ControlTemplate.Triggers>
                     <Trigger Property="HasDropShadow" SourceName="PART_Popup" Value="true">

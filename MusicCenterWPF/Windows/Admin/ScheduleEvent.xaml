@@ -75,12 +75,12 @@
                 </Grid.RowDefinitions>
                 <ComboBox Style="{StaticResource SmallStyledComboBox}"
                           Template="{DynamicResource ComboBoxTemplate1}"
-                          Name="studnetComboBox"/>
+                          Name="studnetComboBox"
+                          SelectionChanged="studentComboBox_SelectionChanged"/>
                 <ComboBox Style="{StaticResource SmallStyledComboBox}"
                           Template="{DynamicResource ComboBoxTemplate1}"
                           Name="teacherComboBox"
-                          Grid.Row="1"
-                          SelectionChanged="studentComboBox_SelectionChanged"/>
+                          Grid.Row="1"/>
             </Grid>
             <Grid Name="MeetingGrid"
                   Grid.Row="1"

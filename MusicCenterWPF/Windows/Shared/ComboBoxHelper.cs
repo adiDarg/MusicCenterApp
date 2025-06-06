@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Documents;
 using System.Windows.Media;
 
@@ -48,7 +50,18 @@ namespace MusicCenterWPF.Windows.Shared
             if (sender is ComboBox comboBox)
             {
                 comboBox.Loaded -= ComboBox_Loaded;
+                comboBox.IsVisibleChanged -= ComboBox_IsVisibleChanged;
+                comboBox.IsVisibleChanged += ComboBox_IsVisibleChanged;
                 GetOrCreateAdorner(comboBox, out _);
+            }
+        }
+        private static void ComboBox_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            if (sender is ComboBox comboBox && GetOrCreateAdorner(comboBox, out PlaceholderAdorner adorner))
+            {
+                adorner.Visibility = comboBox.IsVisible && comboBox.SelectedItem == null
+                    ? Visibility.Visible
+                    : Visibility.Hidden;
             }
         }
 
@@ -56,7 +69,8 @@ namespace MusicCenterWPF.Windows.Shared
         {
             if (sender is ComboBox comboBox && GetOrCreateAdorner(comboBox, out PlaceholderAdorner adorner))
             {
-                adorner.Visibility = comboBox.SelectedItem == null ? Visibility.Visible : Visibility.Hidden;
+                var parent = VisualTreeHelper.GetParent(comboBox) as UIElement;
+                adorner.Visibility = comboBox.IsVisible && parent.IsVisible && comboBox.SelectedItem == null? Visibility.Visible : Visibility.Hidden;
             }
         }
 
@@ -81,42 +95,47 @@ namespace MusicCenterWPF.Windows.Shared
             return true;
         }
 
-        public class PlaceholderAdorner : Adorner
+    }
+    public class PlaceholderAdorner : Adorner
+    {
+        public PlaceholderAdorner(ComboBox comboBox) : base(comboBox) { }
+
+        protected override void OnRender(DrawingContext drawingContext)
         {
-            public PlaceholderAdorner(ComboBox comboBox) : base(comboBox) { }
+            ComboBox comboBox = (ComboBox)AdornedElement;
 
-            protected override void OnRender(DrawingContext drawingContext)
+            string placeholder = GetPlaceholder(comboBox);
+            if (string.IsNullOrEmpty(placeholder) || comboBox.SelectedItem != null)
+                return;
+
+            FormattedText text = new FormattedText(
+                placeholder,
+                System.Globalization.CultureInfo.CurrentCulture,
+                comboBox.FlowDirection,
+                new Typeface(comboBox.FontFamily, comboBox.FontStyle, comboBox.FontWeight, comboBox.FontStretch),
+                comboBox.FontSize,
+                SystemColors.GrayTextBrush,
+                VisualTreeHelper.GetDpi(comboBox).PixelsPerDip);
+
+            // Use padding and part content host (if exists) to calculate position
+            Point offset = new Point(comboBox.Padding.Left, comboBox.Padding.Top);
+
+            if (comboBox.Template.FindName("PART_ContentHost", comboBox) is FrameworkElement part)
             {
-                ComboBox comboBox = (ComboBox)AdornedElement;
+                Point partPos = part.TransformToAncestor(comboBox).Transform(new Point(0, 0));
+                offset.X += partPos.X;
+                offset.Y += partPos.Y;
 
-                string placeholder = GetPlaceholder(comboBox);
-                if (string.IsNullOrEmpty(placeholder) || comboBox.SelectedItem != null)
-                    return;
-
-                FormattedText text = new FormattedText(
-                    placeholder,
-                    System.Globalization.CultureInfo.CurrentCulture,
-                    comboBox.FlowDirection,
-                    new Typeface(comboBox.FontFamily, comboBox.FontStyle, comboBox.FontWeight, comboBox.FontStretch),
-                    comboBox.FontSize,
-                    SystemColors.GrayTextBrush,
-                    VisualTreeHelper.GetDpi(comboBox).PixelsPerDip);
-
-                // Use padding and part content host (if exists) to calculate position
-                Point offset = new Point(comboBox.Padding.Left, comboBox.Padding.Top);
-
-                if (comboBox.Template.FindName("PART_ContentHost", comboBox) is FrameworkElement part)
-                {
-                    Point partPos = part.TransformToAncestor(comboBox).Transform(new Point(0, 0));
-                    offset.X += partPos.X;
-                    offset.Y += partPos.Y;
-
-                    text.MaxTextWidth = Math.Max(part.ActualWidth - offset.X, 10);
-                    text.MaxTextHeight = Math.Max(part.ActualHeight, 10);
-                }
-
-                drawingContext.DrawText(text, offset);
+                text.MaxTextWidth = Math.Max(part.ActualWidth - offset.X, 10);
+                text.MaxTextHeight = Math.Max(part.ActualHeight, 10);
             }
+
+            drawingContext.DrawText(text, offset);
+        }
+
+        private string GetPlaceholder(ComboBox comboBox)
+        {
+            return ComboBoxHelper.GetPlaceholder(comboBox);
         }
     }
 }

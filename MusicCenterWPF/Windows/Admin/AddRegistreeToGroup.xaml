@@ -45,7 +45,8 @@
                 Style="{StaticResource StyledComboBox}" 
                 Grid.Row="2" 
                 SelectionChanged="registreeChoice_SelectionChanged"
-                shared:ComboBoxHelper.Placeholder="Choose Registree">
+                shared:ComboBoxHelper.Placeholder="Choose Registree"
+                IsTextSearchEnabled="True">
             </ComboBox>
             <Button Style="{StaticResource StyledButton}" 
                     Grid.Row="3" 

@@ -10,13 +10,25 @@
     <Compile Update="Windows\Admin\AddRegistreeToGroup.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\Admin\AddStudentTeacherPair.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\Admin\CreateGroup.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\Admin\DisplayMembers.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\Admin\PromoteAndDemote.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\Admin\RemoveRegistreeFromGroup.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Admin\ScheduleEvent.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Admin\SendMessage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\Admin\UpdateInstructorOfGroup.xaml.cs">
@@ -75,13 +87,25 @@
     <Page Update="Windows\Admin\AddRegistreeToGroup.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Windows\Admin\AddStudentTeacherPair.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Windows\Admin\CreateGroup.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\Admin\DisplayMembers.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Windows\Admin\PromoteAndDemote.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Windows\Admin\RemoveRegistreeFromGroup.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Admin\ScheduleEvent.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Admin\SendMessage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\Admin\UpdateInstructorOfGroup.xaml">

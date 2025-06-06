@@ -37,18 +37,23 @@ namespace MusicCenterWPF.Windows.Shared
             List<Message> messages = await webClient.GetAsync();
             foreach (Message message in messages) {
                 StackPanel stackPanel = new StackPanel();
-                Style style = this.FindResource("StyledLabel") as Style;
                 Label title = new Label { 
                     Content = message.Title,
-                    Style = style
+                    Style = this.FindResource("StyledLabel") as Style
                 };
                 Label description = new Label { 
                     Content = message.Description,
-                    Style = style
+                    Style = this.FindResource("SmallStyledLabel") as Style
                 };
                 stackPanel.Children.Add(title);
                 stackPanel.Children.Add(description);
-                messagesPanel.Children.Add(stackPanel);
+
+                Border border = new Border
+                {
+                    Style = this.FindResource("CellBorderStyle") as Style,
+                    Child = stackPanel
+                };
+                messagesPanel.Children.Add(border);
             } 
         }
     }

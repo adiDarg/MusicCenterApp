@@ -99,7 +99,7 @@ namespace MusicCenterWPF.Windows.Admin
             };
 
             webClient.AddParams("groupID", selectedGroupId);
-            webClient.AddParams("registreeID", selectedRegistreeId);
+            webClient.AddParams("userID", selectedRegistreeId);
 
             bool success = await webClient.PostAsync(new Group());
 

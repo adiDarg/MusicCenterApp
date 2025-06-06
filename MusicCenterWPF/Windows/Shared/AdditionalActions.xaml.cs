@@ -156,18 +156,22 @@ namespace MusicCenterWPF.Windows.Shared
 
             //Promote & Demote
             Button promoteAndDemoteButton = new Button { Content = "Promote Or Demote" };
-            //promoteAndDemoteButton.Click += (s, e) => { new PromoteAndDemote().Show(); };
+            promoteAndDemoteButton.Click += (s, e) => { new PromoteAndDemote().Show(); };
             actions.Add(promoteAndDemoteButton);
 
             //Schedule Event
             Button scheduleEvent = new Button { Content = "Schedule Event" };
-            //scheduleEvent.Click += (s, e) => { new ScheduleEvent().Show(); };
+            scheduleEvent.Click += (s, e) => { new ScheduleEvent().Show(); };
             actions.Add(scheduleEvent);
 
             //Send message
             Button sendMessage = new Button { Content = "Send message" };
-            //sendMessage.Click += (s, e) => { new SendMessage().Show(); };
+            sendMessage.Click += (s, e) => { new SendMessage().Show(); };
             actions.Add(sendMessage);
+            //Add Teacher Student Pair
+            Button addTeacherStudentPair = new Button { Content = "Register student for teacher" };
+            addTeacherStudentPair.Click += (s, e) => { new AddStudentTeacherPair().Show(); };
+            actions.Add(addTeacherStudentPair);
 
             //Iterate over actions
             int row = 0;

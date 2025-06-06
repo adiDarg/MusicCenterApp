@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\Owner\Desktop\ביה''ס\מדמ''ח\MusicCenter\MusicCenterWPF\App.xaml
-21511384187
+25-1751519952
 
-26-701967787
-3471921678577
-Resources\GeneralStyles.xaml;Windows\Admin\AddRegistreeToGroup.xaml;Windows\Admin\CreateGroup.xaml;Windows\Admin\DisplayMembers.xaml;Windows\Admin\RemoveRegistreeFromGroup.xaml;Windows\Admin\UpdateInstructorOfGroup.xaml;Windows\Guest\SignIn.xaml;Windows\Guest\SignUp.xaml;Windows\Guest\StartupWindow.xaml;Windows\Registree\ViewTeachers.xaml;Windows\Shared\AdditionalActions.xaml;Windows\Shared\CollapseAndClose.xaml;Windows\Shared\Messages.xaml;Windows\Shared\NavBar.xaml;Windows\Shared\ProfileCard.xaml;Windows\Shared\Schedule.xaml;Windows\Teacher\AddNewInstrument.xaml;Windows\User\EnterValidationKey.xaml;Windows\User\Requests.xaml;Windows\User\SendRequest.xaml;Windows\User\UserProfile.xaml;
+30910266119
+352701546104
+Resources\GeneralStyles.xaml;Windows\Admin\AddRegistreeToGroup.xaml;Windows\Admin\AddStudentTeacherPair.xaml;Windows\Admin\CreateGroup.xaml;Windows\Admin\DisplayMembers.xaml;Windows\Admin\PromoteAndDemote.xaml;Windows\Admin\RemoveRegistreeFromGroup.xaml;Windows\Admin\ScheduleEvent.xaml;Windows\Admin\SendMessage.xaml;Windows\Admin\UpdateInstructorOfGroup.xaml;Windows\Guest\SignIn.xaml;Windows\Guest\SignUp.xaml;Windows\Guest\StartupWindow.xaml;Windows\Registree\ViewTeachers.xaml;Windows\Shared\AdditionalActions.xaml;Windows\Shared\CollapseAndClose.xaml;Windows\Shared\Messages.xaml;Windows\Shared\NavBar.xaml;Windows\Shared\ProfileCard.xaml;Windows\Shared\Schedule.xaml;Windows\Teacher\AddNewInstrument.xaml;Windows\User\EnterValidationKey.xaml;Windows\User\Requests.xaml;Windows\User\SendRequest.xaml;Windows\User\UserProfile.xaml;
 
 False
 
